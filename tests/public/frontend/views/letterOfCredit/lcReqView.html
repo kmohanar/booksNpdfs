@@ -1,0 +1,748 @@
+<!-- <nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         </button>
+        <!--<a class="navbar-brand" href="index.html"><strong>Trade Finance</strong></a>
+
+        <div class="navbar-brand" ng-click="setTab(0)"><a ng-href="{{link}}" ng-click="validateNode()"><img src="./frontend/capgeminilogo.jpg" width="200" height="50" style=" vertical-align: middle;
+    margin-top: -12px;height: 54px;margin-left: -12px;"></a></div>
+    </div>
+
+
+
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav" style="
+        margin-top: 20px;
+    ">
+            <font color="#FFFFFF">WELCOME {{username}}</font>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li>
+
+            </li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+
+        <ul class="nav navbar-top-links navbar-right">
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            <!-- <a id="time" style="text-decoration:none; color: #ffffff";></a> 
+            <a style="text-decoration:none; color: #ffffff" ;>Date:{{CurrentDate | date:'MM/dd/yyyy'}},Time:{{ clock | date:'HH:mm:ss'}}</a>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+             <span class="glyphicon glyphicon-envelope">  <b class="caret"></b>
+            </a>
+                <ul class="dropdown-menu dropdown-messages">
+                    <li>
+                        <a href="#">
+                            <div>
+                                <strong>{{username}}</strong>
+                                <span class="pull-right text-muted">
+                        <em>Today</em>
+                        </span>
+                            </div>
+                            <div>This is the trade fianance standard dummy message...</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <strong>{{username}}</strong>
+                                <span class="pull-right text-muted">
+                        <em>Yesterday</em>
+                        </span>
+                            </div>
+                            <div>This is the trade fianance standard dummy message...</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a class="text-center" href="#">
+                  <strong>Read All Messages</strong>
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+                    </li>
+                </ul>
+                <!-- /.dropdown 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+            <span class="glyphicon glyphicon-bell"></span> <b class="caret"></b>
+            </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#customerHome">
+                                <div>
+                                    No. of LC expiring in this week
+                                    <span class="pull-right text-muted small">10</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#customerHome">
+                                <div>
+                                    No. of LC expiring in this week
+                                    <span class="pull-right text-muted small">10</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts 
+                </li>
+                <!-- /.dropdown 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+           <span class="glyphicon glyphicon-user">  <b class="caret"></b>
+            </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#customerHome"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#customerHome"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="" ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user 
+                </li>
+                <!-- /.dropdown 
+        </ul>
+</nav> -->
+
+<div id="header">
+<nav>
+<div class="container-fluid" style="background-color:#d1d1d1 !important">
+<div class="navbar-header">
+    <a class="navbar-brand" style="color:#337ab7;background-color:#d1d1d1 !important" href="#customerHome" ng-click="setTab(0)">Digital Trade Chain</a>
+</div>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="" style="color:#337ab7">WELCOME
+            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+    </li>
+    <li>
+        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+    </li>
+</ul>
+<div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav" >
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" style="color:#337ab7" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu" >
+                        <li class="divider"><strong></strong></li>
+                        <li><a ng-click="back()" class="txtField">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a ng-click="back()">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+
+</div>
+</nav>
+</div>
+
+
+<!-- <nav class="navbar navbar-default" role="navigation" style="padding-top: 62px;margin-bottom:-66px;">
+    <div class="container-fluid" style="background-color:#e6ecff">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling 
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#lcRequest">Request LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(1)">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Bank Guarantee<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#bgRequest">Request BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(3)">View Requested BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(4)">View Issued BG</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse 
+    </div>
+    <!-- /.container-fluid 
+</nav>
+ -->
+
+<!-- <br>
+<br>
+<br> -->
+
+<style>
+    #ultab {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #litab {
+        border-radius: 17px 1px 5px 0px;
+        float: left;
+        border: 2px solid rgba(37, 130, 193, 0.97);
+        border-bottom-width: thin;
+        margin: 10px -3px -1px 0px;
+        padding: 2px 6px 1px 7px;
+        /* background-color: #af3c3c; */
+        color: #1c1c1d;
+    }
+
+    .active {
+        background-color: #B1BDD9;
+        color: #3f3fa5;
+        margin-bottom: 0px;
+        font-weight: bold;
+    }
+
+    #mainView {
+        border-radius: 6px;
+        border: 1px solid #0099cc;
+        clear: both;
+        padding: 0 1em;
+        background-color: #fbfbfb;
+    }
+
+    .demoAppModule md-content {
+        background-color: transparent !important;
+    }
+
+    .demoAppModule md-content md-tabs {
+        border: 1px solid #e1e1e1;
+    }
+
+    .demoAppModule md-content md-tabs md-tab-content {
+        background: #f6f6f6;
+    }
+
+    .demoAppModule md-content md-tabs md-tabs-wrapper {
+        background: white;
+    }
+
+    .demoAppModule md-content h1:first-child {
+        margin-top: 0;
+    }
+
+    .demoAppModule md-input-container {
+        padding-bottom: 0;
+        width: 300px;
+    }
+
+    .demoAppModule .remove-tab {
+        margin-bottom: 40px;
+    }
+
+    .demoAppModule .demo-tab>div>div {
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .demoAppModule .edit-form input {
+        width: 100%;
+    }
+
+    .demoAppModule md-tabs {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .demoAppModule md-tab[disabled] {
+        opacity: 0.5;
+    }
+
+    .demoAppModule label {
+        text-align: left;
+    }
+
+    .demoAppModule .long>input {
+        width: 264px;
+    }
+
+    .demoAppModule .md-button.add-tab {
+        transform: translateY(5px);
+    }
+    /* Style the tab */
+
+    div.tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+    /* Style the buttons inside the tab */
+
+    div.tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+    /* Change background color of buttons on hover */
+
+    div.tab button:hover {
+        background-color: #ddd;
+    }
+    /* Create an active/current tablink class */
+
+    div.tab button.active {
+        background-color: #ccc;
+    }
+    /* Style the tab content */
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+
+    .form-control {
+        width: 300px;
+    }
+
+
+    .formlabel {
+        display: inline-block;
+        max-width: 100%;
+        font-size: small;
+        font-weight: normal important;
+    }
+
+    .label1 {
+        font-weight: normal important;
+    }
+
+    .label {
+        font-weight: bold important;
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio: 0) bootstrap.min.css:5 input[type=date].form-control,
+    input[type=time].form-control,
+    input[type=datetime-local].form-control,
+    input[type=month].form-control {
+        line-height: 34px;
+        max-width: 300px;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        <!--font-family: Verdana;
+        -->
+    }
+
+    @media (min-width: 768px) bootstrap.min.css:5 .form-inline .form-control {
+        display: inline-block;
+        width: -webkit-fill-available;
+        vertical-align: middle;
+    }
+
+    .hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 30px;
+        padding: 0px 2px;
+        font-size: small;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        margin-bottom: 10px;
+    }
+
+    .navbar-default .navbar-nav>.open>a,
+    .navbar-default .navbar-nav>.open>a:focus,
+    .navbar-default .navbar-nav>.open>a:hover {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+
+
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+        color: #262626;
+        text-decoration: none;
+        background-color: #f5f5f5;
+    }
+
+
+    .btn-primary {
+        color: #fbfbfb;
+        background-color: #0866c6;
+        border-color: #e6ecff;
+    }
+</style>
+<br>
+<br>
+<!-- <h2 style="text-align: center;font-weight: bold;margin-bottom: 12px;margin-top: -17px;">Details Of Letter Of Credit </h2> -->
+<h4 style="text-align: center;background-color:#0866C6;color:#ffffff;margin-left:15%;margin-right: 15%;margin-top: -2%;font-size: 13px;height:40px;padding-top:1%;">Letter Of Credits - Requested</h4>
+<div id="mainView" style="margin-left: 15%;margin-right: 15%;margin-top: 15px;height:250px">
+
+
+        <div class="container" style="margin-top: 15px;">
+
+    <div class="row">
+        <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+            <div class="col-sm-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="importSightPmtLCType">LC Type</label>
+                </div>
+                <div class="col-sm-7">
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.ImportSightPmtLCType_t1" class="txtField" id="importSightPmtLCType" name="importSightPmtLCType"
+                        ng-disabled="true">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="LcRequestNumber">LC Request Number	</label>
+                </div>
+                <div class="col-sm-7">
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.LcRequestNumber" class="txtField" id="LcRequestNumber" name="LcRequestNumber"
+                        ng-disabled="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+            <div class="col-xs-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="applicantID">Applicant</label>
+                </div>
+                <div class="col-sm-7">
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.ApplicantID_t1" class="txtField" id="applicantID" name="applicantID" ng-disabled="true">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="applicantBank">Applicant Bank</label>
+                </div>
+                <div class="col-sm-7">
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.mT700_1_51aADApplicantBank_1" class="txtField" id="applicantBank" name="applicantBank"
+                        ng-disabled="true">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+            <div class="col-sm-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="lcViewForm.BeneficiaryID_t2">Beneficiary</label>
+                </div>
+
+
+                <div class="col-sm-7">
+
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.BeneficiaryID_t2" class="txtField" id="BeneficiaryID_t2" name="BeneficiaryID_t2"
+                        ng-disabled="true">
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="beneficiaryBank">Beneficiary Bank</label>
+                </div>
+                <div class="col-sm-7">
+
+
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.BeneficiaryBank_t2" class="txtField" id="beneficiaryBank" name="beneficiaryBank"
+                        ng-disabled="true">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+            <div class="col-xs-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="lcCurrency">LC Currency	</label>
+                </div>
+                <div class="col-sm-7">
+                    <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.LCCurrency_t1" class="txtField" id="LCCurrency_t1" name="LCCurrency_t1" ng-disabled="true">
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="col-sm-5">
+                    <label class="control-label col-sm-" style="font-weight:!important" for="marginRequired">Charges From</label>
+                </div>
+                <div class="col-sm-7">
+                    <!--
+				<input type="text" ng-model="lcViewForm.ChargesFrom_t3" class="txtField" id="ChargesFrom_t3" name="ChargesFrom_t3" ng-disabled="true">-->
+                    <input ng-model="lcViewForm.ChargesFrom_t3" type="radio" value="none" checked ng-disabled="true">none
+                    <input ng-model="lcViewForm.ChargesFrom_t3" type="radio" value="B" checked ng-disabled="true">B
+                    <input ng-model="lcViewForm.ChargesFrom_t3" type="radio" value="O" checked ng-disabled="true">O
+                    <input ng-model="lcViewForm.ChargesFrom_t3" type="radio" value="T" checked ng-disabled="true">T
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+            <div class="col-xs-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="lcAmount">LC Amount	</label>
+                </div>
+                <div class="col-sm-7">
+                    <input style="margin-bottom: 10px" ng-model="lcViewForm.LCAmount_t1" type="text" class="txtField" id="lcAmount" name="lcAmount" ng-disabled="true"
+                        ng-change="lcAmountcheck()">
+                </div>
+            </div>
+
+
+
+
+            <div class="col-xs-6">
+                <div class="col-sm-5">
+                    <label style="font-weight:!important" for="lcExpiryPlace">LC Expiry Place</label>
+                </div>
+                <div class="col-sm-5">
+                    <input style="margin-bottom: 10px" ng-model="lcViewForm.LCExpiryPlace_t1" type="text" class="txtField" id="lcExpiryPlace" name="lcExpiryPlace" ng-disabled="true">
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="container">
+    <div class="row" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+        <div class="col-sm-6">
+            <div class="col-sm-5">
+                <label for="lcissuedate" style="font-weight:!important">LC Issue Date </label>
+            </div>
+            <div class="col-sm-3">
+                <input style="margin-bottom: 10px" type="text" ng-model="lcViewForm.LCIssueDate_t1" class="txtField" id="lcissuedate" name="lcissuedate" ng-disabled="true">
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-6">
+            <div class="col-sm-5">
+                <label style="font-weight:!important" for="lcExpiryDate">LC Expiry Date	</label>
+            </div>
+            <div class="col-sm-3">
+
+
+
+                <input style="margin-bottom: 10px" ng-model="lcViewForm.LCExpiryDate_t1" type="text" class="txtField" id="lcExpiryDate" name="lcExpiryDate" ng-disabled="true">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+
+        <div class="col-xs-6">
+            <div class="col-sm-5">
+                <label style="font-weight:!important" for="lcShipmentDate">LC Shipment Date	</label>
+            </div>
+            <div class="col-sm-3">
+                <input style="margin-bottom: 10px" ng-model="lcViewForm.lcShipmentDate_t1" type="text" class="txtField" id="lcShipmentDate" name="lcShipmentDate" ng-disabled="true">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        
+            
+			
+			
+                
+
+		<button style="margin-left:30px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none;"  type="button" ng-click="lcViewBack()" class="btn btn-primary" pull-right>Back</button>
+		<button style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; " ng-click="getAttachedFiles()" type="button" class="btn btn-primary"  style="margin-bottom: 20px;"><span class="glyphicon glyphicon-download"></span>Download files</button>
+
+		
+                <!--   <tr ng-show="choices.length" ng-repeat="choice in choices track by $index">
+                        <td>{{$index}}</td>
+
+                        <td>
+                            <div>
+                                <label style="font-weight:!important" for="lcExpiryDate">File:	</label>
+
+                                <button ng-click="Downlod(choices)" style=" background:none!important;margin-bottom:15px;  border:none;padding:0!important;  font-family:arial,sans-serif;  color:#069; text-decoration:">
+						<img src="./frontend/document.jpg" alt="doc-">{{choices[0]}}</button>
+                            </div>
+
+                        </td>
+
+                    </tr>-->
+					
+					
+					
+
+
+
+        
+
+    </div>
+
+    
+    
+</div>    
+    
+    </div>
+

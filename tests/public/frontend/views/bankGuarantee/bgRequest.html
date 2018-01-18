@@ -1,0 +1,296 @@
+<style>
+#txtField
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;
+	<!-- margin-right:200px;
+	margin-left:200px; -->
+	}
+}
+#mainView {
+	border-radius: 6px;
+	border: 1px solid #0099cc;
+	clear: both;
+	padding: 0 1em;
+	background-color: #fbfbfb;
+}
+.btn-primary {
+	color: #fbfbfb;
+	background-color: #0866c6;
+	border-color: #e6ecff;
+}
+
+
+</style>
+<div id="header">
+	<nav>
+		<div class="container-fluid" style="background-color:#d1d1d1 !important">
+			<div class="navbar-header">
+				<a class="navbar-brand" style="color:#337ab7;background-color:#d1d1d1 !important" href="#customerHome" ng-click="setTab(0)">
+					Digital Trade Chain
+				</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#" style="color:#337ab7">
+							WELCOME
+						<span class="glyphicon glyphicon-user"></span>
+							{{username}}
+					</a>
+				</li>
+				<li>
+					<a href="#/customer" ng-click="logout()" style="color:#337ab7">
+						<span class="glyphicon glyphicon-log-in"></span>
+							Logout
+					</a>
+				</li>
+			</ul>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="nav navbar-nav" >
+					<li class="dropdown" >
+						<a class="dropdown-toggle" style="color:#337ab7" data-toggle="dropdown">Bank Guarantee<b class="caret"></b></a>
+						<ul class="dropdown-menu" >
+							<li class="divider"><strong></strong></li>
+							<li><a href="#customerHome" ng-click="setTab(3)" class="txtField">		View Requested BG
+							</a></li>
+							<li class="divider"><strong></strong></li>
+							<li><a href="#customerHome" ng-click="setTab(4)">
+								View Opened BG
+							</a></li>
+						</ul>
+					</li>         
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+
+<div id="footer" style="background:#4682B4;position: absolute;bottom: 0;width: 100%;height: 30px;">
+	<div align="center">@2017 Capgemini,All rights reserved</div>
+</div>
+
+<h4 style="text-align:center;height:40px;background-color: #0866C6;font-weight: bold;color:#ffffff;font-size: 13px;margin-top:1%;width:80%;margin-left:10%;padding-top:1%;">Request Bank Guarantee</h4>
+
+<div ng-show="isError">
+    <div class="panel-body" ng-model="validationErrors" style="font-size:small;">
+        <h1 ng-repeat="x in validationErrors" style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;font-weight:bold;" ><a style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;margin-right:-1px;margin-left:350px;font-weight:bold;" href="#{{x.fieldName}}"><label style="color:red">ERROR:</label>{{x.fieldName}}</a>::>>{{x.errMsg}}</h1>
+    </div>
+</div>
+
+<div id="mainView" style="height:250px;width:80%;margin-left:10%;margin-top:1%">
+
+<!-- <div ng-show="isError">
+    <div class="panel-body" ng-model="validationErrors" style="font-size:small;">
+        <h1 ng-repeat="x in validationErrors" style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;font-weight:bold;" ><a style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;margin-right:-1px;margin-left:350px;font-weight:bold;" href="#{{x.fieldName}}"><label style="color:red">ERROR:</label>{{x.fieldName}}</a>::>>{{x.errMsg}}</h1>
+    </div>
+</div> -->
+
+    <form name="bgForm" novalidate ng-submit="bgForm.$valid && submit()">
+        <div ng-class="{true: 'error'}[submitted && form.amount.$invalid]">
+            <div class="container" >
+				<div class="row" >
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none;margin-top:1%; ">
+				
+						<div class="col-sm-6">
+							<div class="col-sm-5">
+								<label style="font-weight:!important" for="BgRequestNumber">BG Request Number *	</label>
+							</div>
+							<div class="col-sm-7">
+								<input type="text" ng-model="bgForm.BgRequestNumber" class="txtField" id="BgRequestNumber" name="BgRequestNumber" disabled="true" required/>
+							</div>
+						</div>
+						
+						<div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="issuedOnBehalfOf">Issued on Behalf Of *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="bgForm.issuedOnBehalfOf" class="txtField" id="issuedOnBehalfOf" name="issuedOnBehalfOf" disabled="true"
+                                    required>
+                            </div>
+                        </div>
+						
+						<div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="bgCurrency">
+									Currency *	
+								</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <select style="margin-bottom: 10px" align="center" ng-model="bgForm.bgCurrency" class="txtField" name="bgCurrency"
+                                    id="bgCurrency" required>
+									<option ng-repeat="bgCurrency in bgCurrency" value="{{bgCurrency}}">
+										{{bgCurrency}}
+									</option>
+								</select>
+                            </div>
+                        </div>
+						
+						<div class="col-xs-6">
+							<div class="col-xs-5">
+								<label style="font-weight:!important;" for="amount">
+									Amount *
+								</label>
+							</div>
+							<div class="col-xs-7">
+								<input type="text" style="margin-bottom: 10px" ng-model=		"bgForm.amount" class="txtField" id="amount" ng-change="bgAmountcheck()" required>
+								</input>
+							</div>
+						</div>
+						
+						<!-- <div class="col-xs-6">
+							<div class="col-sm-5">
+								<label style="font-weight:!important;" for="Deal Date">
+									Deal Date 
+								</label>
+							</div>
+							<div class="col-sm-7">
+								<input style="margin-bottom: 10px;width: fit-content;" ng-model="dealDate" type="date" class="txtField" id="dealDate" name="dealDate" >
+							</div>
+						</div> -->
+						
+						<div class="col-xs-6">
+							<div class="col-sm-5">
+								<label style="font-weight:!important;" for="Start Date">
+									Start Date  	
+								</label>
+							</div>
+							<div class="col-sm-7">
+								<input style="margin-bottom: 10px;width: fit-content;" ng-model="startDate" type="date" class="txtField" id="startDate" name="startDate" >
+							</div>
+						</div>
+						
+						<div class="col-xs-6">
+							<div class="col-sm-5">
+								<label style="font-weight:!important;" for="Expiry Date">
+									Expiry Date 
+								</label>
+							</div>
+							<div class="col-sm-7">
+								<input style="margin-bottom: 10px;width: fit-content;" ng-model="expiryDate" type="date" class="txtField" id="expiryDate" name="expiryDate" >
+							</div>
+						</div>
+						
+						<div class="col-xs-6">
+							<div class="col-sm-5">
+								<label style="font-weight:!important;" for="Maturity Date">
+									Maturity Date  	
+								</label>
+							</div>
+							<div class="col-sm-7">
+								<input style="margin-bottom: 10px;width: fit-content;" ng-model="maturityDate" type="date" class="txtField" id="maturityDate" name="maturityDate" >
+							</div>
+						</div>
+						
+						<div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="beneficiaryBank">Beneficiary Bank *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="bgForm.beneficiaryBank" class="txtField" id="beneficiaryBank" name="beneficiaryBank" required>
+                            </div>
+                        </div>
+						
+						<div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="BeneficiaryID">Beneficiary *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <select align="center" style="margin-bottom: 10px" ng-model="bgForm.BeneficiaryID" class="txtField" name="bgForm.BeneficiaryID" id="bgForm.BeneficiaryID" required>
+									<option ng-repeat="option in customerList" value=	"{{option.customerid}}">{{option.name}}</option>
+								</select>
+                            </div>
+                        </div>
+						
+					</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+					
+						<div class="col-xs-6" style="margin-left">
+							<div class="col-sm-5">
+								<label style="font-weight:!important" for="termsAndConditions">Terms And Conditions</label>
+							</div>
+							<div class="col-sm-7">
+								<input style="margin-bottom: 10px" ng-model="bgForm.termsAndConditions" type="text" class="txtField" id="termsAndConditions">
+							</div>
+						</div>							
+					</div>
+					
+				</div>
+				
+				<!--ERROR DIV-->
+				<!--ERROR DIV-->
+            <div>
+
+                <span style="color:red" ng-show="bgForm.BgRequestNumber.$invalid">
+                       <span ng-show="submitted && bgForm.BgRequestNumber.$error.required"> BG request number is required.</span>
+                </span>
+                <span style="color:red" ng-show="bgForm.issuedOnBehalfOf.$invalid">
+                         <span ng-show="submitted && bgForm.issuedOnBehalfOf.$error.required">Issued On Behalf Of is required.</span>
+                </span>
+                <span style="color:red" ng-show="bgForm.bgCurrency.$invalid">
+                       <span ng-show="submitted && bgForm.bgCurrency.$error.required">Currency is required.</span>
+                </span>
+                <span style="color:red" ng-show="bgForm.amount.$invalid">
+                        <span ng-show="submitted && bgForm.amount.$error.required">Amount is required.</span>
+                </span>
+                <span style="color:red" ng-show="bgForm.beneficiaryBank.$invalid">
+                         <span ng-show="submitted && bgForm.beneficiaryBank.$error.required">Beneficiary bank is required.</span>
+                </span>
+                <span style="color:red" ng-show="bgForm.BeneficiaryID.$invalid">
+                         <span ng-show="submitted && bgForm.BeneficiaryID.$error.required">Beneficiary is required.</span>
+                </span>
+				
+            </div>
+
+				<button type="button"   ng-click="bgBack();" class="btn btn-primary">
+					<span class="glyphicon glyphicon-arrow-left"></span>
+					Back
+				</button>
+				<button align="left" type="button" ng-click="bgRequestValidate();" ng-mouseover=	"checkerror();" ng-disabled="bgForm.$invalid" class="btn btn-primary">
+					<span class="glyphicon glyphicon-ok"></span><span class="glyphicon glyphicon-ok"></span>
+					Validate
+				</button>
+				<button align="left" type="button" ng-mouseover="checkerror();" ng-disabled="bgForm.$invalid" ng-click="bgCreate();" class="btn btn-primary">
+					<span class="glyphicon glyphicon-ok"></span>
+					Request For BG
+				</button>
+				
+			</div>
+		</div>
+	</form>
+</div>

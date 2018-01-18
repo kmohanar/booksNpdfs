@@ -1,0 +1,1556 @@
+<div id="header">
+<nav>
+<div class="container-fluid" style="background-color:#d1d1d1 !important">
+<div class="navbar-header">
+    <a class="navbar-brand"  href="#customerHome" ng-click="setTab(0)" style="color:#337ab7">Digital Trade Chain</a>
+</div>
+<script type="text/ng-template" id="messageContent.html">
+    <div class="modal-body" id="modal-body">
+        {{ modalInstanceTwo.message }}
+    </div>
+</script>
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="#" style="color:#337ab7">WELCOME
+            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+    </li>
+    <li>
+        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+    </li>
+</ul>
+<div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav" >
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" style="color:#337ab7" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu" >
+                        <li><a href="#lcRequest" ng-click="setTab(1)">Request LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(1)" class="txtField">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+			
+			<ul class="nav navbar-nav" >
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" style="color:#337ab7" data-toggle="dropdown">Bank Guarantee<b class="caret"></b></a>
+                    <ul class="dropdown-menu" >
+						<li><a href="#bgRequest" ng-click="setTab(1)">Request BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(3)" class="txtField">View Requested BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(4)">View Opened BG</a></li>
+
+                    </ul>
+                </li>
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+</div>
+	
+
+</div>
+</nav>
+</div>
+
+<style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        ul.tab {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        /* Float the list items side by side */
+
+        ul.tab li {
+            float: left;
+        }
+        /* Style the links inside the list items */
+
+        ul.tab li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        /* Change background color of links on hover */
+
+        ul.tab li a:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+
+        ul.tab li a:focus,
+        .active {
+            background-color: #0866C6;
+        }
+        /* Style the tab content */
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+
+<!--
+<div id="footer" style="background:#4682B4;position: absolute;bottom: -12%;width: 100%;height: 5%;">
+			<div align="center">@2017 Capgemini,All rights reserved</div>
+		</div>
+-->
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <ul class="tab" style="visibility:hidden;">
+            <li ng-class="{ active: isSet(0) }">
+                <a href class="tablinks" id="defaultOpen" ng-click="setTab(0)">Home</a>
+            </li>
+            <li ng-class="{ active: isSet(1) }">
+                <a href class="tablinks" id="LcRequestTab" ng-click="setTab(1)">LC Request</a>
+            </li>
+            <li ng-class="{ active: isSet(2) }">
+                <a href class="tablinks" id="LcOpenTab" ng-click="setTab(2)">LC Open</a>
+            </li>
+            <li ng-class="{ active: isSet(3) }">
+                <a href class="tablinks" id="BgRequestTab" ng-click="setTab(3)">BG Request</a>
+            </li>
+            <li ng-class="{ active: isSet(4) }">
+                <a href class="tablinks" id="BgOpenTab" ng-click="setTab(4)">BG Open</a>
+            </li>
+        </ul>
+        
+		<div ng-app>
+		<div ng-controller="TodoCtrllc">
+    <div ng-repeat="day in weekDays">
+      {{day}}
+    </div>
+  </div>
+</div>
+
+
+	<div ng-app>
+		<div ng-controller="TodoCtrlcustbg">
+    <div ng-repeat="day in weekDays">
+      {{day}}
+    </div>
+  </div>
+</div>
+		
+        <div class="container" style="margin-left:10%;width:80%;">
+            <div class="row">
+                <div ng-show="isSet(0)" style="margin-top:-40px;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="panel panel-default" >
+                                <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                                    Notifications Panel
+                                </div>
+                                <div class="panel-body" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item">
+                                       <span class="badge">{{count1}}</span>
+                                       No. of LC's expiring in this week
+                                       </a>
+                                        <a href="#" class="list-group-item">
+                                       <span class="badge">{{count4}}</span>
+                                       No. of BG's expiring in this week
+                                       </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                                    Quick Links
+                                </div>
+                                <div class="panel-body" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                                    <!-- <div class="list-group">-->
+                                    <!---<a href="#" class="list-group-item">
+                                       LC Opening
+                                       </a>
+                                       <a href="#" class="list-group-item">
+            
+                                       BG Opening
+                                       </a>--->
+                                    <li class="dropdown" style="list-style: none;">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false" style="text-decoration:none">
+                                       LC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="caret"></b>
+                                       </a>
+                                        <ul class="dropdown-menu">
+
+                                            <li><a href="#lcRequest" ng-click="setTab(1)">Request LC</a></li>
+                                            <li class="divider"><strong></strong></li>
+                                            <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+                                            <li class="divider"><strong></strong></li>
+                                            <li><a href="#customerHome"><i class="fa  fa-fw"></i> LC Amendment</a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.dropdown-user -->
+                                    </li>
+                                    <li class="dropdown" style="list-style: none;">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false" style="text-decoration:none">
+                                     BG &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="caret"></b>
+                                      </a>
+                                        <ul class="dropdown-menu">
+
+                                            <li><a href="#bgRequest" ng-click="setTab(3)">Request BG</a></li>
+                                            <li class="divider"><strong></strong></li>
+                                            <li><a href="#customerHome" ng-click="setTab(4)">View Requested BG</a></li>
+                                            <li class="divider"><strong></strong></li>
+                                            <li><a href="#customerHome"><i class="fa  fa-fw"></i>View Issued BG</a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.dropdown-user -->
+                                    </li>
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+<div class="col-md-4">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<!-- <h3 class="panel-title" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; " >Balance Indicator of A/C No:{{accDetails[0]['ns2:ACC'][0]}}</h3> -->
+		<h3 class="panel-title" style="height:15px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; " >
+				Balance Indicator of A/C No:
+				<select align="center" style="color:#000000;margin-bottom: 10px" ng-model="accountForm.accountSelected" class="txtField" name="accountForm.accountSelected" id="accountForm.accountSelected" required>
+					<option ng-repeat="option in accList" value="{{option}}">{{option}}</option>
+				</select>
+			</h3>
+	</div>
+	<div class="panel-body" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+        <div id="gauge-demo">
+            <div id="gauge" dx-circular-gauge="gaugeOptions" style="height: 150px;"></div>            			
+			<!-- <input style="margin-bottom: 10px" type="text" ng-model="minVal">
+			<input style="margin-bottom: 10px" type="text" ng-model="maxVal">
+			<button ng-click="chartCalculate(minVal,maxVal)">Calculate</button> -->
+			<input style="margin-bottom: 10px" type="text" ng-model="accountForm.minVal" name="accountForm.minVal" id="accountForm.minVal">
+			<input style="margin-bottom: 10px" type="text" ng-model="accountForm.maxVal" name="accountForm.maxVal" id="accountForm.maxVal">
+			<button ng-click="chartCalculate(accountForm.minVal,accountForm.maxVal)">Calculate</button>
+        </div>
+	</div>
+</div>
+
+
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                                    Account Details
+                                </div>
+
+                                <div ng-show="accDetails.length">
+                                    <table st-table="rowCollection" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; " class="table table-striped"  id="table_tingkat_jual" >
+                                        <thead bgcolor="#C0C0C0">
+                                            <tr>
+                                                <th>Account name</th>
+                                                <th>Account Type</th>
+                                                <th>Account Number</th>
+                                                <th>Account Balance</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody ng-repeat="accDetails in accDetails">
+                                            <tr>
+                                                <td>{{accDetails['ns2:ACCTNAME'][0]}}</td>
+                                                <td>{{accDetails['ns2:TYPE'][0]}}</td>
+                                                <td>{{accDetails['ns2:ACC'][0]}}</td>
+                                                <td>{{accDetails['ns2:ONLINEACTUALBAL'][0]}}</td>
+
+                                            </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.row-->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+
+                                <img src="frontend/img/bank5.jpg" style="height: 200px; width: 100%;" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+
+                                <img src="frontend/img/bank2.jpg" style="height: 200px; width: 80%;" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <img src="./frontend/img/bank4.jpg" style="height: 200px; width: 100%; align: right" />
+                            </div>
+                        </div>
+                    </div>
+					
+					
+
+
+
+                </div>
+            </div>
+					
+        </div>
+				
+
+        <div class="row">
+            <div ng-show="isSet(1)" style="margin-left:10%;width:80%;margin-top:-40px;">
+
+                <div ng-show="!loc.length" class="panel panel-primary">
+                    <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <h3 class="panel-title" style="color:#FFFFFF;font-size: 13px">There are no requested Letter of Credits</h3>
+                    </div>
+                    <div class="panel-body" style="font-family: Tahoma !important;font-size: 13px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">Use the "Request for LC" button to request for a Letter of Credit.</div>
+                </div>
+                <div ng-show="loc.length" class="panel panel-primary">
+                    <div class="panel-heading">  <!-- style="background-color:#0866C6;" -->
+                        <h3 class="panel-title" style="font-family: Tahoma !important;font-size: 13px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">Letter of Credit - Requested</h3>
+                    </div>
+                </div>
+
+                <div ng-show="loc.length">
+                    <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual">
+                        <thead bgcolor="#C0C0C0">
+                            <tr style="background-color:#f9f9f9">
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" >LC Request Number</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" >LC Type</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" >LC Currency</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" >LC Amount</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" >LC Expiry Date</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC Actions</th>
+
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody ng-repeat="loc in loc">
+                            <tr>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;" >{{loc.lcRequestNumber}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;" >{{loc.ImportSightPmtLCType}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;" >{{loc.LCCurrency}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;" >{{loc.LCAmount}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;" >{{loc.LCExpiryDate| date:'MM/dd/yyyy'}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:right;">
+                                    <div id="btnwrap">
+                                        <!-- <button class="clsActionButton" id="idEditButton" ng-click="modalInstance.ammend()">Ammend</button>-->
+                                        <button style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;	
+	element.style {
+	margin-bottom:10px !important;text-align:centre;" type="button"  ng-click="lcReqView(loc.lcRequestNumber)">View</button>
+                                        <!--<button class="clsActionButton" id="idAddButton" ng-click="openLc(loc.lcId)">Open</button>-->
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--start here-->
+                <div ng-show="locamend.length">
+                    <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual2">
+                        <thead bgcolor="#C0C0C0">
+                            <tr style="background-color:#f9f9f9">
+								<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC Number</th>
+								<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC AmendReq Id</th>
+								<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC Amend Amount</th>
+<!--								<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC Amend Advising Bank Ref</th>
+
+<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">Amend Mode Of Shipment</th>-->
+<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">Status</th>
+<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC Actions</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="locamend in locamend">
+                            <tr>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{locamend.lcAmendId}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{locamend.lcAmendReqId}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{locamend.lcAmendAmount}}</td>
+ <!--                               <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{locamend.lcAmendAdvisingBankRef}}</td>
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{locamend.amendModeOfShipment}}</td>-->
+                                <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{locamend.status}}</td>
+<!--                                <td style="text-align:right;background-color:white;">
+                                    <div id="btnwrap2">
+                                        <!--<button class="clsActionButton" id="idEditButton" ng-click="modalInstance.ammend()">Ammend</button>-->
+                                  <!--       <button type="button"  ng-click="isCollapsed = !isCollapsed">View</button>
+                                        <!--<button class="clsActionButton" id="idAddButton" ng-click="openLc(loc.lcId)">Open</button>-->
+                              <!--       </div>
+                                </td>-->
+								
+								<td style="background-color:#ffffff;">
+								  <!--<button type="button" class="btn btn-default" ng-click="empamendListNew(locamend)" style="font-family: Tahoma;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: bold important;
+		color: #000000;
+		text-decoration: none;
+		height: 30px;
+		background-color:#FFFFFF;
+		element.style {
+        margin-bottom:10px !important;">View</button>-->
+        <button style="font-family: Tahoma;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: bold important;
+        color: #000000;
+        text-decoration: none;
+        height: 20px;
+        background-color:#f9f9f9;	
+        element.style {
+        margin-bottom:10px !important;" type="button"  ng-click="lcAmendReqView(locamend.lcAmendReqId)">View</button>
+
+								</td>
+							
+							
+                            </tr>
+
+                            <!-- <tr>
+                                <td colspan=12>
+                                    <div uib-collapse="!isCollapsed">
+                                        <div class="well well-lg">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <fieldset class="scheduler-border" style="float:left;width:100%;height:160px;font-size:smaller;">
+                                                        <legend class="scheduler-border">Amendment Details</legend>
+                                                        <div class="row">
+
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>LC Number :</b></br>
+                                                                <i>{{locamend.lcAmendId}}</i>
+                                                            </div>
+
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>LC-Amend Request Id :</b></br>
+                                                                <i>{{locamend.lcAmendReqId}}</i>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>Advising Bank Ref:</b></br>
+                                                                <i>{{locamend.lcAmendAdvisingBankRef}}</i>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>LC Expiry Date:</b></br>
+                                                                <i>{{locamend.lcAmendExpiryDate| date:'MM/dd/yyyy'}}</i>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>LC ExpiryPlace:</b></br>
+                                                                <i>{{locamend.lcAmendExpiryPlace}}</i>
+                                                            </div>
+
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>Number Of Amendment:</b> </br>
+                                                                <i>{{locamend.numberOfAmendment}}</i>
+                                                            </div>
+
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>Amendment Details:</b> </br>
+                                                                <i>{{locamend.amendmentDetails}}</i>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>Status:</b> </br>
+                                                                <i>{{locamend.status}}</i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>Mode Of Shipment:</b></br>
+                                                                <i>{{locamend.amendModeOfShipment}}</i>
+                                                            </div>
+
+                                                            <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                                <b>LC Amount:</b> </br>
+                                                                <i>{{locamend.lcAmendAmount}}</i>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Hide</button>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--end here-->
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div ng-show="isSet(2)" style="margin-left:10%;width:80%;margin-top:-40px;">
+                <div ng-show="!loc1.length" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">There are no Letter of Credits</h3>
+                    </div>
+                    <div class="panel-body" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">Use the "Request for LC" button to request for a Letter of Credit.</div>
+                </div>
+                <div ng-show="loc1.length" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-family: Tahoma !important;font-size: 13px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">Letter of Credits- Opened</h3>
+                    </div>
+                </div>
+                <div ng-show="loc1.length">
+                    <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual1">
+                        <thead bgcolor="#C0C0C0">
+                            <tr>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Number</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Type</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Currency</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Amount</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Expiry Date</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Status</th>
+								<th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">T24 Transaction ID</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">LC Actions</th>
+                                <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">History</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="loc in loc1">
+                            <tr>
+                        <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.lcId}}</td>
+                        <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.importSightPmtLCType_t1}}</td>
+                        <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.lCCurrency_t1}}</td>
+                        <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.lCAmount_t1}}</td>
+                        <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.lCExpiryDate_t1| date:'MM/dd/yyyy'}}</td>
+                        <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.status}}</td>
+						<td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">{{loc.transactionId}}</td>
+
+                                <td style="text-align:center;background-color:white;">
+                                    <div id="btnwrap1" style="margin-left:-10px;">
+                                        <button style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:center;"  id="idAddButton" ng-click="amendLc(loc.lcId)">LC Amend</button>
+                                        <a   ng-click="getMail(loc.ibanNumber,loc.lcId);showHide()" ><span style="!important border-color:white;cursor:pointer;" class="glyphicon glyphicon-envelope" ></span></a>
+                                        <div ng-hide="IsHidden">
+                                            <form class="form-group" name="testForm">
+
+                                                <div id="custom-modal">
+                                                    <div id="overlay">
+                                                        <div class="row" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;	
+	element.style {
+	margin-bottom:10px !important;text-align:center;">EMAIL</div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">From:</label>
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="email" class="form-control" placeholder="enter sender's mail id" ng-model="emailForm.fromEmail">
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">To</label>
+
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="email" class="form-control" placeholder="enter receiver's mail id" ng-model="emailForm.toEmail">
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">Subject:</label>
+
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" ng-value="loc.lcId" ng-model="emailForm.subject">
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">Message:</label>
+
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <textarea class="form-control" style="height:50px;" ng-model="emailForm.mailbody"> </textarea>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <button style="float:right" ng-click="send()"> Send &nbsp; <span class="glyphicon glyphicon-envelope" ></span></button>
+                                                                <button style="float:right" ng-click="cancel()"> Cancel &nbsp; <span class="glyphicon glyphicon-remove" ></span></button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div id="fade"></div>
+                                                </div>
+                                            </form>
+
+
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td style="text-align:center;background-color:white;">
+                                    <select ng-model="selected" ng-change="amendList(selected,loc.lcId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;text-align:center;">
+                                            <!--<option value="{{templength}}">Initial Version</option>-->
+                                             <option value="0">Initial Version</option>
+                                            <!--<option ng-repeat="version in loc.amendData" value="{{version.numberOfAmendment}}">Version {{version.numberOfAmendment}}</option>-->
+                                            <option ng-repeat="version in loc.amendArray" value="{{version.lcNumberOfAmendments+1}}">Version {{version.lcNumberOfAmendments+1}}</option>
+                                        </select>
+
+                                    <!-- <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed;loccusDefaultdata(loc);historycus(loc.lcId)">View</button> -->
+								<button style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+    margin-bottom:10px !important;text-align:center;" type="button"  ng-click="CustOpenLcView(loc.lcId)">View</button>
+     
+                                </td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-show="isSet(3)" style="margin-left:10%;width:80%;margin-top:-40px;">
+                <div ng-show="!bgs.length" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-size:13px;">There are no requested Bank Guarantees</h3>
+                    </div>
+                    <div class="panel-body" style="font-size:13px;">Use the "Request for BG" button to request for a Bank Guarantee.</div>
+                </div>
+                <div ng-show="bgs.length" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-size:13px;">Bank Guarantee - Requested</h3>
+                    </div>
+                </div>
+                <div ng-show="bgs.length">
+                    <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual3">
+                        <thead bgcolor="#C0C0C0" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">
+                            <tr>
+                                <th>BG Req Number</th>
+                                <th>Issued On Behalf Of</th>
+                                <th>BG Currency</th>
+                                <th>BG Amount</th>
+                                <th>BG Expiry Date</th>
+								<th>Status</th>
+                                <th>BG Actions</th>
+
+
+                            </tr>
+                        </thead>
+
+
+
+                        <tbody ng-repeat="bg in bgs" >
+                            <tr style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">
+                                <td>{{bg.bgReqID}}</td>
+                                <td>{{bg.issuedOnBehalfOf}}</td>
+                                <td>{{bg.currency}}</td>
+                                <td>{{bg.amount}}</td>
+                                <td>{{bg.expiryDate| date:'MM/dd/yyyy'}}</td>
+								<td>{{bg.status}}</td>
+                                <td>
+                                    <div id="btnwrap35" >
+                                        <!-- <button class="clsActionButton" id="idEditButton" ng-click="modalInstance.ammend()">Ammend</button>-->
+                                        <button type="button"  style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" ng-click="bgReqView(bg.bgReqID)">View</button>
+                                        <!--<button class="clsActionButton" id="idAddButton" ng-click="openLc(loc.lcId)">Open</button>-->
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+				<br>
+
+                <div ng-show="bogamend.length">
+                    <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual3">
+                        <thead bgcolor="#C0C0C0" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">
+                            <tr>
+                                <th>BG Number</th>
+                                <th>BG Amend Req Id</th>
+                                <th>BG Amend Amount</th>
+                                <th>BG Terms and conditions</th>
+                                <th>BG Expiry Date</th>
+                                <th>Status</th>
+                                <th>BG Actions</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="bogamend in bogamend">
+                            <tr style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">
+                                <td>{{bogamend.bgAmendId}}</td>
+                                <td>{{bogamend.bgAmendReqId}}</td>
+                                <td>{{bogamend.bgAmendPrincipalAmount}}</td>
+                                <td>{{bogamend.bgTermsAndConditions}}</td>
+                                <td>{{bogamend.bgAmendExpiryDate}}</td>
+                                <td>{{bogamend.status}}</td>
+                                <td>
+                                    <div id="btnwrap2">
+<button type="button" class="clsActionButton" ng-click="bgAmendReqView(bogamend.bgAmendReqId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">View</button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div ng-show="isSet(4)" style="margin-left:10%;width:80%;margin-top:-40px;">
+                <div ng-show="!bog1.length" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">There are no Bank Guarantees</h3>
+                    </div>
+                    <div class="panel-body">Use the "Request for BG" button to request for a Bank Guarantee.</div>
+                </div>
+                <div ng-show="bog1.length" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-size:13px;">Bank Guarantee - Issued</h3>
+                    </div>
+                </div>
+                <div ng-show="bog1.length">
+                    <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual3">
+                        <thead bgcolor="#C0C0C0" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">
+                            <tr>
+                                <th>BG Number</th>
+                                <th>Issued On Behalf Of</th>
+                                <th>BG Currency</th>
+                                <th>BG Amount</th>
+                                <th>BG Expiry Date</th>
+								<th>T24 Transaction ID</th>
+								<th>Status</th>
+                                <th style="text-align:center;">BG Actions</th>
+								<th style="text-align:center;">History</th>
+
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="bog in bog1">
+                            <tr style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#ffffff;
+    element.style {
+    margin-bottom:10px !important;">
+                                <td>{{bog.bgNumber_t1}}</td>
+                                <td>{{bog.issuedOnBehalfOf_t1}}</td>
+                                <td>{{bog.currency_t1}}</td>
+                                <td>{{bog.amount_t1}}</td>
+                                <td>{{bog.expiryDate_t1| date:'MM/dd/yyyy'}}</td>
+                                <td>{{bog.transactionId}}</td>
+								<td>{{bog.status}}</td>
+
+                                <td style="text-align:center;">
+                                    <div id="btnwrap4">
+                                        <!-- <button class="btn btn-default" id="idAddButton1" ng-disabled="disableAmendButtonBg(bog)" ng-click="amendBG(bog.bgId)">BG Amend</button> -->
+                                        <button type="button"  style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" id="idAddButton1" ng-disabled="disableAmendButtonBg(bog)" ng-click="amendBG(bog.bgNumber_t1)">BG Amend</button>
+                                        <a type="button" ng-click="getMail(bog.ibanNumber,bog.bgId);showHide()"><span class="glyphicon glyphicon-envelope"></span></a>
+                                        <div ng-hide="IsHidden">
+                                            <form class="form-group" name="testForm">
+
+                                                <div id="custom-modal">
+                                                    <div id="overlay">
+                                                        <div class="row">EMAIL</div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">From:</label>
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="email" class="form-control" placeholder="enter sender's mail id" ng-model="emailForm.fromEmail">
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">To</label>
+
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="email" class="form-control" placeholder="enter receiver's mail id" ng-model="emailForm.toEmail">
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">Subject:</label>
+
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" ng-value="bog.lcorder.lcId" ng-model="emailForm.subject">
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col-sm-2">
+                                                                <label for="" style="float:left;">Message:</label>
+
+                                                            </div>
+                                                            <div class="col-sm-10">
+                                                                <textarea class="form-control" style="height:50px;" ng-model="emailForm.mailbody"> </textarea>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <br>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <button style="float:right" ng-click="send()"> Send &nbsp; <span class="glyphicon glyphicon-envelope" ></span></button>
+                                                                <button style="float:right" ng-click="cancel()"> Cancel &nbsp; <span class="glyphicon glyphicon-remove" ></span></button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div id="fade"></div>
+                                                </div>
+                                            </form>
+
+
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td style="text-align:right;">
+                                    <select ng-model="selected" ng-change="amendBGList(selected,bog.bgId)" >
+                                            <option value="0">Initial Version</option>
+                                            <option ng-repeat="version in bog.bgAmendArray" value="{{version.bgNumberOfAmendments}}">Version {{version.bgNumberOfAmendments}}</option>
+                                        </select>
+
+                                    <button type="button" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" ng-click="bgOpenView(bog.bgNumber_t1);bgcusDefaultdata(bog);bghistorycus(bog.bgId)">View</button>
+
+                                </td>
+                            </tr>
+
+                            <!-- <tr>
+
+                                <td colspan=12>
+
+                                    <div uib-collapse="!isCollapsed" ng-show="bgmyvar">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <fieldset class="scheduler-border" style="float:left;width:100%;height:140px;font-size:smaller;">
+                                                    <legend class="scheduler-border">Applicant Details</legend>
+                                                    <div class="row">
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>BG Req Number :</b><br>
+                                                            <i>{{bog.bgId}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Customer Ref. :</b><br>
+                                                            <i>{{bog.customerReference}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>BG Currency :</b><br>
+                                                            <i>{{bog.currency}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>BG Amount :</b><br>
+                                                            <i>{{bgamendAmountval}}</i>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Applicant Customer :</b><br>
+                                                            <i>{{bog.applicantCustomer}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Applicant Address :</b> <br>
+                                                            <i>{{bog.applicantCustomerAddress}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Applicant Bank :</b> <br>
+                                                            <i>{{bog.applicantBank}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Applicant Bank Address :</b> <br>
+                                                            <i>{{bog.applicantBankAddress}}</i>
+                                                        </div>
+
+                                                    </div>
+
+                                                </fieldset>
+                                                <fieldset class="scheduler-border" style="float:left;width:100%;height:140px;font-size:smaller;">
+                                                    <legend class="scheduler-border">Beneficiary Details</legend>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                            <b>IBAN Number :</b><br>
+                                                            <i>{{bog.ibanNumber}}</i>
+                                                        </div>
+
+
+                                                        <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                            <b>Beneficiary ID :</b> <br>
+                                                            <i>{{bog.beneficiary}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                            <b>Beneficiary Address :</b> <br>
+                                                            <i>{{bog.beneficiaryAddress}}</i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <!--<div class="col-xs-12 col-sm-4 col-lg-4">-->
+                                                        <!--<b>BG Issue Date :</b><br>-->
+                                                        <!--<i>{{bog.dealDate}}</i>-->
+                                                        <!--</div>
+
+                                                        <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                            <b>Beneficiary Bank ID :</b> <br>
+                                                            <i>{{bog.beneficiaryBank}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                            <b>Beneficiary Bank Address :</b><br>
+                                                            <i>{{bog.beneficiaryBankAddress}}</i>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <fieldset class="scheduler-border" style="float:right;width:100%;height:285px;font-size:smaller;">
+                                                    <legend class="scheduler-border">Guarantee Details</legend>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Deal Date  :</b></br>
+                                                            <i>{{bog.dealDate}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Value Date:</b> </br>
+                                                            <i>{{bog.valueDate}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Expiry Date :</b></br>
+                                                            <i>{{bgAmendExpiryDateval}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Maturity Date :</b> </br>
+                                                            <i>{{bog.maturityDate}}</i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                            <b>Terms and Conditions :</b></br>
+                                                            <i>{{bgTermsAndConditions}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                            <b>Further Identification : </b> </br>
+                                                            <i> {{bog.furtherIdentification}} </i>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Guarantee Ref:</b> </br>
+                                                            <i>{{bog.guaranteeReference}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Applicable Rule :</b> </br>
+                                                            <i>{{bog.applicableRule}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                            <b>Narrative :</b></br>
+                                                            <i>{{bog.narrative}}</i>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                            <b>Details of Guarantee :</b></br>
+                                                            <i>{{bog.detailsOfGuarantee1}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                            <b>Sender to Receiver information :</b></br>
+                                                            <i>{{bog.senderToReceiverInformation}}</i>
+                                                        </div>
+
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Hide</button>
+                                        </div>
+                                    </div>
+
+
+                                </td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+			
+        </div>
+		
+    <!--</div>-->
+
+<!--</div>-->
+
+</div>
+

@@ -1,0 +1,109 @@
+	.login-form {
+			max-width: 300px;
+			margin: 0 auto;
+		}
+		#inputUsername {
+		  margin-bottom: -1px;
+		  border-bottom-right-radius: 0;
+		  border-bottom-left-radius: 0;
+		}
+		#inputPassword {
+			border-top-left-radius: 0;
+  			border-top-right-radius: 0;
+		}
+.btnwrap{
+    width: 100%;
+}
+
+.login-form{
+
+background-color:#d9def7;
+
+}
+
+
+body {
+  /* background: #eee !important; */
+  background: #ffffff !important;
+}
+.header_band {
+    padding: 0.3em;
+        color: #F7F9F9 ;
+        background-color: #d1d1d1;
+        clear: left;
+        text-align: center;
+}
+.footer_band {
+    padding: 0.3em;
+        color: #2E86C1 ;
+                background-color: #F7F9F9;
+        clear: left;
+        text-align: center;
+}
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 30px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.container{
+width:100%;
+
+}
+.panel{
+	margin-bottom: 10px;
+}
+.panel-body{
+	margin-bottom: -8px;
+}
+.panel-default {
+  border-color: #ECECEC;
+}
+.panel-default > .panel-heading {
+color: #ffffff;
+border-color: #FFF;
+font-weight:bold;
+background: #0866C6;
+font-size: 16px;
+text-shadow: none;}
+.panel-heading {
+  /* padding: 15px 15px 0px; */
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}

@@ -1,0 +1,805 @@
+<!-- <nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     </button>
+        <!--<a class="navbar-brand" href="index.html"><strong>Trade Finance</strong></a>
+
+        <div class="navbar-brand" ng-click="setTab(0)"><a href="#customerHome"><img src="./frontend/capgeminilogo.jpg" width="200" height="50" style=" vertical-align: middle;
+margin-top: -12px;height: 54px;margin-left: -12px;"></a></div>
+    </div>
+
+
+
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav" style="
+    margin-top: 20px;
+">
+            <font color="#FFFFFF">WELCOME {{username}}</font>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li>
+
+            </li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+
+        <ul class="nav navbar-top-links navbar-right">
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            <!-- <a id="time" style="text-decoration:none; color: #ffffff";></a> 
+            <a style="text-decoration:none; color: #ffffff" ;>Date:{{CurrentDate | date:'MM/dd/yyyy'}},Time:{{ clock | date:'HH:mm:ss'}}</a>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+         <span class="glyphicon glyphicon-envelope">  <b class="caret"></b>
+        </a>
+                <ul class="dropdown-menu dropdown-messages">
+                    <li>
+                        <a href="#">
+                            <div>
+                                <strong>{{username}}</strong>
+                                <span class="pull-right text-muted">
+                    <em>Today</em>
+                    </span>
+                            </div>
+                            <div>This is the trade fianance standard dummy message...</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <strong>{{username}}</strong>
+                                <span class="pull-right text-muted">
+                    <em>Yesterday</em>
+                    </span>
+                            </div>
+                            <div>This is the trade fianance standard dummy message...</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a class="text-center" href="#">
+              <strong>Read All Messages</strong>
+              <i class="fa fa-angle-right"></i>
+              </a>
+                    </li>
+                </ul>
+                <!-- /.dropdown 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+        <span class="glyphicon glyphicon-bell"></span> <b class="caret"></b>
+        </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#customerHome">
+                                <div>
+                                    No. of LC expiring in this week
+                                    <span class="pull-right text-muted small">10</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#customerHome">
+                                <div>
+                                    No. of LC expiring in this week
+                                    <span class="pull-right text-muted small">10</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts 
+                </li>
+                <!-- /.dropdown 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+       <span class="glyphicon glyphicon-user">  <b class="caret"></b>
+        </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#customerHome"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#customerHome"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="" ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user 
+                </li>
+                <!-- /.dropdown 
+        </ul>
+</nav>
+
+<nav class="navbar navbar-default" role="navigation" style="padding-top: 62px;margin-bottom:-66px;">
+    <div class="container-fluid" style="background-color:#e6ecff">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling 
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#lcRequest">Request LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(1)">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Bank Guarantee<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#bgRequest">Request BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(3)">View Requested BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(4)">View Issued BG</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -
+    </div>
+    <!-- /.container-fluid 
+</nav>
+
+
+<br>
+<br>
+<br> -->
+
+<style>
+
+#txtField
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;
+	<!-- margin-right:200px;
+	margin-left:200px; -->
+	}
+}
+    #ultab {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #litab {
+        border-radius: 17px 1px 5px 0px;
+        float: left;
+        border: 2px solid rgba(37, 130, 193, 0.97);
+        border-bottom-width: thin;
+        margin: 10px -3px -1px 0px;
+        padding: 2px 6px 1px 7px;
+        /* background-color: #af3c3c; */
+        color: #1c1c1d;
+    }
+
+    .active {
+        background-color: #B1BDD9;
+        color: #3f3fa5;
+        margin-bottom: 0px;
+        font-weight: bold;
+    }
+
+    #mainView {
+        border-radius: 6px;
+        border: 1px solid #0099cc;
+        clear: both;
+        padding: 0 1em;
+        background-color: #fbfbfb;
+    }
+
+    .demoAppModule md-content {
+        background-color: transparent !important;
+    }
+
+    .demoAppModule md-content md-tabs {
+        border: 1px solid #e1e1e1;
+    }
+
+    .demoAppModule md-content md-tabs md-tab-content {
+        background: #f6f6f6;
+    }
+
+    .demoAppModule md-content md-tabs md-tabs-wrapper {
+        background: white;
+    }
+
+    .demoAppModule md-content h1:first-child {
+        margin-top: 0;
+    }
+
+    .demoAppModule md-input-container {
+        padding-bottom: 0;
+        width: 300px;
+    }
+
+    .demoAppModule .remove-tab {
+        margin-bottom: 40px;
+    }
+
+    .demoAppModule .demo-tab>div>div {
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .demoAppModule .edit-form input {
+        width: 100%;
+    }
+
+    .demoAppModule md-tabs {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .demoAppModule md-tab[disabled] {
+        opacity: 0.5;
+    }
+
+    .demoAppModule label {
+        text-align: left;
+    }
+
+    .demoAppModule .long>input {
+        width: 264px;
+    }
+
+    .demoAppModule .md-button.add-tab {
+        transform: translateY(5px);
+    }
+    /* Style the tab */
+
+    div.tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+    /* Style the buttons inside the tab */
+
+    div.tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+    /* Change background color of buttons on hover */
+
+    div.tab button:hover {
+        background-color: #ddd;
+    }
+    /* Create an active/current tablink class */
+
+    div.tab button.active {
+        background-color: #ccc;
+    }
+    /* Style the tab content */
+
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+
+    .form-control {
+        width: 300px;
+    }
+
+
+    .formlabel {
+        display: inline-block;
+        max-width: 100%;
+        font-size: small;
+        font-weight: normal important;
+    }
+
+    .label1 {
+        font-weight: normal important;
+    }
+
+    .label {
+        font-weight: bold important;
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio: 0) bootstrap.min.css:5 input[type=date].form-control,
+    input[type=time].form-control,
+    input[type=datetime-local].form-control,
+    input[type=month].form-control {
+        line-height: 34px;
+        max-width: 300px;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        <!--font-family: Verdana;
+        -->
+    }
+
+    @media (min-width: 768px) bootstrap.min.css:5 .form-inline .form-control {
+        display: inline-block;
+        width: -webkit-fill-available;
+        vertical-align: middle;
+    }
+
+    .hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 30px;
+        padding: 0px 2px;
+        font-size: small;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        margin-bottom: 10px;
+    }
+
+    .navbar-default .navbar-nav>.open>a,
+    .navbar-default .navbar-nav>.open>a:focus,
+    .navbar-default .navbar-nav>.open>a:hover {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+
+
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+        color: #262626;
+        text-decoration: none;
+        background-color: #f5f5f5;
+    }
+
+
+    .btn-primary {
+        color: #fbfbfb;
+        background-color: #0866c6;
+        border-color: #e6ecff;
+    }
+</style>
+
+<div id="header">
+<nav>
+<div class="container-fluid" style="background-color:#d1d1d1 !important">
+<div class="navbar-header">
+    <a class="navbar-brand" style="color:#337ab7;background-color:#d1d1d1 !important" href="#customerHome" ng-click="setTab(0)">Digital Trade Chain</a>
+</div>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="#" style="color:#337ab7">WELCOME
+            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+    </li>
+    <li>
+        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+    </li>
+</ul>
+<div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav" >
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" style="color:#337ab7" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu" >
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(1)" class="txtField">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+
+</div>
+</nav>
+</div>
+
+	
+</div>
+
+
+<br>
+<br>
+
+<!-- <h2 style="text-align: center;font-weight: bold;margin-bottom: 12px;margin-top: -30px;">Request for Letter Of Credit</h2> -->
+<h4 style="text-align: center;background-color: #0866C6;font-weight: bold;color:#ffffff;margin-left: 280px;margin-right: 280px;margin-top: -30px;font-size: 13px;height:40px;padding-top:10px;">Request Letter of Credit</h4>
+<div ng-show="isError">
+    <div class="panel-body" ng-model="validationErrors" style="font-size:small;">
+        <h1 ng-repeat="x in validationErrors" style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;font-weight:bold;" ><a style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;margin-right:-1px;margin-left:350px;font-weight:bold;" href="#{{x.fieldName}}"><label style="color:red">ERROR:</label>{{x.fieldName}}</a>::>>{{x.errMsg}}</h1>
+    </div>
+</div>
+
+
+
+<div id="mainView" style="margin-left: 280px;margin-right: 280px;margin-top:15px">
+    <form name="lcForm" novalidate ng-submit="lcForm.$valid && submit()">
+        <div ng-class="{true: 'error'}[submitted && form.lcamount.$invalid]">
+
+
+
+            <div class="container" style="margin-top:10px">
+
+                <div class="row" >
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="importSightPmtLCType">LC Type *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <select align="center" style="margin-bottom: 10px" ng-model="lcForm.ImportSightPmtLCType_t1" class="txtField" name="importSightPmtLCType" id="importSightPmtLCType"
+                                    required>
+				    <option ng-repeat="option in lctype" value="{{option}}" >{{option}}</option>
+                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="LcRequestNumber">LC Request Number *	</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcForm.LcRequestNumber" class="txtField" id="LcRequestNumber" name="LcRequestNumber" disabled="true"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="applicantID">Applicant *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcForm.ApplicantID_t1" class="txtField" id="applicantID" name="applicantID" disabled="true"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="applicantBank">Applicant Bank *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcForm.mT700_1_51aADApplicantBank_1" class="txtField" id="applicantBank" name="applicantBank"
+                                    disabled="true" required>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="lcForm.BeneficiaryID_t2">Beneficiary *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <select align="center" style="margin-bottom: 10px" ng-model="lcForm.BeneficiaryID_t2" class="txtField" name="lcForm.BeneficiaryID_t2" id="lcForm.BeneficiaryID_t2"
+                                    required>
+				    <option ng-repeat="option in customerList" value="{{option.customerid}}">{{option.name}}</option>
+                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="beneficiaryBank">Beneficiary Bank *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcForm.beneficiaryBank" class="txtField" id="beneficiaryBank" name="beneficiaryBank" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="lcCurrency">LC Currency *	</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <select style="margin-bottom: 10px" ng-model="lcForm.LCCurrency_t1" align="center" ng-model="lcForm.lcCurrency" class="txtField" name="lcCurrency"
+                                    id="lcCurrency" required>
+                   <option ng-repeat="lccurrency in lccurrency" value="{{lccurrency}}">{{lccurrency}}</option>
+                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label class="control-label col-sm-" style="font-weight:!important" for="marginRequired">Charges From *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input ng-model="lcForm.ChargesFrom_t3" type="radio" value="none" required>[none]
+                                <input ng-model="lcForm.ChargesFrom_t3" type="radio" value="B">B
+                                <input ng-model="lcForm.ChargesFrom_t3" type="radio" value="O">O
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+            <!-- </div>
+            <div class="container" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; "> -->
+                <div class="row">
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="lcAmount">LC Amount *	</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input style="margin-bottom: 10px" ng-model="lcForm.LCAmount_t1" type="text" class="txtField" id="lcAmount" name="lcAmount" ng-change="lcAmountcheck()"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="col-sm-7">
+							<!-- Kumar Changes For Documents upload-->
+							
+                                <!--<input type="file" upload-files />     ng-change="documentUpload()"     -->
+								<input style="margin-bottom: 10px" id="file" type="file"/>
+                            </div>
+                         
+						 <div class="col-sm-3">
+                                <button ng-click="documentUpload()">Upload</button>
+                            </div>   <!-- -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <!-- </div>
+            <div class="container" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; "> -->
+                <div class="row">
+				<div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                    <div class="col-sm-6">
+                        <div class="col-sm-5">
+                            <label for="lcissuedate" style="font-weight:!important;">LC Issue Date * </label>
+                        </div>
+                       <!--  <div class="col-sm-5">
+                            <input type="date" style="margin-bottom: 10px;width: fit-content;" ng-model="lcForm.LCIssueDate_t1" class="txtField" id="lcissuedate" name="lcissuedate"
+                                date-format="yyyy-MM-dd" required>
+                        </div> -->
+						<div class="col-sm-3">
+                            <input style="margin-bottom: 10px;width: fit-content;" ng-model="lcForm.LCIssueDate_t1" type="date" class="txtField" id="lcissuedate" name="lcissuedate"
+                                required>
+                        </div>
+                    </div>
+                <!-- </div>
+
+                <div class="row"> -->
+                    <div class="col-xs-6">
+                        <div class="col-sm-5">
+                            <label style="font-weight:!important;" for="lcExpiryDate">LC Expiry Date *	</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input style="margin-bottom: 10px;width: fit-content;" ng-model="lcForm.LCExpiryDate_t1" type="date" class="txtField" id="lcExpiryDate" name="lcExpiryDate"
+                                required>
+                        </div>
+                    </div>
+
+                <!-- </div>
+                <div class="row"> -->
+                    <div class="col-xs-6">
+                        <div class="col-sm-5">
+                            <label style="font-weight:!important" for="lcExpiryPlace">LC Expiry Place *</label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input style="margin-bottom: 10px" ng-model="lcForm.LCExpiryPlace_t1" type="text" class="txtField" id="lcExpiryPlace" name="lcExpiryPlace" required>
+                        </div>
+                    </div>
+					<div class="col-xs-6"> 
+                        <div class="col-sm-5"> 
+                            <label style="font-weight:!important;" for="lcShipmentDate">LC Shipment Date*       </label>
+                        </div> 
+                        <div class="col-sm-3"> 
+                            <input style="margin-bottom: 10px;width: fit-content;" ng-model="lcForm.LCShipmentDate_t1" type="date" class="txtField" id="lcShipmentDate" name="lcShipmentDate"
+                                required> 
+                        </div> 
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-bottom: 15px">
+            <div ng-show="lcFormError" class="form-group">
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span> Enter valid parameters for LOC
+                </div>
+            </div>
+
+            <!--ERROR DIV-->
+            <div>
+
+                <span style="color:red" ng-show="lcForm.ImportSightPmtLCType_t1.$invalid">
+                       <span ng-show="submitted && lcForm.ImportSightPmtLCType_t1.$error.required"> Select Any One LC Type.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.LcRequestNumber.$invalid">
+                         <span ng-show="submitted && lcForm.LcRequestNumber.$error.required">LC request number is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.ApplicantID_t1.$invalid">
+                         <span ng-show="submitted && lcForm.ApplicantID_t1.$error.required">Applicant is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.mT700_1_51aADApplicantBank_1.$invalid">
+                       <span ng-show="submitted && lcForm.mT700_1_51aADApplicantBank_1.$error.required">Applicant bank is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.BeneficiaryID_t2.$invalid">
+                        <span ng-show="submitted && lcForm.BeneficiaryID_t2.$error.required">Beneficiary is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.beneficiaryBank.$invalid">
+                         <span ng-show="submitted && lcForm.beneficiaryBank.$error.required">Beneficiary bank is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.LCCurrency_t1.$invalid">
+                         <span ng-show="submitted && lcForm.LCCurrency_t1.$error.required">LC currency is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.ChargesFrom_t3.$invalid">
+                         <span ng-show="submitted && lcForm.ChargesFrom_t3.$error.required">Charges From is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.LCAmount_t1.$invalid">
+                         <span ng-show="submitted && lcForm.LCAmount_t1.$error.required">LC Amount is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.LCIssueDate_t1.$invalid">
+                         <span ng-show="submitted && lcForm.LCIssueDate_t1.$error.required">LC issue date is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.LCExpiryDate_t1.$invalid">
+                         <span ng-show="submitted && lcForm.LCExpiryDate_t1.$error.required">LC expiry date is required.</span>
+                </span>
+                <span style="color:red" ng-show="lcForm.LCExpiryPlace_t1.$invalid">
+                         <span ng-show="submitted && lcForm.LCExpiryPlace_t1.$error.required">Expiry Place is required.</span>
+                </span>
+
+            </div>
+            <button type="button"   ng-click="back();" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span>Back</button>
+            <button align="left" type="button" ng-click="requestValidate();" ng-mouseover="checkerror();" ng-disabled="lcForm.$invalid"
+                class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span><span class="glyphicon glyphicon-ok"></span>Validate</button>
+            <button align="left" type="button" ng-mouseover="checkerror();" ng-disabled="lcForm.$invalid" ng-click="create();" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Request For LC</button>
+            
+			
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,661 @@
+<script src="./js/ng-pattern-restrict.js"></script>
+
+<div style="background-color:#ffffff !important">
+    <div id="header">
+        <nav>
+            <div class="container-fluid" style="background-color:#d1d1d1 !important">
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="color:#337ab7; background-color:#d1d1d1 !important" href="#employeeHome">Digital Trade Chain</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" style="color:#337ab7">WELCOME
+                            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+                    </li>
+                    <li>
+                        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+                            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+                    </li>
+                </ul>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" style="background-color:d1d1d1;color:#337ab7" data-toggle="dropdown">Letter Of Credit
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="divider">
+                                    <strong></strong>
+                                </li>
+                                <li>
+                                    <a href="#employeeHome" ng-click="setTab(1)" class="txtField">View Requested LC</a>
+                                </li>
+                                <li class="divider">
+                                    <strong></strong>
+                                </li>
+                                <li>
+                                    <a href="#employeeHome" ng-click="setTab(2)">View Opened LC</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                    </li>
+
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#"></a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <h4 style="text-align: center;background-color:#0866C6;color:#ffffff;margin-left:15%;width:70%;margin-top: 10px;font-size: 13px;height:35px;padding-top:9px; padding-top:10px;font-weight:bold;">Upload Bills </h4>
+        <style>
+            #ultab {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                font-family: Tahoma;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: normal;
+                color: #000000;
+                text-decoration: none;
+            }
+
+            #header {
+                background: #D3D3D3;
+                width: 100%;
+                height: 50px;
+            }
+
+            #container {
+			width:100%;
+                min-height: 100%;
+                position: relative;
+            }
+
+            #header-image {
+                background-image: url('cap-logo.jpg');
+                background-repeat: no-repeat;
+                background-position: left;
+                -webkit-background-size: 10px;
+                -moz-background-size: 10px;
+                -o-background-size: 10px;
+                background-size: 40px;
+                height: 40px;
+            }
+
+            #lableWithBorder {
+                font-family: Tahoma;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: normal;
+                padding-left: 3px;
+                padding-right: 12px;
+                padding-bottom: 6px;
+                padding-top: 6px;
+                border-right: 1px solid #ACACAD;
+            }
+
+            #mainButton {
+                font-family: Tahoma;
+                color: #000000;
+                background-color: #F9AA20;
+                border: 2px solid #e4e4e4;
+                border-right: 2px solid #894A06;
+                border-bottom: 2px solid #894A06;
+                text-decoration: none;
+                display: inline-block;
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+                font-weight: normal;
+                font-size: 11px;
+                cursor: hand;
+            }
+
+            #txtField {
+                font-family: Tahoma;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: normal;
+                color: #000000;
+                text-decoration: none;
+                height: 20px;
+                background-color: #FFFFFF;
+                element.style {
+                    margin-bottom: 10px !important;
+                }
+            }
+
+            <!-- ultab:hover {
+                background-color: yellow;
+            }
+
+            --><!-- #litab {
+                border-radius: 2px 1px 5px 0px;
+                float: left;
+                border: 2px solid rgba(37, 130, 193, 0.97);
+
+                border-bottom-width: thin;
+
+                margin: 10px -3px -1px 0px;
+                padding: 12px 12px 6px 6px;
+                /* background-color: #af3c3c; */
+                background-color: #d7dfe8;
+                color: #1c1c1d;
+                text-align: center;
+                cursor: pointer;
+                background-color: #E5E8E9;
+                text-decoration: none;
+            }
+
+            -->#litab {
+                border-radius: 2px 1px 5px 0px;
+                float: left;
+                border: 2.5px solid rgba(37, 130, 193, 0.97);
+
+                border-bottom-width: thin;
+
+                margin: 10px -3px -1px 0px;
+                padding: 12px 12px 6px 6px;
+                /* background-color: #af3c3c; */
+                background-color: #d7dfe8;
+                color: #1c1c1d;
+                text-align: center;
+                cursor: pointer;
+                background-color: #E5E8E9;
+                text-decoration: none;
+
+
+                <!-- padding-left: 42px;
+                padding-bottom: 6px;
+                padding-top: 6px;
+                border-right: 1px solid #ACACAD;
+                -->
+            }
+
+            .active {
+                background-color: #B1BDD9;
+                color: #3f3fa5;
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+
+            #mainView {
+                border-radius: 6px;
+                border: 1px solid #0099cc;
+                clear: both;
+                padding: 0 1em;
+                background-color: #fbfbfb;
+            }
+
+            .demoAppModule md-content {
+                background-color: transparent !important;
+            }
+
+            .demoAppModule md-content md-tabs {
+                border: 1px solid #e1e1e1;
+            }
+
+            .demoAppModule md-content md-tabs md-tab-content {
+                background: #f6f6f6;
+            }
+
+            .demoAppModule md-content md-tabs md-tabs-wrapper {
+                background: white;
+            }
+
+            .demoAppModule md-content h1:first-child {
+                margin-top: 0;
+            }
+
+            .demoAppModule md-input-container {
+                padding-bottom: 0;
+                width: 0px;
+            }
+
+            .demoAppModule .remove-tab {
+                margin-bottom: 40px;
+            }
+
+            .demoAppModule .demo-tab>div>div {
+                padding: 25px;
+                box-sizing: border-box;
+            }
+
+            .demoAppModule .edit-form input {
+                width: 100%;
+            }
+
+            .demoAppModule md-tabs {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .demoAppModule md-tab[disabled] {
+                opacity: 0.5;
+            }
+
+            .demoAppModule label {
+                text-align: left;
+            }
+
+            .demoAppModule .long>input {
+                width: 264px;
+            }
+
+            .demoAppModule .md-button.add-tab {
+                transform: translateY(5px);
+            }
+            /* Style the tab */
+
+            div.tab {
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+            }
+            /* Style the buttons inside the tab */
+
+            div.tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+            }
+            /* Change background color of buttons on hover */
+
+            div.tab button:hover {
+                background-color: #f49542;
+            }
+            /* Create an active/current tablink class */
+
+            div.tab button.active {
+                background-color: #ccc;
+            }
+            /* Style the tab content */
+
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+            }
+
+            .form-control {
+                width: 300px;
+            }
+
+
+            .formlabel {
+                display: inline-block;
+                max-width: 100%;
+                font-size: small;
+                font-weight: normal important;
+            }
+
+            .label1 {
+                font-weight: normal important;
+            }
+
+            .label {
+                font-weight: bold important;
+            }
+
+            @media screen and (-webkit-min-device-pixel-ratio: 0) bootstrap.min.css:5 input[type=date].form-control,
+            input[type=time].form-control,
+            input[type=datetime-local].form-control,
+            input[type=month].form-control {
+                line-height: 34px;
+                max-width: 300px;
+            }
+
+            html,
+            body,
+            div,
+            span,
+            applet,
+            object,
+            iframe,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            blockquote,
+            pre,
+            a,
+            abbr,
+            acronym,
+            address,
+            big,
+            cite,
+            code,
+            del,
+            dfn,
+            em,
+            font,
+            img,
+            ins,
+            kbd,
+            q,
+            s,
+            samp,
+            small,
+            strike,
+            strong,
+            sub,
+            sup,
+            tt,
+            var,
+            b,
+            u,
+            i,
+            center,
+            dl,
+            dt,
+            dd,
+            ol,
+            ul,
+            li,
+            fieldset,
+            form,
+            label,
+            legend,
+            table,
+            caption,
+            tbody,
+            tfoot,
+            thead,
+            tr,
+            th,
+            td {
+                font-size: 100%;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                <!--font-family: Verdana;
+                -->
+            }
+
+            @media (min-width: 768px) bootstrap.min.css:5 .form-inline .form-control {
+                display: inline-block;
+                width: -webkit-fill-available;
+                vertical-align: middle;
+            }
+
+            .hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 1px;
+            }
+
+            .form-control {
+                display: block;
+                width: 100%;
+                height: 30px;
+                padding: 0px 2px;
+                font-size: small;
+                line-height: 1.42857143;
+                color: #555;
+                background-color: #FFFFFF;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                margin-bottom: 10px;
+            }
+
+            .navbar-default .navbar-nav>.open>a,
+            .navbar-default .navbar-nav>.open>a:focus,
+            .navbar-default .navbar-nav>.open>a:hover {
+                color: #fbfbfb;
+                background-color: #d1d1d1;
+            }
+
+            .dropdown-menu>li>a {
+                display: block;
+                padding: 3px 20px;
+                clear: both;
+                font-weight: 400;
+                line-height: 1.42857143;
+                color: #fbfbfb;
+                white-space: nowrap;
+                background: #d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1;
+                font-size: 13px;
+            }
+
+            .navbar-nav>li>.dropdown-menu {
+                margin-top: 0;
+                border-top-left-radius: 0;
+                background: #d1d1d1;
+                border-top-right-radius: 0;
+            }
+
+            .btn-primary {
+                color: #fbfbfb;
+                background-color: #0866c6;
+                border-color: #e6ecff;
+            }
+
+            #footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 30px;
+                /* Height of the footer */
+                background: #4682B4;
+            }
+
+            body {
+                background-color: #FFFFFF;
+                margin: 0px;
+                padding: 0px;
+            }
+
+            #txtNormal {
+                font-family: Tahoma;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: normal;
+                color: #000000;
+                text-align: left;
+                text-decoration: none;
+                padding-left: 3px;
+                margin-top=6px
+            }
+
+            #style1 {
+                color: #FF0000
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div id="mainView" style="margin-top:10px;margin-left:15%;width:70%;height:100%;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                    <fieldset style="width:100%">
+
+
+                        <div>
+                            <br>
+                            <div class="row">
+                                <b style="margin-left: 2%;">LC Number-</b>
+                                <i>{{LCRequestId}}</i>
+                            </div>
+                            <br>
+                            <table st-table="rowCollection" class="table table-striped" id="table_tingkat_jual1" style="width:100%">
+                                <thead bgcolor="#C0C0C0">
+                                    <tr>
+                                        <th>SNo</th>
+                                        <th colspan="1">Bill Upload</th>
+                                        <th style="text-align:center;">LC Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-show="choices.length" ng-repeat="choice in choices track by $index">
+                                        <td>{{$index+1}}</td>
+                                        <td>
+                                            <div>
+                                                <button ng-click="Downlod(choice)" style=" background:none!important; border:none;padding:0!important;  font-family:arial,sans-serif;  color:#069; text-decoration:">
+                                                    <img src="./frontend/document.jpg" alt="doc-">{{choice}}</button>
+                                            </div>
+
+                                        </td>
+                                        <td style="text-align:center">
+                                            <div style="width: 100%;">
+                                                <!-- verification and bill lodging  should be done from  employee bank 10005 -->
+                                                <button  ng-click="verify()">Verify</button>
+                                                <!-- <button ng-click="billInput(1)">Bill Input</button> -->
+                                                <button  ng-click="billInput(1)">Bill Input</button>
+
+                                                <!--<button type="button" id="idAddButton3"    ng-click="verify()">Verify</button>-->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- bill upload should be done from advisingBank -->
+                                    <tr ng-if="thisNode == getData.lcorder.advisingBankID">
+                                        <td>
+                                            <img src="./frontend/upload.png" alt="upload">
+                                        </td>
+                                        <td>
+
+                                            <div>
+                                                <!--<input type="file" upload-files />-->
+                                                <input style="margin-bottom: 10px" id="file" type="file"/>
+                                                                                                
+                                                <br />
+                                            </div>
+
+                                        </td>
+                                        <td style="text-align:center">
+                                            <div style="width: 100%;">
+                                                 <!--<button ng-click="save()">Upload</button> -->
+                                                 
+                                                <button ng-click="documentUpload()">Upload</button>
+												<button ng-disabled="node != otherBank ?  false : true" ng-click="verify()">Verify</button>                                                
+                                                <button ng-disabled="node != otherBank ?  false : true" ng-click="billInput(1)">Bill Input</button>
+                                                <button ng-click="getAttachedFiles()" type="button" ng-show="isFile" style="border: 0px;background-color: white;" ><img src="./frontend/document.jpg" alt="doc-" >Bill-{{LCRequestId}}</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <form name="billform" novalidate ng-show="showTheForm1">
+
+                                <table class="table table-striped" border="1">
+                                    <tr>
+                                        <th>LC Number:{{LCRequestId}}</th>
+                                        <th>Bill Amount:</th>
+                                    </tr>
+
+                                </table>
+
+
+                                <fieldset class="scheduler-border" style="float:left;width:100%;height:80px;font-size:smaller;">
+                                    <legend class="scheduler-border">Bill Input:</legend>
+
+                                    <div class="row">
+
+                                        <div class="col-xs-12 col-sm-3 col-lg-3" >
+                                            <label for="bill_number" class="control-label" style="display: block">Bill Number:</label>
+                                            <input type="text" ng-model="billform.billNumb" class="txtField" id="bill_number" disabled required="required">
+
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                            <label for="bill_amount" class="control-label">Bill Amount:
+                                                <i>(outstanding amount:{{lastOutStandingAmount}})</i>
+                                            </label>
+                                            <!--<input type="text" to-number ng-model="billform.billamount" class="form-control" id="bill_amount" name="bill_amount" ng-change="amountChange()">-->
+                                            <input type="text" to-number ng-pattern-restrict="^$|^[A-Za-z0-9]+" ng-model="billform.billamount" class="txtField"
+                                                id="bill_amount" name="bill_amount" ng-change="amountChange()">
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                            <label for="bill_date" class="control-label" style="display: block">Bill Date :</label>
+                                            <input type="date" ng-model="billform.billdate" class="txtField" id="bill_date" name="bill_date">
+
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                            <label for="currency_type" class="control-label" style="display: block">Currency Type :
+                                                <font color="red">*</font>:</label>
+                                            <select ng-model="billform.billcurrency" class="txtField" name="billcurrency" id="currency_type" required>
+                                                <option ng-repeat="billcurrency in billcurrency" value="{{billcurrency}}">{{billcurrency}}</option>
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+                                </fieldset>
+
+                                <button ng-click="create()"  type="button" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-ok"></span> Submit</button>
+                                <button ng-click="cancel()" type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-remove"></span>Cancel</button>
+                            </form>
+                            <br>
+                            <br>
+                            <div class="row" ng-show="bills.length" style="margin-left: 10px;margin-right: 10px;">
+                                <table st-table="rowCollection" class="table table-striped" id="table_tingkat_jual">
+                                    <thead bgcolor="#C0C0C0">
+                                        <tr>
+                                            <th>Bill Number</th>
+                                            <th>Bill Date</th>
+                                            <th>Currency Type</th>
+                                            <th>Bill Amount</th>
+                                            <th>Outstanding Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody ng-repeat="bills in bills">
+                                        <tr>
+                                            <td>{{bills.billNo}}</td>
+                                            <td>{{bills.billDate}}</td>
+                                            <td>{{bills.currencyType}}</td>
+                                            <td>{{bills.billAmount}}</td>
+                                            <td>{{bills.lcOutstandingAmt}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none;"  type="button" ng-click="documentBack()" class="btn btn-primary" pull-right>Back</button>
+                        </div>
+                        <div>
+                        </div>
+
+                    </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>

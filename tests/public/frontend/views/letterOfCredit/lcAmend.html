@@ -1,0 +1,2579 @@
+<!-- <nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+     <span class="sr-only">Toggle navigation</span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     <span class="icon-bar"></span>
+     </button>
+        <!--<a class="navbar-brand" href="index.html"><strong>Trade Finance</strong></a>
+
+        <div class="navbar-brand" ng-click="setTab(0)"><a href="#customerHome"><img src="./frontend/capgeminilogo.jpg" width="200" height="50" style=" vertical-align: middle;
+margin-top: -12px;height: 54px;margin-left: -12px;"></a></div>
+    </div>
+
+
+
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav" style="
+    margin-top: 20px;
+">
+            <font color="#FFFFFF">WELCOME {{username}}</font>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li>
+
+            </li>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+
+        <ul class="nav navbar-top-links navbar-right">
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            <!-- <a id="time" style="text-decoration:none; color: #ffffff";></a> 
+            <a style="text-decoration:none; color: #ffffff" ;>Date:{{CurrentDate | date:'MM/dd/yyyy'}},Time:{{ clock | date:'HH:mm:ss'}}</a>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+         <span class="glyphicon glyphicon-envelope">  <b class="caret"></b>
+        </a>
+                <ul class="dropdown-menu dropdown-messages">
+                    <li>
+                        <a href="#">
+                            <div>
+                                <strong>{{username}}</strong>
+                                <span class="pull-right text-muted">
+                    <em>Today</em>
+                    </span>
+                            </div>
+                            <div>This is the trade fianance standard dummy message...</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <strong>{{username}}</strong>
+                                <span class="pull-right text-muted">
+                    <em>Yesterday</em>
+                    </span>
+                            </div>
+                            <div>This is the trade fianance standard dummy message...</div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a class="text-center" href="#">
+              <strong>Read All Messages</strong>
+              <i class="fa fa-angle-right"></i>
+              </a>
+                    </li>
+                </ul>
+                <!-- /.dropdown 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+        <span class="glyphicon glyphicon-bell"></span> <b class="caret"></b>
+        </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#customerHome">
+                                <div>
+                                    No. of LC expiring in this week
+                                    <span class="pull-right text-muted small">10</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#customerHome">
+                                <div>
+                                    No. of LC expiring in this week
+                                    <span class="pull-right text-muted small">10</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts 
+                </li>
+                <!-- /.dropdown 
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#customerHome" aria-expanded="false">
+       <span class="glyphicon glyphicon-user">  <b class="caret"></b>
+        </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#customerHome"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#customerHome"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="" ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user 
+                </li>
+                <!-- /.dropdown 
+        </ul>
+</nav>
+
+<nav class="navbar navbar-default" role="navigation" style="padding-top: 62px;margin-bottom:-66px;">
+    <div class="container-fluid" style="background-color:#e6ecff">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling 
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#lcRequest">Request LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(1)">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Bank Guarantee<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#bgRequest">Request BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(3)">View Requested BG</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(4)">View Issued BG</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -
+    </div>
+    <!-- /.container-fluid 
+</nav>
+
+
+<br>
+<br>
+<br> -->
+
+<style>
+#ultab {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+#header {
+background: #D3D3D3;
+width: 100%;
+height: 50px;
+}
+
+#container {
+min-height: 100%;
+position: relative;
+}
+
+#header-image {
+background-image: url('cap-logo.jpg');
+background-repeat: no-repeat;
+background-position: left;
+-webkit-background-size: 10px;
+-moz-background-size: 10px;
+-o-background-size: 10px;
+background-size: 40px;
+height: 40px;
+
+}
+
+#lableWithBorder
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	padding-left: 3px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-top: 6px;
+	border-right: 1px solid #ACACAD;
+}
+
+#mainButton {
+		font-family: Tahoma;
+        color: #000000;
+        background-color: #F9AA20; 
+        border: 2px solid #e4e4e4;
+        border-right: 2px solid #894A06;
+        border-bottom: 2px solid #894A06;
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 4px;
+		padding-right: 4px;
+		padding-top: 2px;
+		padding-bottom: 2px;
+        font-weight: normal;
+        font-size: 11px;
+		cursor: hand;
+}
+
+#txtField
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;
+	
+	}
+}
+
+
+#litab {
+    width : 10%;
+    border-radius: 2px 1px 5px 0px;
+    float: left;
+    border: 2.5px solid rgba(37, 130, 193, 0.97);
+	
+    border-bottom-width: thin;
+	
+    margin: 10px -3px -1px 0px;
+    padding: 12px 12px 6px 6px;
+    /* background-color: #af3c3c; */
+	background-color:#d7dfe8;
+    color: #1c1c1d;
+	    text-align: center;
+		cursor:pointer;
+		background-color: #E5E8E9;
+    text-decoration: none;
+		
+		
+	<!-- 	    padding-left: 42px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    border-right: 1px solid #ACACAD;
+		 -->
+}
+.active {
+    background-color: #B1BDD9;
+    color: #3f3fa5;
+    margin-bottom: 0px;
+	font-weight: bold;
+}
+#mainView {
+  border-radius: 6px;
+    border: 1px solid #0099cc;
+	clear: both;
+	padding: 0 1em;
+	background-color: #fbfbfb;
+}
+.demoAppModule md-content {
+  background-color: transparent !important; }
+  .demoAppModule md-content md-tabs {
+    border: 1px solid #e1e1e1; }
+    .demoAppModule md-content md-tabs md-tab-content {
+      background: #f6f6f6; }
+    .demoAppModule md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .demoAppModule md-content h1:first-child {
+    margin-top: 0; }
+
+.demoAppModule md-input-container {
+  padding-bottom: 0;
+    width: 300px;	}
+
+.demoAppModule .remove-tab {
+  margin-bottom: 40px; }
+
+.demoAppModule .demo-tab > div > div {
+  padding: 25px;
+  box-sizing: border-box; }
+
+.demoAppModule .edit-form input {
+  width: 100%; }
+
+.demoAppModule md-tabs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.demoAppModule md-tab[disabled] {
+  opacity: 0.5; }
+
+.demoAppModule label {
+  text-align: left; }
+
+.demoAppModule .long > input {
+  width: 264px; }
+
+.demoAppModule .md-button.add-tab {
+  transform: translateY(5px); }
+
+
+
+  /* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #f49542;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.form-control {
+  width: 300px;
+}
+
+
+.formlabel {
+    display: inline-block;
+    max-width: 100%;
+    font-size: small;
+  font-weight: normal important;
+}
+
+.label1 {
+    font-weight: normal important;
+}
+
+.label {
+    font-weight: bold important;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+bootstrap.min.css:5
+input[type=date].form-control, input[type=time].form-control, input[type=datetime-local].form-control, input[type=month].form-control {
+    line-height: 34px;
+    max-width: 300px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    <!--font-family: Verdana;-->
+}
+@media (min-width: 768px)
+bootstrap.min.css:5
+.form-inline .form-control {
+    display: inline-block;
+    width: -webkit-fill-available;
+    vertical-align: middle;
+}
+.hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0px 2px;
+    font-size: small;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-bottom: 10px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fbfbfb;
+    background-color: #d1d1d1;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #fbfbfb;
+    white-space: nowrap;
+    background: #d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1;
+    font-size: 13px;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    background: #d1d1d1;
+    border-top-right-radius: 0;
+}
+.btn-primary {
+    color: #fbfbfb;
+    background-color: #0866c6;
+    border-color: #e6ecff;
+}
+#footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 30px;
+/* Height of the footer */
+background: #4682B4;
+}
+body
+{
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+#txtNormal
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align:left;
+	text-decoration: none;
+	padding-left:3px;
+	margin-top=6px
+}
+
+#style1 {
+color: #FF0000
+}
+
+
+</style>
+
+<style>
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 10px;
+    text-align: right;
+	}
+#header {
+background: #d1d1d1;
+width: 100%;
+height: 50px;
+}</style>
+
+<div id="header">
+<nav>
+<div class="container-fluid" style="background-color:#d1d1d1 !important">
+<div class="navbar-header">
+    <a class="navbar-brand" style="color:#337ab7;background-color:#d1d1d1 !important" href="#customerHome" ng-click="setTab(0)">Digital Trade Chain</a>
+</div>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="#" style="color:#337ab7">WELCOME
+            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+    </li>
+    <li>
+        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+    </li>
+</ul>
+<div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav" >
+                <li class="dropdown" >
+                    <a class="dropdown-toggle" style="color:#337ab7" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu" >
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(1)" class="txtField">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+            </ul>
+        </div>
+
+</div>
+</nav>
+</div>
+	
+	<!--	<div id="footer" style="background:#4682B4;position: absolute;bottom: 0;width: 100%;height: 30px;">
+			<div align="center">@2017 Capgemini,All rights reserved</div>
+		</div>
+-->
+</div>
+
+
+<br>
+<br>
+
+<!-- <h2 style="text-align: center;font-weight: bold;margin-bottom: 12px;margin-top: -30px;">Request for Letter Of Credit</h2> -->
+<h4 style="text-align: center;background-color: #0866C6;font-weight: bold;color:#ffffff;margin-left:15%;width:70%;margin-top: -30px;font-size: 13px;height:40px;padding-top:10px;">Request Amend Letter of Credit</h4>
+<div ng-show="isError">
+    <div class="panel-body" ng-model="validationErrors" style="font-size:small;">
+        <h1 ng-repeat="x in validationErrors" style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;font-weight:bold;" ><a style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;margin-right:-1px;margin-left:350px;font-weight:bold;" href="#{{x.fieldName}}"><label style="color:red">ERROR:</label>{{x.fieldName}}</a>::>>{{x.errMsg}}</h1>
+    </div>
+</div>
+
+<div id="mainView" style="margin-left: 15%;width: 70%;margin-top:5px;margin-bottom:80px;">   <!--varaprasad-->
+    <form novalidate ng-submit="lcAmendForm1.$valid && submit()">
+        <div ng-class="{true: 'error'}[submitted && form.lcamount.$invalid]">
+
+            <div class="container" style="margin-top:10px">
+                <div class="row" >
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="newLcNumber">LC Number *	</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcAmendForm1.newLcNumber" class="txtField" id="newLcNumber" name="newLcNumber" disabled="true"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+			    	<div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-sm-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="newLcRequestNumber">Amend Request Number *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px;width:75%;" ng-model="lcAmendForm1.newLcRequestNumber" class="txtField" id="newLcRequestNumber" name="newLcRequestNumber" disabled="true"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+				    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                    <div class="col-xs-6">
+                        <div class="col-sm-5">
+                            <label style="font-weight:!important;" for="newLCExpiryDate_t1">LC Expiry Date *	</label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input style="margin-bottom: 10px;width: fit-content;" ng-model="lcAmendForm1.newLCExpiryDate_t1" type="date" class="txtField" id="newLCExpiryDate_t1" name="newLCExpiryDate_t1" required>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="newLCExpiryPlace_t1">LC Expiry Place *</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input style="margin-bottom: 10px" ng-model="lcAmendForm1.newLCExpiryPlace_t1" type="text" class="txtField" id="newLCExpiryPlace_t1" name="newLCExpiryPlace_t1" required>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				<div class="row">
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="newLCAmount_t1">LC Amount *	</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input style="margin-bottom: 10px" ng-model="lcAmendForm1.newLCAmount_t1" type="text" class="txtField" id="newLCAmount_t1" name="newLCAmount_t1" ng-change="lcAmountcheck()"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="newLcNumberOfAmendments">Number Of Amendments *	</label>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcAmendForm1.newLcNumberOfAmendments" class="txtField" id="newLcNumberOfAmendments" name="newLcNumberOfAmendments" disabled="true"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				
+				<div class="row">
+                    <div class="form-inline" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+                        <div class="col-xs-6">
+                            <div class="col-sm-5">
+                                <label style="font-weight:!important" for="newAmendmentDetails">Amendment Details *:</label>
+                        </div>
+                            <div class="col-sm-7">
+                                <input type="text" style="margin-bottom: 10px" ng-model="lcAmendForm1.newAmendmentDetails" class="txtField" id="newAmendmentDetails" name="newAmendmentDetails" required>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+        </div>
+        <div class="container" style="margin-bottom: 15px">
+
+            <button type="button"   ng-click="lcAmendBack();" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span>Back</button>
+       <!--          <button align="left" type="button" ng-click="requestValidate();" ng-mouseover="checkerror();" ng-disabled="lcAmendForm1.$invalid"
+                class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span><span class="glyphicon glyphicon-ok"></span>Validate</button>-->  
+           <button ng-click="amendLC()" type="button" class="btn btn-primary" id="amendlcbutton" ng-disabled = "lcAmendBtnDisable()? false : true"><span class="glyphicon glyphicon-ok"  ></span> Amend</button> 
+<!--       <button align="left" type="button" ng-mouseover="checkerror();" ng-disabled="lcAmendForm.$invalid" ng-click="create();" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Amend</button>-->            
+        </div>
+    </form>
+</div>
+</div>
+
+
+
+
+
+
+
+<!--full record start-->
+
+<div class="container" style="width: 70%;margin-left: 15%;background-color:#ffffff !important" >
+<div class="row" style="margin-top:-80px;">   <!--varaprasad-->
+  <div id="tabs" style="background-color:#ffffff">
+          <ul id="ultab" style="width:100%;background-color:#ffffff">
+              <li class="dropdown" id="litab" ng-repeat="tab in tabs"
+                  ng-class="{active:isActiveTab(tab.url)}"
+                  ng-click="onClickTab(tab)">{{tab.title}}</li>
+          </ul>
+          <div id="mainView">
+              <div ng-include="currentTab" style="height:420px;margin-bottom: -10px;"></div>
+          </div>
+      <script type="text/ng-template" id="one.tpl.html">
+</br>
+<div class="row" id="ultab">
+<div form name="lcAmendForm1" class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="ImportSightPmtLCType_t1">Import Sight Pmt LC Type </label>
+            </div>
+		    <div class="col-sm-7" >
+                <input disabled="true" align="center" class="txtNormal" ng-model ="lcAmendForm1.ImportSightPmtLCType_t1" class="txtField" name="ImportSightPmtLCType_t1" id="ImportSightPmtLCType_t1" required style="height: 20px;margin-top=6px "><span class="style1"></span>
+				    
+	        </div>
+	    </div>		
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="LcRequestNumber">LC Number	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" type="text" ng-model ="lcAmendForm1.LcRequestNumber" class="txtField" id="LcRequestNumber" name="LcRequestNumber" ng-disabled="false" style="margin-top=6px"><span class="style1"></span>
+	        </div>
+	    </div>		
+<br> </br>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="ApplicantID_t1">Applicant ID	*</label>
+            </div>
+		    <div class="col-sm-7">
+			    <input disabled="true" type="text" ng-model ="lcAmendForm1.ApplicantID_t1" class="txtField" id="ApplicantID_t1" name="ApplicantID_t1" ng-disabled="true" required ng-change="applicantAddressUpdate()" ng-change="enableOpen()">
+<!--                 <select disabled="true" align="center" ng-model ="lcAmendForm1.ApplicantID_t1"  class="form-control" name="applicantID" id="applicantID" required ng-model="lcAmendForm1.applicantID">
+                    <option align="center" value="applicantID">1000</option>
+                </select> -->
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="ApplicantAddress_t1">Applicant Address	</label>
+            </div>
+		    <div class="col-sm-7">
+			    <textarea disabled="true" ng-model ="lcAmendForm1.ApplicantAddress_t1" id="ApplicantAddress_t1" class="txtField" style="margin: 0px 0px 10px; width: 230px; height: 57px;"  disabled="true"></textarea>
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="lcCurrency">LC Currency	*</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LCCurrency_t1" align="center"  class="txtField" name="lcCurrency" id="lcCurrency" required ng-disabled="true" ng-change="enableOpen()">
+   	        </div>
+	    </div>		
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="lcAmount">LC Amount	*</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LCAmount_t1" style="margin-bottom: 10px" type="text" class="txtField" id="lcAmount" name="lcAmount"  required  ng-change="lcAmountcheck()" ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="creditTolerance">Credit Tolerance	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.CreditTolerance_t1" type="text" class="txtField" id="creditTolerance" name="creditTolerance" ng-model="lcAmendForm1.creditTolerance" ng-change="enableOpen()">
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="debitTolerance">Debit Tolerance(-%)	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.DebitTolerance_t1" type="text" style="margin-bottom: 10px;width:45px;" class="txtField" id="debitTolerance" name="debitTolerance" ng-model="lcAmendForm1.debitTolerance" ng-change="enableOpen()">
+	        </div>
+	    </div>
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="LCIssueDate_t1" >LC Issue Date	*</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LCIssueDate_t1" type="text"  class="txtField" id="LCIssueDate_t1" name="LCIssueDate_t1"  required ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="ShipmentDate_t1">Shipment Date	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.ShipmentDate_t1" type="date"  style="margin-bottom: 10px" class="txtField" id="ShipmentDate_t1" name="ShipmentDate_t1">
+	        </div>
+	    </div>
+		
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="LCExpiryDate_t1">LC Expiry Date	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LCExpiryDate_t1" type="text"  class="txtField" id="LCExpiryDate_t1" name="LCExpiryDate_t1" ng-model="lcAmendForm1.lcExpiryDate" ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="LiablityReversalDate_t1">Liablity Reversal Date	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LiablityReversalDate_t1" type="date" style="margin-bottom: 10px" class="txtField" id="LiablityReversalDate_t1" name="LiablityReversalDate_t1">
+	        </div>
+	    </div>
+		
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="presentationDays">Presentation Days	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.PresentationDays_t1" type="text"  class="txtField" id="presentationDays" name="presentationDays">
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="lcExpiryPlace">LC Expiry Place	*</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LCExpiryPlace_t1" style="margin-bottom: 10px" type="text"  class="txtField" id="lcExpiryPlace" name="lcExpiryPlace" ng-model="lcAmendForm1.lcExpiryPlace" ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+		
+		<br> </br>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="incoTerms">Inco Terms	</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.IncoTerms_t1"  align="center" ng-model="lcAmendForm1.incoTerms"  class="txtField" name="incoTerms" id="incoTerms" required>
+                    <option ng-repeat="option in incoTerms" value="{{option}}" >{{option}}</option>
+                </select>
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="modeOfShipment">Mode Of Shipment	</label>
+            </div>
+		    <div class="col-sm-7">
+			    <select disabled="true" ng-model="lcAmendForm1.ModeOfShipment_t1"  style="margin-bottom: 10px" class="txtField" name="modeofshipment" id="modeofshipment" >
+                                    <option value="Land">Land</option>
+                                    <option value="Sea">Sea</option>
+                                    <option value="Air">Air</option>
+                </select>
+	        </div>
+	    </div>
+		
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="limitReference">Limit Reference	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.LimitReference_t1" type="text"  class="txtField" id="limitReference" name="limitReference" >
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="autoExpiry">Auto Expiry	</label>
+            </div>
+		    <div class="col-sm-7">
+			    <select disabled="true" ng-model="lcAmendForm1.AutoExpiry_t1" style="margin-bottom: 10px" class="txtField" name="autoExpiry" id="autoExpiry" >
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                </select>
+	        </div>
+	    </div>
+		
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="otherOfficer">Other Officer	</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.OtherOfficer_t1" align="center" ng-model="lcAmendForm1.otherOfficer"  class="txtField" name="otherOfficer" id="otherOfficer" required>
+                   <option ng-repeat="otherOfficer in otherOfficer" value="{{otherOfficer}}">{{otherOfficer}}</option>	
+                </select>
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="accountOfficer">Account Officer	</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.AccountOfficer_t1" style="margin-bottom: 10px" align="center" ng-model="lcAmendForm1.accountOfficer"  class="txtField" name="accountOfficer" id="accountOfficer" required>
+					<option ng-repeat="accountOfficer in accountOfficer" value="{{accountOfficer}}">{{accountOfficer}}</option>	
+                </select>
+	        </div>
+	    </div>
+		
+		<br> </br>
+		<!-- <br> </br> -->
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="portfolioApplicant">Portfolio Applicant	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.PortfolioApplicant_t1" type="text"  class="txtField" id="portfolioApplicant" name="portfolioApplicant" >
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="portfolioBeneficiary">Portfolio Beneficiary	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.PortfolioBeneficiary_t1" style="margin-bottom: 10px" type="text"  class="txtField" id="portfolioBeneficiary" name="portfolioBeneficiary" > 
+	        </div>
+	    </div>
+		<br> </br>
+		<!-- <br> </br> -->
+		<div class="row">
+		</div>
+    </div>
+
+    <div class="col-sm-4">
+    </div>
+    </div>
+	</br>
+  	</script>
+
+  	<script type="text/ng-template" id="two.tpl.html">
+  		<div id="viewTwo">
+        </br>
+		<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+		
+        <!-- <div class="row" id="ultab>
+		    <div class="form-inline"  height:400px;"> -->
+			
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="advisingThroughBank">Advising Through Bank</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.AdvisingThroughBank_t2" align="center" style="margin-bottom: 10px" class="txtField" name="advisingThroughBank" id="advisingThroughBank" required ng-change="advisingBankChange()" required ng-change="enableOpen()">
+                    <option align="center" ng-repeat="bank in otherBankList" value="{{bank.bankid}}">{{bank.bankid}} {{bank.bankname}}</option>
+                </select>
+	        </div>
+	    </div>
+		
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="beneficiaryID">Beneficiary ID *</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.BeneficiaryID_t2" align="center" style="margin-bottom: 10px" class="txtField" name="BeneficiaryID_t2" id="BeneficiaryID_t2" required ng-change="customerChange()" required disabled = "true" ng-change="enableOpen()">
+                    <!-- <option ng-repeat="customer in customerList" value="{{customer.cusomerid}}">{{customer.cusomerid}} {{customer.name}}</option>
+                </select> -->
+	        </div>
+	    </div>
+
+	    
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="beneficiaryAddress">Beneficiary Address	</label>
+            </div>
+		    <div class="col-sm-7">
+				<textarea disabled="true" ng-model ="lcAmendForm1.BeneficiaryAddress_t2" id="beneficiaryAddress" class="txtField" style="margin: 0px 0px 10px; width: 246px; height: 57px; margin-bottom: 10px" disabled="true"></textarea>
+                <!-- <input disabled="true" ng-model ="lcAmendForm1.BeneficiaryAddress_t2" type="text" class="form-control" id="beneficiaryAddress" name="beneficiaryAddress" ng-model="lcAmendForm1.beneficiaryAddress"> -->
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="advisingBankAddress">Advising Bank Address	</label>
+            </div>
+		    <div class="col-sm-7">
+				<textarea disabled="true" ng-model ="lcAmendForm1.AdvisingBankAddress_t2" id="advisingBankAddress"  class="txtField" style="margin: 0px 0px 10px; width: 246px; height: 57px; margin-bottom: 10px" disabled="true"></textarea>
+                <!-- <input disabled="true" ng-model ="lcAmendForm1.AdvisingBankAddress_t2" type="text" class="form-control" id="advisingBankAddress" name="advisingBankAddress"> -->
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="availableWithBankID">Available With Bank ID *</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.AvailableWithBankID_t2" align="center"  style="margin-bottom: 10px" class="txtField" name="availableWithBankID" id="availableWithBankID" required  ng-change="enableOpen()">
+                    <option align="center" ng-repeat="bank in otherBankList" value="{{bank.bankid}}">{{bank.bankid}} {{bank.bankname}}</option>
+                </select>
+	        </div>
+	    </div>
+		
+		
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="advisingBankID">AdvisingBank ID *</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.AdvisingBankID_t2" align="center" ng-model="advisingBankID" style="margin-bottom: 10px" class="txtField" name="advisingBankID" id="advisingBankID" required ng-change="enableOpen()">
+                    <option align="center" ng-repeat="bank in otherBankList" value="{{bank.bankid}}">{{bank.bankid}} {{bank.bankname}}</option>
+                </select>
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="reimbusingBank">Reimbusing Bank</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.ReimbusingBank_t2" align="center"  style="margin-bottom: 10px" class="txtField" name="reimbusingBank" id="reimbusingBank" required ng-change="enableOpen()">
+                    <option align="center" ng-repeat="bank in otherBankList" value="{{bank.bankid}}">{{bank.bankid}} {{bank.bankname}}</option>
+                </select>
+	        </div>
+	    </div>
+	</div>
+
+</div>
+
+  		</div>
+				</br>
+  	</script>
+
+  	<script type="text/ng-template" id="three.tpl.html">
+
+					</br>
+
+					<!-- <div class="row">
+							    <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+
+		<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	<div class="col-sm-6" style="margin-top:-5px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" style="font-weight:!important;margin-top:-3px;"  for="marginRequired">Charges From</label>
+       </div>
+	   <div class="col-sm-5"  class="txtField" style="margin-bottom:-10px;">
+		<input disabled="true" ng-model ="lcAmendForm1.ChargesFrom_t3" type="radio" checked value="none">[none]
+        <input disabled="true" ng-model ="lcAmendForm1.ChargesFrom_t3" type="radio" value="B" disabled="true">B
+        <input disabled="true" ng-model ="lcAmendForm1.ChargesFrom_t3" type="radio" value="O" disabled="true">O
+        <input disabled="true" ng-model ="lcAmendForm1.ChargesFrom_t3" type="radio" value="T" disabled="true">T
+      </div>
+    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeDefaultAcct">Charge Default Acct</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.ChargeDefaultAcct_t3" align="center" ng-model="chargeDefaultAcct" style="margin-bottom: 10px" class="txtField" name="chargeDefaultAcct" id="chargeDefaultAcct" required>
+                    <option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+                </select>
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeCode">Charge Code</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.ChargeCode_t3" align="center" ng-model="chargeCode" style="margin-bottom: 10px" class="txtField" name="chargeCode" id="chargeCode" required>
+					<option align="center" ng-repeat="chargeCodeDrop in chargeCodeDrop" value="{{chargeCodeDrop}}">{{chargeCodeDrop}}</option>
+                </select>
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="partyCharged">Party Charged</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.PartyCharged_t3" align="center" ng-model="partyCharged" style="margin-bottom: 10px" class="txtField" name="partyCharged" id="partyCharged" required>
+					<option align="center" ng-repeat="partyChargedDD in partyChargedDD" value="{{partyChargedDD}}">{{partyChargedDD}}</option>
+                </select>
+	        </div>
+	    </div>
+		<div>
+
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeDebitAcct">Charge Debit Acct</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.ChargeDebitAcct_t3" align="center" ng-model="chargeDebitAcct" style="margin-bottom: 10px" class="txtField" name="chargeDebitAcct" id="chargeDebitAcct" required>
+                    <option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+                </select>
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeCurrency">Charge Currency</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.ChargeCurrency_t3" align="center" ng-model="chargeCurrency" style="margin-bottom: 10px" class="txtField" name="chargeCurrency" id="chargeCurrency" required>
+                    <option align="center" ng-repeat="lccurrency in lccurrency" value="{{lccurrency}}">{{lccurrency}}</option>
+                </select>
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeExchangeRate">Charge Exchange Rate	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.ChargeExchangeRate_t3" type="text" style="margin-bottom: 10px" class="txtField"id="chargeExchangeRate" name="chargeExchangeRate" >
+	        </div>
+	    </div>
+
+	<br></br>
+	</br>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="waiveCharges">Waive Charges	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.WaiveCharges_t3" type="text" style="margin-bottom: 10px" class="txtField" id="waiveCharges" name="waiveCharges" >
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeAmount">Charge Amount	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.ChargeAmount_t3" type="text" style="margin-bottom: 10px" class="txtField" id="chargeAmount" name="chargeAmount">
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="amortiseCharges">Amortise Charges	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.AmortiseCharges_t3" type="text" style="margin-bottom: 10px" class="txtField" id="amortiseCharges" name="amortiseCharges" >
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeStatus">Charge Status</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.ChargeStatus_t3" align="center" ng-model="chargeStatus" style="margin-bottom: 10px" class="txtField"name="chargeStatus" id="chargeStatus" required>
+					<option align="center" ng-repeat="ChargeStatusDD in ChargeStatusDD" value="{{ChargeStatusDD}}">{{ChargeStatusDD}}</option>
+                </select>
+	        </div>
+	    </div>
+
+	    <!-- <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="taxCurrency">Tax Currency	</label>
+            </div> -->
+	    <!-- <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.TaxCurrency_t3" type="text" style="margin-bottom: 10px" class="txtField" id="taxCurrency" name="taxCurrency" >
+	        </div>-->
+	    </div>
+
+	</div>
+  	</div>
+  	</div>
+    </br>
+  	</script>
+
+    <script type="text/ng-template" id="four.tpl.html">
+  		<div id="viewFour">
+        </br>
+        <!-- <div class="row">
+        <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+				<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important;margin-top: 10px" for="commissionCode">Commission Code</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.CommissionCode_t4" align="center" ng-model="commissionCode" style="margin-top: 10px" class="txtField" name="commissionCode" id="commissionCode" required>
+					<option align="center" ng-repeat="commissionCodeDD in commissionCodeDD" value="{{commissionCodeDD}}">{{commissionCodeDD}}</option>
+                </select>
+	        </div>
+	    </div>
+
+	<div class="col-sm-6"  style = "height: 40px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" for="commissionPartyCharge" style="margin-top:1px;" for="marginRequired">Commission Party Charge</label>
+       </div>
+	   <div class="col-sm-7" style="margin-bottom: 10px;margin-top:5px;" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.CommissionParty_t4" for="commissionPartyCharge" type="radio" checked value="none">[None]
+        <input disabled="true" ng-model ="lcAmendForm1.CommissionParty_t4" for="commissionPartyCharge" type="radio" value="B">B
+        <input disabled="true" ng-model ="lcAmendForm1.CommissionParty_t4" for="commissionPartyCharge" type="radio" value="O">O
+      </div>
+    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionFrequency">Commission Frequency</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.CommissionFrequency_t4" align="center" ng-model="commissionFrequency" style="margin-bottom: 10px" class="txtField" name="commissionFrequency" id="commissionFrequency" required>
+					<option align="center" ng-repeat="commissionFrequencyDD in commissionFrequencyDD" value="{{commissionFrequencyDD}}">{{commissionFrequencyDD}}</option>
+                </select>
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionRate">Commission Rate	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.CommissionRate_t4" type="text" style="margin-bottom: 10px" class="txtField" id="commissionRate" name="commissionRate" >
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="accrualParam">Accrual Param</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.AccrualParam_t4" align="center" ng-model="accrualParam" style="margin-bottom: 10px" class="txtField" name="accrualParam" id="accrualParam" required>
+					<option align="center" ng-repeat="accrualParamDD in accrualParamDD" value="{{accrualParamDD}}">{{accrualParamDD}}</option>
+                </select>
+	        </div>
+	    </div>
+
+   <!--    		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                
+            </div>
+		    <div class="col-sm-7">
+//            <select disabled="true" ng-model ="lcAmendForm1.CommissionAmount_t4" align="center" ng-model="commissionAmount" class="form-control" name="commissionAmount" id="commissionAmount" required>
+  //                  <option align="center" value="CAD1091500010001">CAD1091500010001</option>
+	//				<option align="center" value="14656">14656</option>
+      //          </select>  
+	        </div>
+	    </div> -->
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+			<!--<label  style="font-weight:!important" for="commissionAmount">Commission Amount</label>-->
+                <label  style="font-weight:!important" for="fixedCommissionAmount">Fixed Commission Amount	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.FixedCommissionAmount_t4" type="text" style="margin-bottom: 10px" class="txtField" id="fixedCommissionAmount" name="fixedCommissionAmount" >
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionAccount">Commission Account</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.CommissionAccount_t4" align="center" ng-model="commissionAccount" style="margin-bottom: 10px" class="txtField" name="commissionAccount" id="commissionAccount" required>
+                    <option align="center" value="CAD1091500010001">CAD1091500010001</option>
+					<option align="center" value="14656">14656</option>
+                </select>
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionExchangeRate">Commission Exchange Rate	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.CommissionExchangeRate_t4" type="text" style="margin-bottom: 10px" class="txtField" id="commissionExchangeRate" name="commissionExchangeRate" ng-disabeld="true">
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionClaimed">Commission Claimed	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.CommissionClaimed_t4" value="value" type="checkbox"  style="margin-bottom: 10px" class="txtField" id="commissionClaimed" name="commissionClaimed" >
+				{{CommissionClaimed_t4}}
+	        </div>
+	    </div>
+
+
+	<div class="col-sm-6"  style = "height: 40px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" for="backForwardKey" style="font-weight:!important; margin-top:-5px;" for="marginRequired">Back Forward Key</label>
+       </div>
+	   <div class="col-sm-5" style="margin-bottom: 10px" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.BackForward_t4" for="backForwardKey" type="radio" checked value="none">[None]
+        <input disabled="true" ng-model ="lcAmendForm1.BackForward_t4" for="backForwardKey" type="radio" value="C">C
+        <input disabled="true" ng-model ="lcAmendForm1.BackForward_t4" for="backForwardKey" type="radio" value="N">N
+		<input disabled="true" ng-model ="lcAmendForm1.BackForward_t4" for="backForwardKey" type="radio" value="P">P
+      </div>
+    </div>
+
+	<div class="col-sm-6"  style = "height: 40px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" for="returnCommission" style="font-weight:!important;margin-top:-16px;" for="marginRequired">Return Commission</label>
+       </div>
+	   <div class="col-sm-5" style="margin-top: -10px" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.ReturnCommission_t4" for="returnCommission" type="radio" checked value="none">[None]
+        <input disabled="true" ng-model ="lcAmendForm1.ReturnCommission_t4" for="returnCommission" type="radio" value="No">No
+        <input disabled="true" ng-model ="lcAmendForm1.ReturnCommission_t4" for="returnCommission" type="radio" value="Yes">Yes
+      </div>
+    </div>
+  	</div>
+  	</div>
+    </br>
+
+  		</div>
+  	</script>
+    <script type="text/ng-template" id="five.tpl.html">
+  		<div id="viewFive">
+        </br>
+        <!-- <div class="row">
+        <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+			<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+		
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="slRefTranche">SL Ref Tranche	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.SLRefTranche_t5" type="text" style="margin-bottom: 10px" class="txtField" id="slRefTranche" name="slRefTranche" >
+	        </div>
+	    </div>
+
+	<div class="col-sm-6" style = "height: 35px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" for="productType" style="margin-top:-3px;" for="marginRequired">Product Type</label>
+       </div>
+	   <div class="col-sm-5" style="margin-bottom: 10px" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.ProductType_t5" for="productType" type="radio" checked value="none">[None]
+        <input disabled="true" ng-model ="lcAmendForm1.ProductType_t5" for="productType" type="radio" value="Lce">Lce
+        <input disabled="true" ng-model ="lcAmendForm1.ProductType_t5" for="productType" type="radio" value="Lci">Lci
+      </div>
+    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="baseCcyRate">Base Ccy Rate</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.BaseCcyRate_t5" type="text" style="margin-bottom: 10px" class="txtField" id="baseCcyRate" name="baseCcyRate" >
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="participator">Participator</label>
+            </div>
+		    <div class="col-sm-7">
+                <select disabled="true" ng-model ="lcAmendForm1.Participator_t5" align="center" ng-model="participator" style="margin-bottom: 14px" class="txtField" name="participator" id="participator" required>
+                    <option align="center" value="190130">190130</option>
+					 <option align="center" value="100386">100386</option>
+                </select>
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="partShare">Part Share</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.PartShare_t5" type="text" style="margin-bottom: 10px" class="txtField" id="partShare" name="partShare" >
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="partAmount">Part Amount</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.PartAmount_t5" type="text" style="margin-bottom: 10px" class="txtField" id="partAmount" name="partAmount" ng-diabled="true">
+	        </div>
+	    </div>
+
+	<div class="col-sm-6">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" for="syndicateCharge" style="font-weight:!important; margin-top:-3px;" for="marginRequired">Syndicate Charge</label>
+       </div>
+	   <div class="col-sm-5" style="margin-bottom: 10px" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.SyndicateCharge_t5" for="syndicateCharge" type="radio" checked value="none">[None]
+        <input disabled="true" ng-model ="lcAmendForm1.SyndicateCharge_t5" for="syndicateCharge" type="radio" value="Yes">Yes
+        <input disabled="true" ng-model ="lcAmendForm1.SyndicateCharge_t5" for="syndicateCharge" type="radio" value="No">No
+      </div>
+    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="ownPartAmt">Own Part Amt</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.OwnPartAmt_t5" type="text" style="margin-bottom: 10px" class="txtField" id="ownPartAmt" name="ownPartAmt" ng-diabled="true">
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="bankToBankInfo">Bank To Bank Info</label>
+            </div>
+		    <div class="col-sm-7">
+                <input disabled="true" ng-model ="lcAmendForm1.BankToBankInfo_t5" type="text" style="margin-bottom: 10px" class="txtField" id="bankToBankInfo" name="bankToBankInfo" ng-diabled="true">
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="mt799Message">MT799 Message</label>
+            </div>
+		    <div class="col-sm-7">
+			    <textarea disabled="true" ng-model ="lcAmendForm1.MT799Message_t5" id="mt799Message" style="margin-bottom: 10px" class="txtField" ng-diabled="true" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea>
+	        </div>
+	    </div>
+
+
+		</div>
+  	</div>
+  	</div>
+    </br>
+  	</script>
+    </br>
+    <script type="text/ng-template" id="six.tpl.html">
+  	<div id="viewSix">
+    <div class="row">
+    <div class="form-inline" style="overflow-y: scroll; height:400px;">
+
+    </br>
+		<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	<div class="col-sm-6" style="height: 30px;">
+	  <div class="col-sm-5">
+            <label class="control-label" style=" margin-top:-3px;" for="marginRequired">Margin Required?</label>
+      </div>
+      <div class="col-sm-7" style="margin-bottom: 10px" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.MarginRequired_t6" type="radio" value="None" checked> [None]
+		<input disabled="true" ng-model ="lcAmendForm1.MarginRequired_t6" type="radio" value="No"> No
+		<input disabled="true" ng-model ="lcAmendForm1.MarginRequired_t6" type="radio" value="Y"> Y
+      </div>
+    </div>
+
+
+
+	<div class="col-sm-6 "style="height: 30px;">
+	  <div class="col-sm-5">
+      <label class="control-label" style=" margin-top:-3px;" for="margibCalvBase">Margin Calc Base</label>
+      </div>
+      <div class="col-sm-7" style="margin-bottom: 10px" class="txtField">
+		<input disabled="true" ng-model ="lcAmendForm1.MarginCalcBase_t6"  type="radio" value="None" checked> [None]
+		<input disabled="true" ng-model ="lcAmendForm1.MarginCalcBase_t6"  type="radio" value="Lc.amt"> Lc.amt
+		<input disabled="true" ng-model ="lcAmendForm1.MarginCalcBase_t6"  type="radio" value="Liability.amt"> Liability.amt
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="marginPercent">Margin Percent</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" type="text" ng-model ="lcAmendForm1.MarginPercent_t6"  style="margin-bottom: 10px" class="txtField" id="marginPercent" name="marginPercent" ng-disabeld="true">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="marginDebitAccount">Margin Debit Account</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MarginDebitAccount_t6"  align="center" ng-model="lcAmendForm1.marginDebitAccount_t6 " style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="marginDebitAccount_t6 in marginDebitAccount_t6" value="{{marginDebitAccount_t6}}">{{marginDebitAccount_t6}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+	  <label class="control-label" style="font-weight:!important" for="marginAmount">Margin Amount</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MarginAmount_t6" type="text" style="margin-bottom: 10px" class="txtField" id="marginAmount" name="marginAmount" ng-diabled="true">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important;" for="marginExchangeRate">Margin Exchange Rate</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MarginExchangeRate_t6" type="text" style="margin-bottom: 10px" class="txtField" id="marginExchangeRate" name="marginExchangeRate" ng-disabeld="true">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="marginCreditAcct">Margin Credit Acct</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MarginCreditAcct_t6" align="center" ng-model="lcAmendForm1.MarginCreditAcct_t6" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MarginCreditAcct_t6 in MarginCreditAcct_t6" value="{{MarginCreditAcct_t6}}">{{MarginCreditAcct_t6}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="marginOutstanding">Margin Outstanding</label>
+      </div>
+      <div class="col-sm-7">
+	  </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important ; margin-top:-3px;" for="limitWithProvision">Limit with Provision</label>
+      </div>
+      <div class="col-sm-7" style="margin-bottom: 10px" class="txtField">
+                             <input disabled="true" ng-model ="lcAmendForm1.LimitwithProvision_t6" type="radio" value="None" checked> [None]
+                             <input disabled="true" ng-model ="lcAmendForm1.LimitwithProvision_t6" type="radio" value="No"> No
+                             <input disabled="true" ng-model ="lcAmendForm1.LimitwithProvision_t6" type="radio" value="Yes"> Yes
+      </div>
+    </div>
+
+</div>
+</div>
+    </br>
+</div>
+	</script>
+
+
+    <script type="text/ng-template" id="seven.tpl.html">
+    <div id="viewSeven">
+    <div class="row">
+    <div class="form-inline" style="overflow-y: scroll; height:400px;">
+
+
+	<div class="col-sm-12">
+    </br>
+	<h5 align='center'><b>------------------Payment Details------------------</b></h5>
+	</br>
+    </div>
+			<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="margin-top:-7px;" for="documentId">Drawing Type.1</label>
+      </div>
+      <div class="col-sm-7">
+       <select disabled="true" ng-model ="lcAmendForm1.DrawingType_1_t7" align="center" ng-model="lcAmendForm1.DrawingType_1_t7" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                <option align="center" ng-repeat="DrawingType_1_t7 in DrawingType_1_t7" value="{{DrawingType_1_t7}}">{{DrawingType_1_t7}}</option>
+              </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Payment Percent.1	</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.PaymentPercent_1_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+      </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Payment Portion.1</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.PaymentPortion_1_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+     </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Acpt.time Band.1</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.Acpt_timeBand_1_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+      </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Add Covered Amt.1</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.AddCoveredAmt_1_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Portion No.1</label>
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Drawing Amt.1</label>
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Prov.O/s Amount.1</label>
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Prov. Await Amt.1</label>
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Liab.Port.Amt.1</label>
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">LCY Port.Amt.1</label>
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Port Limit Ref.1</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.PortLimitRef_1_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+      </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Portion Overdrawn.1</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.PortionOverdrawn_1_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+    </div>
+
+	<div class="row">
+	</br>
+	</div>
+
+	<div class="col-sm-12">
+    </br>
+	<h5 align='center'><b>------------------Revolving Information------------------</b></h5>
+	</br>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important; margin-top:-3px;" for="documentId">Revolving Type</label>
+      </div>
+      <div class="col-sm-7">
+                             <input disabled="true" ng-model ="lcAmendForm1.RevolvingType_t7" type="radio" value="None" checked> [None]
+                             <input disabled="true" ng-model ="lcAmendForm1.RevolvingType_t7" type="radio" value="Cm"> Cm
+                             <input disabled="true" ng-model ="lcAmendForm1.RevolvingType_t7" type="radio" value="Nc"> Nc
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">No of Revolutions</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.NoofRevolutions_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Revolving Fqy</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.RevolvingFqy_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+	<label class="control-label" style="font-weight:!important" for="documentId">Limit for Revolving</label>
+      </div>
+      <div class="col-sm-7">
+       <select disabled="true" ng-model ="lcAmendForm1.LimitforRevolving_t7" align="center" ng-model="lcAmendForm1.LimitforRevolving_t7" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="LimitforRevolving_t7 in LimitforRevolving_t7" value="{{LimitforRevolving_t7}}">{{LimitforRevolving_t7}}</option>
+                </select>
+      </div>
+      </div>
+
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentId">Cur.Revol.Liab</label>
+      </div>
+      <div class="col-sm-7">
+       <input disabled="true" ng-model ="lcAmendForm1.Cur_Revol_Liab_t7" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1" >
+      </div>
+    </div>
+
+	</div>
+    </div>
+    </div>
+    </script>
+    <br>
+	<script type="text/ng-template" id="eight.tpl.html">
+  	<div id="viewEight">
+    <!-- <div class="row">
+    <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+				<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	<br>
+
+	<div class="col-sm-6">
+	<div class="col-sm-12">
+	  <div class="col-sm-5">
+      <label class="control-label" style="margin-top:-7px;" for="documentId">Document Id</label>
+      </div>
+      <div class="col-sm-7">
+       <select disabled="true" ng-model ="lcAmendForm1.DocumentId_t8" align="center" ng-model="lcAmendForm1.DocumentId_t8" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="DocumentId_t8 in DocumentId_t8" value="{{DocumentId_t8}}">{{DocumentId_t8}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-12">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentsCode1">Documents Code.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.DocumentsCode_1_t8" type="text" style="margin-bottom: 10px" class="txtField" id="documentsCode1" name="documentsCode1"  >
+      </div>
+    </div>
+
+	<div class="col-sm-12">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentsTest1">46A Documents Text.1</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" rows="4" cols="50" ng-model ="lcAmendForm1.ADocumentsText_1_t8" type="text" style="margin-bottom: 10px" class="txtField" id="documentsTest1" name="documentsTest1"  style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-12">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="46AdocumentsRequired">46A Documents Required</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" rows="4" cols="50" ng-model ="lcAmendForm1.ADocumentsRequired_t8" type="text" style="margin-bottom: 10px" class="txtField" id="46AdocumentsRequired" name="46AdocumentsRequired" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-12">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important;" for="47AAdditionalConditions1" style="margin-bottom: 10px" class="txtField">47A Additional Conditions.1</label>
+      </div>
+      <div class="col-sm-6" >
+       <select disabled="true" ng-model ="lcAmendForm1.MT700_1_47AAdditionalConditions_1" align="center" ng-model="lcAmendForm1.MT700_1_47AAdditionalConditions_1" style="margin-bottom: 17px;margin-left: -30px;
+    margin-top: 9px;" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT700_1_47AAdditionalConditions_1 in MT700_1_47AAdditionalConditions_1" value="{{MT700_1_47AAdditionalConditions_1}}">{{MT700_1_47AAdditionalConditions_1}}</option>
+                </select>
+      </div>
+    </div>
+	
+    <div class="col-sm-12">
+	<div class="col-sm-5">
+    </div>
+      <div class="col-sm-7">
+		<button ng-click="getAttachedFiles()" type="button" class="btn btn-primary"  style="margin-bottom: 20px;"><span class="glyphicon glyphicon-download"></span>Download files</button>
+      </div>
+	</div>
+	
+	
+<!--	<div class="col-sm-12" style="margin-bottom:18px;">
+	<div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="Fille">File</label>
+      </div>
+	   <div class="col-sm-7">
+      <tr ng-show="choices.length" ng-repeat="choice in choices track by $index">
+                <td>{{$index}}</td>
+				  
+                <td>
+                    <div>
+                        <button ng-click="Downlod(choices)" style=" background:none!important; border:none;padding:0!important;  font-family:arial,sans-serif;  color:#069; text-decoration:">
+						<img src="./frontend/document.jpg" alt="doc-">{{choices[0]}}</button>
+                    </div>
+
+                </td>
+                
+            </tr>
+      </div>
+      
+    </div>-->
+
+	
+	<br>
+    </div>
+
+	</div>
+  	</div>
+ 	</div>
+  	</script>
+
+	<script type="text/ng-template" id="nine.tpl.html">
+  	<div id="viewNine">
+    <div class="row">
+    <div class="form-inline" style="overflow-y: scroll; height:400px;">
+	<br>
+	<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="docyCreditNumber">20 Docy.Credit Number</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_20Docy_CreditNumber" ng-value="lcAmendForm1.docyCreditNumber" type="text" style="margin-bottom: 10px" class="txtField" id="docyCreditNumber" name="docyCreditNumber"  >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="referenceToPreAdvice">23 Reference to PreAdvice</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_23ReferencetoPreAdvice" type="text" style="margin-bottom: 10px" class="txtField" id="referenceToPreAdvice" name="referenceToPreAdvice" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="31CDateOfIssue">31C Date of Issue</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_31CDateofIssue" type="text" style="margin-bottom: 10px" class="txtField" id="31CDateOfIssue" name="31CDateOfIssue"  >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="40EapplicableRuleCodes">40E Applicable Rule Codes</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MT700_1_40EApplicableRuleCodes" align="center" style="margin-bottom: 10px" class="txtField" name="40EapplicableRuleCodes" id="40EapplicableRuleCodes" required>
+          <option align="center" ng-repeat="applicableRuleCodes in applicableRuleCodes" value="{{applicableRuleCodes}}">{{applicableRuleCodes}}</option>
+        </select>
+      </div>
+    </div>
+	</br>
+    </br>
+
+	<div class="col-sm-12">
+    </br>
+	<h5 align='center'><b>------------------Applicable Rule Description------------------</b></h5>
+	</br>
+    </div>
+
+	</br>
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="31DDateOfExpiry">31D Date of Expiry</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_31DDateofExpiry" type="text" style="margin-bottom: 10px" class="txtField" id="31DDateOfExpiry" name="31DDateOfExpiry"  >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="31DPlaceOfExpiry">31D Place of Expiry</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_31DPlaceofExpiry" type="text" style="margin-bottom: 10px" class="txtField" id="31DPlaceOfExpiry" name="31DPlaceOfExpiry" ng-model="lcAmendForm1.lcExpiryPlace" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="applicantBank1">51a(A/D) Applicant Bank.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_51aADApplicantBank_1" type="text" style="margin-bottom: 10px" class="txtField" id="applicantBank1" name="applicantBank1" ng-model="lcAmendForm1.applicantID">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="applicant1">50 Applicant.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_50Applicant_1" ng-value="lcAmendForm1.ApplicantAddress_t1" type="text" style="margin-bottom: 10px" class="txtField" id="applicant1" name="applicant1">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="beneficiary1">59 Beneficiary.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_59Beneficiary_1" ng-value="lcAmendForm1.BeneficiaryAddress_t2" type="text" style="margin-bottom: 10px" class="txtField" id="beneficiary1" name="beneficiary1" ng-model="lcAmendForm1.beneficiaryAddress" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="CurrencyCodeAmt">32B Currency Code,Amount</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_32BCurrencyCode_Amount" ng-value="lcAmendForm1.LCCurrency_t1 + lcAmendForm1.LCAmount_t1" style="margin-bottom: 10px" class="txtField" id="lccurrency" name="lccurrency"  >
+        
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important" for="percentgCrAmtTolerance">39A Percentg Cr Amt Tolerance</label>
+      </div>
+      <div class="col-sm-6">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_39APercentgCrAmtTolerance" ng-value="lcAmendForm1.CreditTolerance_t1" type="text" style="margin-bottom: 10px;margin-left:-33px" class="txtField" id="percentgCrAmtTolerance" name="percentgCrAmtTolerance">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important" for="percentgDrAmtTolerance">39A Percentg Dr Amt Tolerance</label>
+      </div>
+      <div class="col-sm-6">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_39APercentgDrAmtTolerance" ng-value="lcAmendForm1.DebitTolerance_t1" type="text" style="margin-bottom: 10px;margin-left:-33px" class="txtField" id="percentgDrAmtTolerance" name="percentgDrAmtTolerance" ng-model="lcAmendForm1.debitTolerance" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="maximumCreditAmt">39B Maximum Credit Amt</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_39BMaximumCreditAmt" type="number" style="margin-bottom: 10px" class="txtField" id="maximumCreditAmt" name="maximumCreditAmt" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="addlAmountsCovered1">39C Addl Amounts Covered.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_39CAddlAmountsCovered_1" type="number" style="margin-bottom: 10px" class="txtField" id="addlAmountsCovered1" name="addlAmountsCovered1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="41aAAvailableWith">41aA Available With</label>
+      </div>
+      <div class="col-sm-7">        
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_41aAAvailableWith" ng-value="lcAmendForm1.AvailableWithBankID_t2" type="number" style="margin-bottom: 10px" class="txtField" id="MT700_1_41aAAvailableWith" name="MT700_1_41aAAvailableWith" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="41aDAvailableWith">41aD Available with.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_41aDAvailablewith_1" type="text" style="margin-bottom: 10px" class="txtField" id="41aDAvailableWith" name="41aDAvailableWith" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="availableBy">Available By</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_AvailableBy" type="text" style="margin-bottom: 10px" class="txtField" id="availableBy" name="availableBy" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="draftsAt">42C Drafts at.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_42CDraftsat_1" type="text" style="margin-bottom: 10px" class="txtField" id="draftsAt" name="draftsAt" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="draweeId">42aA Drawee (ID)</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MT700_1_42aADraweeID" align="center" ng-model="lcAmendForm1.MT700_1_42aADraweeID" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT700_1_42aADraweeID in MT700_1_42aADraweeID" value="{{MT700_1_42aADraweeID}}">{{MT700_1_42aADraweeID}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="draweeName">42aD Drawee (Name).1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_42aDDraweeName_1" type="text" style="margin-bottom: 10px" class="txtField" id="draweeName" name="draweeName">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="mixedPaymentDetails">42M Mixed Payment Details.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_42MMixedPaymentDetails_1" type="text" style="margin-bottom: 10px" class="txtField" id="mixedPaymentDetails" name="mixedPaymentDetails" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important" for="deferredPaymentDetails">42P Deferred Payment Details.1</label>
+      </div>
+      <div class="col-sm-6">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_42PDeferredPaymentDetails_1" type="text" style="margin-bottom: 10px;margin-left:-35px" class="txtField" id="deferredPaymentDetails" name="deferredPaymentDetails" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="partialShipment">43P Partial Shipments</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_43PPartialShipments" type="text" style="margin-bottom: 10px" class="txtField" id="partialShipment" name="partialShipment" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="transhipment">43T Transhipment</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_43TTranshipment" type="text" style="margin-bottom: 10px" class="txtField" id="transhipment" name="transhipment" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important" for="placeOfTakingInCharge">44A Place of Taking in Charge</label>
+      </div>
+      <div class="col-sm-6">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_44APlaceofTakinginCharge" type="text" style="margin-bottom: 10px;margin-left:-33px" class="txtField" id="placeOfTakingInCharge" name="placeOfTakingInCharge" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="portOfLoading">44E Port of Loading</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_44EPortofLoading" type="text" style="margin-bottom: 10px" class="txtField" id="portOfLoading" name="portOfLoading" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="portOfDischarge">44F Port of Discharge</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_44FPortofDischarge" type="text" style="margin-bottom: 10px" class="txtField" id="portOfDischarge" name="portOfDischarge" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="finalDestination">44B Final Destination</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_44BFinalDestination" type="text" style="margin-bottom: 10px" class="txtField" id="finalDestination" name="finalDestination" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="MT700_1_44CLatestDateofShipment">44C Latest Date of Shipment</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_44CLatestDateofShipment" ng-value="lcAmendForm1.ShipmentDate_t1" type="text" style="margin-bottom: 10px" class="txtField" id="MT700_1_44CLatestDateofShipment" name="MT700_1_44CLatestDateofShipment">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="shipmentPeriod">44D Shipment Period.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_44DShipmentPeriod_1" ng-value= type="text" style="margin-bottom: 10px" class="txtField" id="shipmentPeriod" name="shipmentPeriod" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="descriptionOfGoods">45A Description of Goods</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" ng-model ="lcAmendForm1.MT700_1_45ADescriptionofGoods" type="text" style="margin-bottom: 10px" class="txtField" id="descriptionOfGoods" name="descriptionOfGoods" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important" for="documentsRequiredCode1">46A Documents Required (Code).1</label>
+      </div>
+      <div class="col-sm-6">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_46ADocumentsRequiredCode_1" ng-value="lcAmendForm1.DocumentsCode_1_t8" type="text" style="margin-bottom: 10px;margin-left:-33px" class="txtField" id="documentsRequiredCode1" name="documentsRequiredCode1" ng-model="lcAmendForm1.documentsCode1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentsRequired1">46A Documents Required.1</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" ng-model ="lcAmendForm1.MT700_1_46ADocumentsRequired_1" ng-value="lcAmendForm1.ADocumentsText_1_t8" type="text" style="margin-bottom: 10px" class="txtField" id="documentsRequired1" name="documentsRequired1"  style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="documentsRequired">46A Documents Required</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" ng-model ="lcAmendForm1.MT700_1_46ADocumentsRequired" type="text" style="margin-bottom: 10px" class="txtField" id="documentsRequired" name="documentsRequired" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important;" for="additionalConditions1">47A Additional Conditions.1</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MT700_1_47AAdditionalConditions_1" align="center" ng-model="lcAmendForm1.lccurrency" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT700_1_47AAdditionalConditions_1 in MT700_1_47AAdditionalConditions_1" value="{{MT700_1_47AAdditionalConditions_1}}">{{MT700_1_47AAdditionalConditions_1}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="additionalConditions">47A Additional Conditions</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" ng-model ="lcAmendForm1.MT700_1_47AAdditionalConditions" type="text" style="margin-bottom: 10px" class="txtField" id="additionalConditions" name="additionalConditions" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="charges">71B Charges</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" placeholder = "number" ng-model ="lcAmendForm1.MT700_1_71BCharges" type="number" style="margin-bottom: 10px" class="txtField" id="charges" name="charges" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="periodForPresentation">48 Period for Presentation</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" ng-model ="lcAmendForm1.MT700_1_48PeriodforPresentation" type="text" style="margin-bottom: 10px" class="txtField" id="periodForPresentation" name="periodForPresentation" style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="confirmationInstructions">49 Confirmation Instructions</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_49ConfirmationInstructions" type="text" style="margin-bottom: 10px" class="txtField" id="confirmationInstructions" name="confirmationInstructions" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="reimbursingbank">53aA Reimbursing Bank</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MT700_1_53aAReimbursingBank" align="center" ng-model="lcAmendForm1.lccurrency" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT700_1_53aAReimbursingBank in MT700_1_53aAReimbursingBank" value="{{MT700_1_53aAReimbursingBank}}">{{MT700_1_53aAReimbursingBank}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="reimbursingbank1">53aD Reimbursing Bank.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_53aDReimbursingBank_1" type="text" style="margin-bottom: 10px" class="txtField" id="reimbursingbank1" name="reimbursingbank1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="instructionsToTheBank">78 Instructions to the Bank</label>
+      </div>
+      <div class="col-sm-7">
+        <textarea disabled="true" ng-model ="lcAmendForm1.MT700_1_78InstructionstotheBank" type="text" style="margin-bottom: 10px" class="txtField" id="instructionsToTheBank" name="instructionsToTheBank"  style="margin: 0px 0px 10px; width: 246px; height: 57px;" ></textarea >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="adviseThroughBank">57aA Advise Through Bank</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MT700_1_57aAAdviseThroughBank" align="center" ng-model="lcAmendForm1.MT700_1_57aAAdviseThroughBank" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT700_1_57aAAdviseThroughBank in MT700_1_57aAAdviseThroughBank" value="{{MT700_1_57aAAdviseThroughBank}}">{{MT700_1_57aAAdviseThroughBank}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="adviseThroughBank1">57aD Advise Through Bank.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_57aDAdviseThroughBank_1" ng-value="lcAmendForm1.BeneficiaryAddress_t2" type="text" style="margin-bottom: 10px" class="txtField" id="adviseThroughBank1" name="adviseThroughBank1"  >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="senderToReceiverInfo">72 Sender to Receiver Info.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT700_1_72SendertoReceiverInfo_1" type="text" style="margin-bottom: 10px" class="txtField" id="senderToReceiverInfo" name="senderToReceiverInfo" >
+      </div>
+    </div>
+  		</div>
+		</div>
+
+  		</div>
+  	</script>
+	<script type="text/ng-template" id="ten.tpl.html">
+  	<div id="viewTen">
+    <div class="row">
+    <div class="form-inline" style="overflow-y: scroll; height:400px;">
+	<br>
+	<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="margin-top:-6px;" for="bankId">MT 740 Sent to(Bank ID):</label>
+      </div>
+      <div class="col-sm-7">
+                             <select disabled="true" ng-model ="lcAmendForm1.MT740_MT740SenttoBankId" align="center" ng-model="lcAmendForm1.MT740_MT740SenttoBankId" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT740_MT740SenttoBankId in MT740_MT740SenttoBankId" value="{{MT740_MT740SenttoBankId}}">{{MT740_MT740SenttoBankId}}</option>
+                </select>
+      </div>
+    </div>
+
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="BankName">MT 740 Sent to(Bank Name):</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_MT740SenttoBankName" type="text" style="margin-bottom: 10px" class="txtField" id="BankName" name="BankName" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important;margin-top:-3px;" for="sendMT740WithLc">Send MT 740 with LC:</label>
+      </div>
+      <div class="col-sm-7" style="margin-bottom: 10px" class="txtField">
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_SendMT740withLC" type="radio" value="None" checked> [None]
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_SendMT740withLC" type="radio" value="No"> No
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_SendMT740withLC" type="radio" value="Yes"> Yes
+
+      </div>
+    </div>
+
+	<div class="col-sm-12">
+
+
+    </br>
+	<h5 align='center'><b>******************SWIFT MT 740 Details******************</b></h5>
+	</br>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="docyCreditNumber">20 Docy.Credit Number</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_20Docy_CreditNumber" ng-value="lcAmendForm1.docyCreditNumber" type="text" style="margin-bottom: 10px" class="txtField" id="docyCreditNumber" name="docyCreditNumber" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="accountIdentification">25 Account Identification</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_25AccountIdentification" type="text" style="margin-bottom: 10px" class="txtField" id="accountIdentification" name="accountIdentification" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="MT740_31DDateofExpiry">31D Date of Expiry</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_31DDateofExpiry" ng-value="lcAmendForm1.LCExpiryDate_t1" type="text" style="margin-bottom: 10px" class="txtField" id="MT740_31DDateofExpiry" name="MT740_31DDateofExpiry" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="placeOfExpiry">31D Place of Expiry</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_31DPlaceofExpiry" ng-value="lcAmendForm1.LCExpiryPlace_t1" type="text" style="margin-bottom: 10px" class="txtField" id="placeOfExpiry" name="placeOfExpiry" ng-model="lcAmendForm1.lcExpiryPlace" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="negotiatingBank">58a(A/D) Negotiating Bank.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_58aADNegotiatingBank_1" type="text" style="margin-bottom: 10px" class="txtField" id="negotiatingBank" name="negotiatingBank">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="beneficiary">59 Beneficiary</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_59Beneficiary" ng-value="lcAmendForm1.BeneficiaryID_t2" type="text" style="margin-bottom: 10px" class="txtField" id="MT740_59Beneficiary" name="MT740_59Beneficiary">
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="beneficiary.1">59 Beneficiary.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_59Beneficiary_1" ng-value="lcAmendForm1.BeneficiaryAddress_t2" type="text" style="margin-bottom: 10px" class="txtField" id="beneficiary.1" name="beneficiary.1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="LcCurrency">32B LC Currency</label>
+      </div>
+      <div class="col-sm-7">
+          <input disabled="true" ng-model ="lcAmendForm1.MT740_32BLCCurrency" ng-value="lcAmendForm1.LCCurrency_t1 + lcAmendForm1.LCAmount_t1" type="text" style="margin-bottom: 10px" class="txtField" id="lccurrency" name="lccurrency" >                             
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="creditTolerance">39A Credit Tolerance</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_39ACreditTolerance" ng-value="lcAmendForm1.CreditTolerance_t1" type="text" style="margin-bottom: 10px" class="txtField" id="creditTolerance" name="creditTolerance"  >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="debitTolerance">39A Debit Tolerance(-%)</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_39ADebitTolerance" ng-value="lcAmendForm1.DebitTolerance_t1" type="text" style="margin-bottom: 10px" class="txtField" id="debitTolerance" name="debitTolerance" > 
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="maximumCreditAmt">39B Maximum Credit Amt</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_39BMaximumCreditAmt" type="number" style="margin-bottom: 10px" class="txtField" id="maximumCreditAmt" name="maximumCreditAmt" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="addlAmountsCovered">39C Addl Amounts Covered.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_39CAddlAmountsCovered_1" type="number" style="margin-bottom: 10px" class="txtField" id="addlAmountsCovered" name="addlAmountsCovered" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important; margin-top:-3px;" for="applicableRuleCodes">40F Applicable Rule Codes</label>
+      </div>
+      <div class="col-sm-7" style="margin-bottom: 10px" class="txtField">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_40FApplicableRuleCodes" type="radio" value="None" checked> [None]
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_40FApplicableRuleCodes" type="radio" value="Noturr"> Noturr
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_40FApplicableRuleCodes" type="radio" value="Urr Latest Version"> Urr Latest Version
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="availableWith">41aA Available With</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_41aAAvailablewith_1" ng-value="lcAmendForm1.AvailableWithBankID_t2" type="text" style="margin-bottom: 10px" class="txtField" id="MT740_41aDAvailablewith_1" name="MT740_41aDAvailablewith_1" >
+       
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="availableWith1">41aD Available with.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_41aDAvailablewith_1" type="text" style="margin-bottom: 10px" class="txtField" id="availableWith1" name="availableWith1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="draftsAt1">42C Drafts at.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_42CDraftsat_1" type="text" style="margin-bottom: 10px" class="txtField" id="draftsAt1" name="draftsAt1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="drawee">42aA Drawee</label>
+      </div>
+      <div class="col-sm-7">
+        <select disabled="true" ng-model ="lcAmendForm1.MT740_42aADrawee" align="center" ng-model="lcAmendForm1.MT740_42aADrawee" style="margin-bottom: 10px" class="txtField" name="lccurrency" id="lccurrency" required>
+                  <option align="center" ng-repeat="MT740_42aADrawee in MT740_42aADrawee" value="{{MT740_42aADrawee}}">{{MT740_42aADrawee}}</option>
+                </select>
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="drawee1">42aD Drawee.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_42aDDrawee_1" type="text" style="margin-bottom: 10px" class="txtField" id="drawee1" name="drawee1" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="mixedPaymentDetails">42M Mixed Payment Details.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_42MMixedPaymentDetails_1" type="text" style="margin-bottom: 10px" class="txtField" id="mixedPaymentDetails" name="mixedPaymentDetails" >
+      </div>
+    </div>
+	
+	
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important" for="deferredpaymentDetails">42P Deferred Payment Details.1</label>
+      </div>
+      <div class="col-sm-6">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_42PDeferredPaymentDetails_1" type="text" style="margin-bottom: 10px;margin-left:-33px" class="txtField" id="deferredpaymentDetails" name="deferredpaymentDetails" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-6">
+      <label class="control-label" style="font-weight:!important; margin-right:5px" for="reimbursingBankCharges">71A Reimbursing Bank Charges</label>
+      </div>
+      <div class="col-sm-6" style="margin-bottom: 10px;margin-left:-33px;margin-top:-3px;" class="txtField">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_71AReimbursingBankCharges" type="radio" value="None" checked> [None]
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_71AReimbursingBankCharges" type="radio" value="Clm"> Clm
+                             <input disabled="true" ng-model ="lcAmendForm1.MT740_71AReimbursingBankCharges" type="radio" value="Our"> Our
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="otherCharges">71B Other Charges.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_71BOtherCharges_1" type="number" style="margin-bottom: 10px" class="txtField" id="otherCharges" name="otherCharges" >
+      </div>
+    </div>
+
+	<div class="col-sm-6">
+	  <div class="col-sm-5">
+      <label class="control-label" style="font-weight:!important" for="senderToReceiverInfo">72 Sender to Receiver Info.1</label>
+      </div>
+      <div class="col-sm-7">
+        <input disabled="true" ng-model ="lcAmendForm1.MT740_72SendertoReceiverInfo_1" type="text" style="margin-bottom: 10px" class="txtField" id="senderToReceiverInfo" name="senderToReceiverInfo" >
+      </div>
+    </div>
+	
+	</div>
+</div>
+</div>
+  </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!--full record end-->

@@ -1,0 +1,1488 @@
+
+<style>
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 10px;
+    text-align: right;
+	}
+#header {
+background: #d1d1d1;
+width: 100%;
+height: 50px;
+}</style>
+<div style="background-color:#ffffff !important">
+<div id="header">
+<nav>
+<div class="container-fluid" style="background-color:#d1d1d1 !important">
+<div class="navbar-header">
+    <a class="navbar-brand" style="color:#337ab7" href="#employeeHome">Digital Trade Chain</a>
+</div>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="#" style="color:#337ab7">WELCOME
+            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+    </li>
+    <li>
+        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+    </li>
+</ul>
+<div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" style="background-color:d1d1d1;color:#337ab7" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#employeeHome" ng-click="setTab(1)" >View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#employeeHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" style="background-color:d1d1d1;color:#337ab7;font-family:Tahoma;" data-toggle="dropdown">Bank Guarantee
+                            <b class="caret"></b>
+                        </a>
+
+                <ul class="dropdown-menu">
+                    <li class="divider">
+                        <strong></strong>
+                    </li>
+                    <li>
+                        <a href="#employeeHome" ng-click="setTab(3)">View Requsted BG</a>
+                    </li>
+                    <li class="divider">
+                        <strong></strong>
+                    </li>
+                    <li>
+                        <a href="#employeeHome" ng-click="setTab(4)">View Issued BG</a>
+                    </li>
+
+
+                </ul>
+            </li>
+                
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></a></li>
+
+							</ul>
+				</div>
+			</div>
+		</nav> 
+	</div>
+</div>
+
+<div class="panel-heading" >
+ 	<h4 class="panel-title" style="text-align: center;color:#ffffff;background-color:		#0866C6;margin-left: 15%;margin-right: 15%;margin-top: 10px;font-size: 13px;height:35px;padding-top:10px;">Issue of Generic Guarantee</h4>
+</div>
+<!-- <nav class="navbar navbar-default" role="navigation" style="padding-top: 62px;margin-bottom:-66px;"> -->
+
+<div ng-show="isError">
+    <div class="panel-body" ng-model="validationErrors" style="font-size:small;">
+        <h1 ng-repeat="x in validationErrors" style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;font-weight:bold;" ><a style="align:center; ffont-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;margin-right:-1px;margin-left:350px;font-weight:bold;" href="#{{x.fieldName}}">
+	<label style="color:red">ERROR:</label>{{x.fieldName}}</a>::>>{{x.errMsg}}
+	</h1>
+    </div>
+</div>
+ 
+
+ <div class="container-fluid" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+   <!--  <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" >Letter Of Credit<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#lcRequest">Request LC</a></li>
+                <li class="divider"><strong></strong></li>
+                <li><a href="#customerHome" ng-click="setTab(1)">View Requested LC</a></li>
+    <li class="divider"><strong></strong></li>
+                <li><a href="#customerHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">Bank Guarantee<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#bgRequest">Request BG</a></li>
+                <li class="divider"><strong></strong></li>
+                <li><a href="#customerHome" ng-click="setTab(3)">View Requested BG</a></li>
+    <li class="divider"><strong></strong></li>
+                <li><a href="#customerHome" ng-click="setTab(4)">View Issued BG</a></li>
+
+            </ul>
+        </li>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"></a></li>
+
+      </ul>
+    </div> --><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+<!-- </nav> -->
+
+<style>
+#ultab {
+    list-style: none;
+    padding: 0;
+    margin: 0;	
+	width:100%;
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+#header {
+background: #D3D3D3;
+width: 100%;
+height: 50px;
+}
+
+#container {
+min-height: 100%;
+position: relative;
+}
+
+#header-image {
+background-image: url('cap-logo.jpg');
+background-repeat: no-repeat;
+background-position: left;
+-webkit-background-size: 10px;
+-moz-background-size: 10px;
+-o-background-size: 10px;
+background-size: 40px;
+height: 40px;
+
+}
+
+#lableWithBorder
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	padding-left: 3px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-top: 6px;
+	border-right: 1px solid #ACACAD;
+}
+
+#mainButton {
+		font-family: Tahoma;
+        color: #000000;
+        background-color: #F9AA20; 
+        border: 2px solid #e4e4e4;
+        border-right: 2px solid #894A06;
+        border-bottom: 2px solid #894A06;
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 4px;
+		padding-right: 4px;
+		padding-top: 2px;
+		padding-bottom: 2px;
+        font-weight: normal;
+        font-size: 11px;
+		cursor: hand;
+}
+
+#txtField
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;
+	}
+}
+
+
+#litab {
+width:15%;
+    border-radius: 2px 1px 5px 0px;
+    float: left;
+    border: 2.5px solid rgba(37, 130, 193, 0.97);
+	
+    border-bottom-width: thin;
+	
+    margin: 10px -3px -1px 0px;
+    padding: 12px 12px 6px 6px;
+    /* background-color: #af3c3c; */
+	background-color:#d7dfe8;
+    color: #1c1c1d;
+	    text-align: center;
+		cursor:pointer;
+		background-color: #E5E8E9;
+    text-decoration: none;
+		
+		
+	<!-- 	    padding-left: 42px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    border-right: 1px solid #ACACAD;
+		 -->
+}
+.active {
+    background-color: #B1BDD9;
+    color: #3f3fa5;
+    margin-bottom: 0px;
+	font-weight: bold;
+}
+#mainView {
+  border-radius: 6px;
+    border: 1px solid #0099cc;
+	clear: both;
+	padding: 0 1em;
+	background-color: #fbfbfb;
+}
+.demoAppModule md-content {
+  background-color: transparent !important; }
+  .demoAppModule md-content md-tabs {
+    border: 1px solid #e1e1e1; }
+    .demoAppModule md-content md-tabs md-tab-content {
+      background: #f6f6f6; }
+    .demoAppModule md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .demoAppModule md-content h1:first-child {
+    margin-top: 0; }
+
+.demoAppModule md-input-container {
+  padding-bottom: 0;
+    width: 300px;	}
+
+.demoAppModule .remove-tab {
+  margin-bottom: 40px; }
+
+.demoAppModule .demo-tab > div > div {
+  padding: 25px;
+  box-sizing: border-box; }
+
+.demoAppModule .edit-form input {
+  width: 100%; }
+
+.demoAppModule md-tabs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.demoAppModule md-tab[disabled] {
+  opacity: 0.5; }
+
+.demoAppModule label {
+  text-align: left; }
+
+.demoAppModule .long > input {
+  width: 264px; }
+
+.demoAppModule .md-button.add-tab {
+  transform: translateY(5px); }
+
+
+
+  /* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #f49542;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.form-control {
+  width: 300px;
+}
+
+
+.formlabel {
+    display: inline-block;
+    max-width: 100%;
+    font-size: small;
+  font-weight: normal important;
+}
+
+.label1 {
+    font-weight: normal important;
+}
+
+.label {
+    font-weight: bold important;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+bootstrap.min.css:5
+input[type=date].form-control, input[type=time].form-control, input[type=datetime-local].form-control, input[type=month].form-control {
+    line-height: 34px;
+    max-width: 300px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    <!--font-family: Verdana;-->
+}
+@media (min-width: 768px)
+bootstrap.min.css:5
+.form-inline .form-control {
+    display: inline-block;
+    width: -webkit-fill-available;
+    vertical-align: middle;
+}
+.hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0px 2px;
+    font-size: small;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-bottom: 10px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fbfbfb;
+    background-color: #d1d1d1;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #fbfbfb;
+    white-space: nowrap;
+    background: #d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1;
+    font-size: 13px;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    background: #d1d1d1;
+    border-top-right-radius: 0;
+}
+.btn-primary {
+    color: #fbfbfb;
+    background-color: #0866c6;
+    border-color: #e6ecff;
+}
+#footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 30px;
+/* Height of the footer */
+background: #4682B4;
+}
+body
+{
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+#txtNormal
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align:left;
+	text-decoration: none;
+	padding-left:3px;
+	margin-top=6px
+}
+
+#style1 {
+color: #FF0000
+}
+
+
+</style>
+
+<script type="text/ng-template" id="myModalContent.html">
+        
+        <div class="modal-body" style="font-size:13px">
+			Next Date:
+				<input type="date" ng-model="obj.commFrequency_t3" name="bday" >
+					<button class="button" style="font-size:10px;" type="button" ng-click="ok()">
+						<span class="glyphicon glyphicon-ok"></span>
+					</button>
+					<button class="button" style="font-size:10px;" type="button" ng-click="cancel()">
+						<span class="glyphicon glyphicon-remove"  ></span>
+					</button>
+						
+					<div class="container">						
+						<label for="daily">Daily</label>
+							<input id="daily" type="radio" name="content" ng-model="obj.freqOption_t3" value="DAILY">
+							<br />
+						<label for="daily">Monthly</label>
+							<input id="daily" type="radio" name="content" ng-model="obj.freqOption_t3" value="MONTHLY">
+						<br />
+						<label for="daily">Weekly</label>
+							<input id="daily" type="radio" name="content" ng-model="obj.freqOption_t3" value="WEEKLY">
+						<br />
+						<label for="daily">Defined</label>
+							<input id="daily" type="radio" name="content" ng-model="obj.freqOption_t3" value="DEFINED">						
+						
+						<div>
+							<div ng-show="obj.freqOption_t3 == 'DAILY'">						
+								<p>
+									<label>
+										<input type="radio" ng-model="obj.freqOptionOne_t3" name="fqu:D:radio" id="fqu:Daily" value="DAILY">
+										Daily
+									</label></p>
+								<p>
+									<label>
+										<input type="radio" ng-model="obj.freqOptionOne_t3" name="fqu:D:radio" id="fqu:BusinessDay" value="BSNSS">
+										Business Day
+									</label>
+								</p>				
+							</div>
+							
+							<div ng-show="obj.freqOption_t3 == 'WEEKLY'">				
+								<p>Every
+									<select ng-model ="obj.freqOptionTwo_t3" align="center" style="margin-bottom: 10px" class="txtField" name="weekly" id="weekly" required>
+										<option selected="true" value="1">1</option>
+										<option align="center" value="2">2</option>
+										<option align="center" value="3">3</option>
+										<option align="center" value="4">4</option>
+										<option align="center" value="5">5</option>
+										<option align="center" value="6">6</option>
+										<option align="center" value="7">7</option>
+										<option align="center" value="8">8</option>
+										<option align="center" value="9">9</option>
+									</select>Week(s)
+								</p>
+							</div>
+						
+							<div ng-show="obj.freqOption_t3 == 'MONTHLY'">
+								<p>
+									<label>
+										<input type="radio" ng-model="obj.freqOptionThree_t3" name="fqu:M:radio" id="fqu:M:Twice" value="TWMTH">
+										Twice Monthly
+									</label>
+								</p>
+								<p>
+								<label>
+									<input type="radio" ng-model="obj.freqOptionThree_t3" name="fqu:M:radio" id="fqu:M:Every" value="EVERY">Every
+								</label>
+									<input type="text" ng-model="obj.freqOptionThree1_t3" id="fqu:M:MonthNumber" value="01" size="2" class="scheduler scheduler_MDDEAL scheduler_MDDEAL_GTISS">Month(s) On
+									<select ng-model ="obj.freqOptionThree2_t3" align="center" style="margin-bottom: 10px" class="txtField" name="weekly" id="weekly" required>
+									<option selected="true" value="01">1</option>
+									<option value="02">2</option>
+									<option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></p>
+						</div>
+						
+						<div ng-show="obj.freqOption_t3 == 'DEFINED'">						
+							Defined Frequency:
+							<select ng-model ="obj.freqOptionFour_t3" align="center" style="margin-bottom: 10px" class="txtField" name="weekly" id="weekly" required>
+								<option value=""></option>
+								<option value="LHFYR- LAST DAY IN THIS MID YEAR">LHFYR- LAST DAY IN THIS MID YEAR</option>
+								<option value="LYEAR- LAST DAY OF THIS YEAR">LYEAR- LAST DAY OF THIS YEAR</option>
+								<option value="LQUAT- LAST DAY OF THIS QUARTER">LQUAT- LAST DAY OF THIS QUARTER</option>
+								<option value="LMNTH- LAST DAY OF THIS MONTH">LMNTH- LAST DAY OF THIS MONTH</option>
+								<option value="LWEEK- LAST DAY OF THIS WEEK">LWEEK- LAST DAY OF THIS WEEK</option>
+							</select>
+						
+						</div>
+						
+						<!-- <div ng-show="bgOpenForm.freqOption_t3 == 'other'">This is the other content!</div> -->
+						</div>
+
+						
+						</div>
+        </div>
+        <!-- <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div> -->
+    </script>
+<script type="text/ng-template" id="messageContent.html">
+        <div class="modal-body" id="modal-body">
+            {{ modalInstanceTwo.message }}
+        </div>
+    </script>
+
+
+<div class="container" style="margin-top:5%;padding-left:2%;margin-left:15%;margin-right:15%;background-color:#ffffff !important" >
+
+<div class="row" style="margin-top:-65px; ">
+  <div id="tabs" style="margin-top:-10px;width:70%;background-color:#ffffff">
+        <ul id="ultab" style="width:100%;background-color:#ffffff">
+            <li class="dropdown" id="litab" ng-repeat="tab in tabs" 
+				  ng-class="{active:isActiveTab(tab.url)}"
+                  ng-click="onClickTab(tab)">{{tab.title}}
+			</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab" style="height:430px;margin-bottom: -10px;"></div>
+        </div>
+      <script type="text/ng-template" id="one.tpl.html">
+</br>
+<div class="row" id="ultab">
+
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="guaranteeRef_t1">Guarantee Reference </label>
+            </div>
+		    <div class="col-sm-7" >
+                <input align="center" class="txtNormal" ng-model ="bgOpenForm.guaranteeRef_t1" class="txtField" name="guaranteeRef_t1" id="guaranteeRef_t1" required  style="height: 20px;margin-top=6px " <span class="style1"></span>
+				    
+	        </div>
+	    </div>		
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="BgRequestNumber">BG Number	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input type="text" ng-model ="bgOpenForm.bgNumber_t1" class="txtField" id="BgRequestNumber" name="BgRequestNumber" ng-disabled="false" style="margin-top=6px" <span class="style1"></span>
+	        </div>
+	    </div>		
+<br> </br>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="issuedOnBehalfOf_t1">Issued On Behalf of</label>
+            </div>
+		    <div class="col-sm-7">
+			    <input type="text" ng-model ="bgOpenForm.issuedOnBehalfOf_t1" class="txtField" id="issuedOnBehalfOf_t1" name="issuedOnBehalfOf_t1" ng-disabled="true" required ng-change="applicantAddressUpdate()" ng-change="enableOpen()">
+<!--                 <select align="center" ng-model ="bgOpenForm.issuedOnBehalfOf_t1"  class="form-control" name="issuedOnBehalfOf" id="issuedOnBehalfOf" required ng-model="bgOpenForm.issuedOnBehalfOf">
+                    <option align="center" value="issuedOnBehalfOf">1000</option>
+                </select> -->
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="customersReference_t1">Customer's Reference</label>
+            </div>
+		    <div class="col-sm-7">
+                   
+			    <input type="text" ng-model ="bgOpenForm.customersReference_t1" id="customersReference_t1" class="txtField" style="margin: 0px 0px 10px;"  >
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="bgCurrency">BG Currency	*</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.currency_t1" align="center"  class="txtField" name="bgCurrency" id="bgCurrency" required ng-disabled="true" ng-change="enableOpen()">
+   	        </div>
+	    </div>		
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="bgAmount">BG Amount	*</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.amount_t1" style="margin-bottom: 10px" type="text" class="txtField" id="bgAmount" name="bgAmount"  required   ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+
+
+	    <!-- <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="creditTolerance">Credit Tolerance	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.CreditTolerance_t1" type="text" class="txtField" id="creditTolerance" name="creditTolerance" ng-model="bgOpenForm.creditTolerance" ng-change="enableOpen()">
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="debitTolerance">Debit Tolerance(-%)	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.DebitTolerance_t1" type="text" style="margin-bottom: 10px;width:45px;" class="txtField" id="debitTolerance" name="debitTolerance" ng-model="bgOpenForm.debitTolerance" ng-change="enableOpen()">
+	        </div>
+	    </div>
+		<br> </br> -->
+	
+
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="startDate">Start Date	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.startDate_t1" type="text"  style="margin-bottom: 10px" class="txtField" id="startDate" name="startDate">
+	        </div>
+	    </div>
+		
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="expiryDate_t1">Expiry Date	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.expiryDate_t1" type="text" style="margin-bottom: 10px" class="txtField" id="expiryDate_t1" name="expiryDate_t1" ng-model="bgOpenForm.lcExpiryDate" ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+	    <br></br>
+
+        <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="maturityDate_t1">Maturity Date	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.maturityDate_t1" type="text" style="margin-bottom: 10px" class="txtField" id="maturityDate_t1" name="maturityDate_t1">
+	        </div>
+	    </div>
+		
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="beneficiaryId">Beneficiary ID	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.beneficiaryId_t1" type="text"  style="margin-bottom: 10px" class="txtField" id="beneficiaryId" name="beneficiaryId">
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="limitReference">Limit Reference</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.limitReference_t1"  type="text"  class="txtField" id="limitReference" name="limitReference" ng-model="bgOpenForm.limitReference" ng-disabled="true" ng-change="enableOpen()">
+	        </div>
+	    </div>
+		
+		
+	
+<!--
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="incoTerms">Inco Terms	</label>
+            </div>
+		    <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.IncoTerms_t1"  align="center" ng-model="bgOpenForm.incoTerms"  class="txtField" name="incoTerms" id="incoTerms" required>
+                    <option ng-repeat="option in incoTerms" value="{{option}}" >{{option}}</option>
+                </select>
+	        </div>
+	    </div>
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="modeOfShipment">Mode Of Shipment	</label>
+            </div>
+		    <div class="col-sm-7">
+			    <select ng-model="bgOpenForm.ModeOfShipment_t1"  style="margin-bottom: 10px" class="txtField" name="modeofshipment" id="modeofshipment" >
+                                    <option value="Land">Land</option>
+                                    <option value="Sea">Sea</option>
+                                    <option value="Air">Air</option>
+                </select>
+	        </div>
+	    </div>
+		-->
+		<br> </br>
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="beneficiaryNoncust">Beneficiary(NonCust).1</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.beneficiaryNoncust_1_t1" type="text"  class="txtField" id="beneficiaryNoncust" name="beneficiaryNoncust" >
+	        </div>
+	    </div>
+      
+		<br> </br>	
+		
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="termsNconditions">Terms and Conditions</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.termsNconditions_1_t1" type="text"  class="txtField" id="termsNconditions" name="termsNconditions" >
+	        </div>
+	    </div>
+      
+		<br> </br>
+        <div class="col-sm-6"  style = "height: 40px;">
+	        <div class="col-sm-5">
+            <label class="control-label col-sm-" for="eventsProcessing" style="font-weight:!important;margin-top:-10px;" for="marginRequired">Events Processing</label>
+            </div>
+	        <div class="col-sm-5" style="margin-top: -2px" class="txtField">
+		
+                    <input ng-model ="bgOpenForm.eventsProcessing_t1" for="eventsProcessing" type="radio" value="ENDOFDAY">End Of Day
+                    <input ng-model ="bgOpenForm.eventsProcessing_t1" for="eventsProcessing" type="radio" value="ONLINE">Online
+            </div>
+        </div>
+        <div class="col-sm-6"  style = "height: 40px;">
+	        <div class="col-sm-5">
+            <label class="control-label col-sm-" for="autoExpiry" style="font-weight:!important;margin-top:-52px;" >Auto Expiry</label>
+            </div>
+	        <div class="col-sm-5" style="margin-top: -28px" class="txtField">
+                    <input ng-model ="bgOpenForm.autoexpiry_t1" for="autoExpiry" type="radio" value="NONE">None
+                    <input ng-model ="bgOpenForm.autoexpiry_t1" for="autoExpiry" type="radio" value="NO" checked=true>No
+                    <input ng-model ="bgOpenForm.autoexpiry_t1" for="autoExpiry" type="radio" value="YES">Yes
+            </div>
+        </div>
+        <div class="col-sm-8"  style = "height: 40px;">
+	        <div class="col-sm-3">
+            <label class="control-label col-sm-" for="liquidationMode" style="font-weight:!important;margin-top:-30px;" >Liquidation Mode</label>
+            </div>
+	        <div class="col-sm-7" style="margin-top: -19px;margin-left:31px;" class="txtField">
+                    <input ng-model ="bgOpenForm.liquidationMode_t1" for="liquidationMode" type="radio" value="NONE">[None]
+                    <input ng-model ="bgOpenForm.liquidationMode_t1" for="liquidationMode" type="radio" value="AUTOMATIC">Automatic
+                    <input ng-model ="bgOpenForm.liquidationMode_t1" for="liquidationMode" type="radio" value="MANUAL">Manual
+                    <input ng-model ="bgOpenForm.liquidationMode_t1" for="liquidationMode" type="radio" value="SEMIAUTOMATIC">Semi Automatic
+            </div>
+        </div>
+		
+		<div class="row">
+		</div>
+    </div>
+
+    <div class="col-sm-4">
+    </div>
+    </div>
+	</br>
+  	</script>
+
+  	<script type="text/ng-template" id="two.tpl.html">
+  		<div id="viewTwo">
+        </br>
+		<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+		
+        <!-- <div class="row" id="ultab>
+		    <div class="form-inline"  height:400px;"> -->
+			
+        <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeDate_1_t2">Charge Date.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.chargeDate_1_t2" type="date"  style="margin-bottom: 10px" class="txtField" id="chargeDate_1_t2" name="chargeDate_1_t2">
+	        </div>
+	    
+		
+	  	
+	        <div class="col-sm-5">
+                
+                <label  style="font-weight:!important" for="chargeCode">Charge Code.1.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <select align="center"  ng-model="bgOpenForm.chargeCode_1_1_t2" style="margin-bottom: 10px" class="txtField" name="chargeCodes" id="chargeCodes" required ng-change=bgChargeCodeChanged(bgOpenForm.chargeCode_1_1_t2) 
+                data-ng-options="chargeCodes for chargeCodes in chargeCodes">
+                <option align="center" ng-repeat="chargeCodes in chargeCodes" value="{{chargeCodes}}">{{chargeCodes}} </option>
+                </select>
+              
+	        </div>
+            <br><br>
+
+            
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeDebitAccount">Charge Debit Account.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.chargeDebitAccount_1_t2" align="center" ng-model="chargeDebitAccount" style="margin-bottom: 10px" class="txtField" name="chargeDebitAccount" id="chargeDebitAccount" required>
+                    <option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+                </select>
+            </div>
+
+            
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeCurrency">Charge Currency.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.chargeCurrency_1_t2" type="text" style="margin-bottom: 10px" class="txtField"id="chargeCurrency" name="chargeCurrency" disabled>
+               
+               <!-- <select ng-model ="bgOpenForm.chargeCurrency_1_t2" align="center"  style="margin-bottom: 10px" class="txtField" name="chargeCurrency" id="chargeCurrency" required>
+                    <option align="center" ng-repeat="chargeCurrency in chargeCurrencies" value="{{chargeCurrency}}">{{chargeCurrency}}</option>
+                </select>-->
+               
+
+            </div>
+
+
+            
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeAmount">Charge Amount.1.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.chargeAmount_1_1_t2" type="text"  class="txtField" id="chargeAmount" name="chargeAmount" style="margin-bottom:10px" ng-change="bgCheckEmpty()">
+	        </div>
+            
+
+            
+	    </div>
+	
+
+	
+	</div>
+
+</div>
+
+  		</div>
+				</br>
+  	</script>
+
+  	<script type="text/ng-template" id="three.tpl.html">
+
+					</br>
+
+					<!-- <div class="row">
+							    <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+
+		<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+	<div class="col-sm-6" style="margin-top:-5px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" style="font-weight:!important;margin-top:-3px;"  for="commissionPayType">Commission Pay Type</label>
+       </div>
+	   <div class="col-sm-5"  class="txtField" style="margin-bottom:-10px;">
+		<input ng-model ="bgOpenForm.commissionPayType_t3" type="radio" checked value="" ng-change="checkChanges(bgOpenForm.commissionPayType_t3)">[none]
+        <input ng-model ="bgOpenForm.commissionPayType_t3" type="radio" value="BEGIN" ng-change="checkChanges(bgOpenForm.commissionPayType_t3)">Begin
+        <input ng-model ="bgOpenForm.commissionPayType_t3" type="radio" value="END" ng-change="checkChanges(bgOpenForm.commissionPayType_t3)">End        
+      </div>
+    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="accrualPattern">Accrual Pattern</label>
+            </div>
+		    <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.accrualPattern_t3" align="center" ng-model="accrualPattern" style="margin-bottom: 10px" class="txtField" name="accrualPattern" id="accrualPattern" required>
+                    <option align="center" ng-repeat="accrualPattern in accrualPatterns" value="{{accrualPattern}}">{{accrualPattern}}</option>
+                </select>                    
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="interestCalcBasis">Interest Calc Basis</label>
+            </div>
+		    <div class="col-sm-7">
+                    <!--<input ng-model ="bgOpenForm.interestCalcBasis_t3" type="text" style="margin-bottom: 10px" class="txtField"id="interestCalcBasis" name="interestCalcBasis" >-->
+                <select ng-model ="bgOpenForm.interestCalcBasis_t3" align="center" ng-model="interestCalcBasis" style="margin-bottom: 10px" class="txtField" name="interestCalcBasis" id="interestCalcBasis" required>
+                    <option align="center" ng-repeat="interestCalcBasis in interestCalcBasis" value="{{interestCalcBasis}}">{{interestCalcBasis}}</option>
+                </select>
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="Current Rate">Current Rate</label>
+            </div>
+		    <div class="col-sm-7">
+                    <input ng-model ="bgOpenForm.currentRate_t3" type="text" style="margin-bottom: 10px;border-color:white;visibility: hidden;" class="txtField"id="currentRate" name="currentRate"  >
+	        </div>
+	    </div>
+		<div>
+
+
+		<div class="col-sm-6">
+                <div class="col-sm-5">
+                        <label  style="font-weight:!important" for="commrate">Comm Rate</label>
+                    </div>
+                    <div class="col-sm-7">
+                            <input ng-model ="bgOpenForm.commrate_t3" type="text" style="{{Stl_comrate_t3}}" class="txtField"id="commrate" name="commrate" ng-change="checkInput()" >
+                    </div>
+                </div>
+	    </div>
+
+        <div class="col-sm-6">
+                <div class="col-sm-5">
+                        <label  style="font-weight:!important" for="commspread">Comm Spread</label>
+                </div>
+                <div class="col-sm-7">
+                        <input ng-model ="bgOpenForm.commSpread_t3" type="text" style="margin-bottom: 10px;" class="txtField"id="commSpread_t3" name="commSpread_t3"  >
+                </div>
+        </div>
+	    
+
+
+		<!--<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="chargeCurrency">Charge Currency</label>
+            </div>
+		    <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.ChargeCurrency_t3" align="center"  style="margin-bottom: 10px" class="txtField" name="chargeCurrency" id="chargeCurrency" required>
+                    <option align="center" ng-repeat="lccurrency in lccurrency" value="{{lccurrency}}">{{lccurrency}}</option>
+                </select>
+	        </div>
+	    </div>-->
+		
+	
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commFrequency">Comm Frequency</label>
+            </div>
+		    <div class="col-sm-7">
+					<input ng-model ="bgOpenForm.commFrequency_t3" type="text" style="margin-bottom: 10px;" class="txtField" id="commFrequency_t3" name="commFrequency_t3">	
+					<button class="button" type="button" style="border-radius: 100px 100px 100px 100px;font-size: 10px;width: 20%;"><h1><img style="border-color:Black;float:left;margin-left:-6px" ng-click="open()" src="./frontend/fqyImg.gif"></h1></button>	
+	        </div>
+			
+	    </div>
+
+	
+	</br>
+    <div class="row"></div>
+    <div class="col-sm-6" style="margin-top:-5px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" style="font-weight:!important;margin-top:-3px;"  for="fixedAmount">Fixed Amount</label>
+       </div>
+	   <div class="col-sm-5"  class="txtField" style="margin-bottom:-10px;">
+		<input ng-model ="bgOpenForm.fixedAmount_t3" type="radio" checked value="">[none]
+        <input ng-model ="bgOpenForm.fixedAmount_t3" type="radio" value="NO">No
+        <input ng-model ="bgOpenForm.fixedAmount_t3" type="radio" value="YES">Yes
+      </div>
+    </div>
+    <div class="row"></div>
+    <div class="col-sm-6" style="margin-top:-5px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" style="font-weight:!important;margin-top:-3px;"  for="commissionClaimed">Commission Claimed</label>
+       </div>
+	   <div class="col-sm-5"  class="txtField" style="margin-bottom:-10px;">
+		<input ng-model ="bgOpenForm.commissionClaimed_t3" type="checkbox" checked value="YES">
+      
+      </div>
+    </div>
+    <div class="row"></div>
+
+	    <div class="col-sm-6">
+                <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionDate_1_t3">Commission Date.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.commissionDate_1_t3" type="date"  style="{{Stl_comrate_t3}}" class="txtField" id="commissionDate_1_t3" name="commissionDate_1_t3" >
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commissionAmount">Commission Amount	</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.commissionAmount_1_t3" type="text" style="margin-bottom: 10px" class="txtField" id="commissionAmount" name="commissionAmount">
+	        </div>
+	    </div>
+
+	    <div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="commDebitAcct">Comm Debit Acct.1</label>
+            </div>
+		    <div class="col-sm-7">
+                
+                <select ng-model ="bgOpenForm.commDebitAcct_1_t3" align="center" style="{{Stl_comrate_t3}}"  class="txtField" name="commDebitAcct" id="commDebitAcct" required>
+                    <option align="center" value=""></option>
+					<option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+                </select>
+
+                
+	        </div>
+	    </div>
+
+		<div class="col-sm-6">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="conversionRate_1_t3">Conversion Rate.1</label>
+            </div>
+		    <div class="col-sm-7">
+                    <input ng-model ="bgOpenForm.conversionRate_1_t3" type="text" style="margin-bottom: 10px;border-color:white;visibility: hidden;" class="txtField"id="conversionRate" name="conversionRate"  >
+	        </div>
+	    </div>
+        <div class="col-sm-6"  style = "height: 40px;">
+	        <div class="col-sm-5">
+            <label class="control-label col-sm-" for="rateChange" style="font-weight:!important;margin-top:-16px;" for="rateChange">Rate Change</label>
+            </div>
+	        <div class="col-sm-5" style="margin-top: -10px" class="txtField">
+                    <input ng-model ="bgOpenForm.rateChange_t3" for="rateChange" type="radio" value="">[None]
+                    <input ng-model ="bgOpenForm.rateChange_t3" for="rateChange" type="radio" value="NO">No
+                    <input ng-model ="bgOpenForm.rateChange_t3" for="rateChange" type="radio" value="YES">Yes
+            </div>
+        </div>
+        <div class="col-sm-6"  style = "height: 40px;">
+	        <div class="col-sm-5">
+            <label class="control-label col-sm-" for="returnCommission" style="font-weight:!important;margin-top:-16px;" for="returnCommission">Return Commission</label>
+            </div>
+	        <div class="col-sm-5" style="margin-top: -10px" class="txtField">
+                    <input ng-model ="bgOpenForm.returnCommission_t3" for="returnCommission" type="radio" value="">[None]
+                    <input ng-model ="bgOpenForm.returnCommission_t3" for="returnCommission" type="radio" value="NO">No
+                    <input ng-model ="bgOpenForm.returnCommission_t3" for="returnCommission" type="radio" value="YES">Yes
+            </div>
+        </div>
+        <div class="col-sm-6">
+                <div class="col-sm-5">
+                        <label  style="font-weight:!important" for="commrate">New Rate</label>
+                    </div>
+                    <div class="col-sm-7">
+                            <input ng-model ="bgOpenForm.currentRate_t3" type="text" style="margin-bottom: 10px;border-color:white;visibility: hidden;" class="txtField"id="currentRate" name="currentRate"  >
+                    </div>
+                </div>
+	    
+
+        <div class="col-sm-6">
+                <div class="col-sm-5">
+                        <label  style="font-weight:!important" for="commspread">Effective Date</label>
+                </div>
+                <div class="col-sm-7">
+                        <input ng-model ="bgOpenForm.currentRate_t3" type="date" style="margin-bottom: 10px;border-color:white;visibility: hidden;" class="txtField"id="currentRate" name="currentRate"  >
+                </div>
+        </div>
+
+	    
+
+	    </div>
+
+	</div>
+  	</div>
+  	</div>
+    </br>
+  	</script>
+
+    <script type="text/ng-template" id="four.tpl.html">
+  		<div id="viewFour">
+        </br>
+        <!-- <div class="row">
+        <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+				<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+		
+
+	<div class="col-sm-6"  style = "height: 40px;">
+	   <div class="col-sm-5">
+            <label class="control-label col-sm-" for="takeMargin" style="margin-top:1px;" for="takeMargin">Take Margin</label>
+       </div>
+	   <div class="col-sm-7" style="margin-bottom: 10px;margin-top:5px;" class="txtField">
+		<input ng-model ="bgOpenForm.takeMargin_t4" for="takeMargin" type="radio" checked value="">[None]
+        <input ng-model ="bgOpenForm.takeMargin_t4" for="takeMargin" type="radio" value="NO">No
+        <input ng-model ="bgOpenForm.takeMargin_t4" for="takeMargin" type="radio" value="YES">Yes
+      </div>
+
+      <div class="col-sm-5">
+                <label  style="font-weight:!important" for="marginPercent">Margin Percentage</label>
+      </div>
+	  <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.marginPercent_t4" type="text" style="margin-bottom: 10px" class="txtField" id="marginPercent" name="marginPercent" >
+	  </div>
+
+
+      <div class="col-sm-5">
+                <label  style="font-weight:!important" for="marginAmount">Margin Amount</label>
+      </div>
+	  <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.marginAmount" type="text" style="margin-bottom: 10px" class="txtField" id="marginAmount" name="marginAmount" >
+	  </div>
+
+
+   
+
+    
+
+
+     <div class="col-sm-5">
+                <label  style="font-weight:!important" for="marginReleaseDate">Margin Release Date</label>
+      </div>
+	  <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.marginReleaseDate_t4" type="date"  style="margin-bottom: 10px" class="txtField" id="marginReleaseDate" name="marginReleaseDate">
+	  </div>
+
+
+
+      <div class="col-sm-5">
+                <label  style="font-weight:!important" for="marginDebitAcct">Margin Debit Account</label>
+      </div>
+        <div class="col-sm-7">
+            <select ng-model ="bgOpenForm.marginDebitAcct" align="center"  style="margin-bottom: 10px" class="txtField" name="marginDebitAcct" id="marginDebitAcct" required >
+                <option align="center" value=""></option>
+				<option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+            </select>
+        </div>
+
+        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="provisionExchangeRate">Provision Exchange Rate</label>
+      </div>
+	  <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.provisionExchangeRate_t4" type="text" style="margin-bottom: 10px" class="txtField" id="provisionExchangeRate" name="provisionExchangeRate" >
+	  </div>
+       
+
+
+
+
+
+
+
+
+
+        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="marginCreditAcct">Margin Credit Account</label>
+      </div>
+        <div class="col-sm-7">
+            <select ng-model ="bgOpenForm.marginCreditAcct_t4" align="center"  style="margin-bottom: 10px" class="txtField" name="marginCreditAcct" id="marginCreditAcct" required >
+				<option align="center" value=""></option>
+                <option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+            </select>
+        </div>
+
+
+
+
+        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="marginReleaseAcct">Margin Release Acct</label>
+      </div>
+        <div class="col-sm-7">
+            <select ng-model ="bgOpenForm.marginReleaseAcct_t4" align="center"  style="margin-bottom: 10px" class="txtField" name="marginReleaseAcct" id="marginReleaseAcct" required >
+				<option align="center" value=""></option>
+                <option align="center" ng-repeat="allAccount in allAccountList track by $index" value="{{allAccount}}">{{allAccount}}</option>
+            </select>
+        </div>
+
+
+
+</div>
+</div>
+
+	
+    	
+
+
+	
+
+
+  	</div>
+  	</div>
+    </br>
+
+  		</div>
+  	</script>
+    <script type="text/ng-template" id="five.tpl.html">
+  		<div id="viewFive">
+        </br>
+        <!-- <div class="row">
+        <div class="form-inline" style="overflow-y: scroll; height:400px;"> -->
+			<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+
+
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+		
+        <div class="col-sm-6"  style = "height: 40px;">
+	        <div class="col-sm-5">
+                <label  style="font-weight:!important" for="slTrancheReference">SL Tranche Reference</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.slTrancheReference_t5" type="text"  class="txtField" id="slTrancheReference" name="slTrancheReference" >
+	        </div>
+	    
+
+
+        
+            <div class="col-sm-5">
+                    <label class="control-label col-sm-" for="productType"  for="productType">Product Type</label>
+            </div>
+            <div class="col-sm-7" style="margin-bottom: 10px;margin-top:5px;" class="txtField">
+                <input ng-model ="bgOpenForm.productType_t5" for="productType" type="radio" checked value="">[None]
+                <input ng-model ="bgOpenForm.productType_t5" for="productType" type="radio" value="GT">Gt
+                <input ng-model ="bgOpenForm.productType_t5" for="productType" type="radio" value="SC">Sc
+            </div>
+
+
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="slLinkdate">SL Link Date</label>
+            </div>
+		    <div class="col-sm-7">
+                    <input ng-model ="bgOpenForm.slLinkdate_t5" type="date" style="border-color:white;visibility: hidden;" class="txtField"id="slLinkdate" name="slLinkdate"  >
+	        </div>
+
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="issuingBank">Issuing Bank</label>
+            </div>
+            <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.issuingBank_t5" align="center"  style="margin-bottom: 10px" class="txtField" name="issuingBank" id="issuingBank" required >
+                    <option align="center" ng-repeat="issuingBank in issuingBank" value="{{issuingBank}}">{{issuingBank}}</option>
+                </select>
+            </div>
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="participantId">Participant Id.1</label>
+            </div>
+            <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.participantId_1_t5" align="center" ng-model="participantId" style="margin-bottom: 10px" class="txtField" name="participantId" id="participantId" required >
+                    <option align="center" ng-repeat="participantId in participantId" value="{{participantId}}">{{participantId}}</option>
+                </select>
+            </div>
+
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="participationAmt">Participation Amt.1</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.participationAmt_1_t5" type="text"  class="txtField" id="participationAmt" name="participationAmt" >
+	        </div>
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="netPrinAmt">Net Prin Amt</label>
+            </div>
+		    <div class="col-sm-7">
+                    
+	        </div>
+
+
+
+      </div>
+    </div>
+</div>
+
+	
+
+
+		
+  	</div>
+  	</div>
+    </br>
+  	</script>
+    </br>
+   
+
+
+   
+    <br>
+	
+
+	<script type="text/ng-template" id="six.tpl.html">
+  	<div id="viewNine">
+    <div class="row">
+    <div class="form-inline" style="overflow-y: scroll; height:400px;">
+	<br>
+	<div class="row" id="ultab">
+<div class="form-horizontal" style="margin-top:10px; padding-top="10px">
+      <div class="form-inline" style=" height:400px;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">
+       
+        <div class="col-sm-6" >
+
+                    <div class="col-sm-5">
+                        <label  style="font-weight:!important" for="receivingBankId">Receiving Bank ID</label>
+                    </div>
+                    <div class="col-sm-7">
+                        <select ng-model ="bgOpenForm.receivingBankId_t6" align="center"  style="margin-bottom: 10px" class="txtField" name="receivingBankId" id="receivingBankId" required >
+                            <option align="center" ng-repeat="receivingBankId in receivingBankIds" value="{{receivingBankId}}">{{receivingBankId}}</option>
+                        </select>
+                    </div>
+        
+        
+            <div class="row"></div>
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="receivingBankAddress">Receiving Bank Address.1</label>
+            </div>
+		    <div class="col-sm-7">
+				<textarea ng-model ="bgOpenForm.receivingBankAddress_1_t6" id="beneficiaryAddress" class="txtField" style="margin: 0px 0px 10px; width: 246px; height: 57px; margin-bottom: 10px"></textarea>
+               
+	        </div>
+
+
+
+
+            <div class="col-sm-5">
+                    <label class="control-label col-sm-" for="updateCorrBankLimit"  for="updateCorrBankLimit">Update Corr Bank Limit</label>
+            </div>
+            <div class="col-sm-7" style="margin-bottom: 10px;margin-top:5px;" class="txtField">
+                <input ng-model ="bgOpenForm.updateCorrBankLimit_t6" for="updateCorrBankLimit" type="radio" checked value="none">[None]
+                <input ng-model ="bgOpenForm.updateCorrBankLimit_t6" for="updateCorrBankLimit" type="radio" value="No">No
+                <input ng-model ="bgOpenForm.updateCorrBankLimit_t6" for="updateCorrBankLimit" type="radio" value="Yes">Yes
+            </div>
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="transactionReferenceNo20">20 Transaction Reference No</label>
+            </div>
+		    <div class="col-sm-7">
+                <input ng-model ="bgOpenForm.guaranteeRef_t1" type="text"  class="txtField" id="transactionReferenceNo20" name="transactionReferenceNo20" >
+	        </div>
+            
+
+            <div class="col-sm-5">
+                    <label class="control-label col-sm-" for="furtherIdentification23"  for="furtherIdentification23">23 Further Identification</label>
+            </div>
+            <div class="col-sm-7" style="margin-bottom: 10px;margin-top:5px;" class="txtField">
+                <input ng-model ="bgOpenForm.furtherIdentification23_t6" for="furtherIdentification23" type="radio" checked value="None">[None]
+                <input ng-model ="bgOpenForm.furtherIdentification23_t6" for="furtherIdentification23" type="radio" value="Issue">Issue
+                <input ng-model ="bgOpenForm.furtherIdentification23_t6" for="furtherIdentification23" type="radio" value="Request">Request
+            </div>
+
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="date30">30 Date</label>
+            </div>
+            <div class="col-sm-7">
+                        <input ng-model ="bgOpenForm.startDate_t1" type="date"  style="margin-bottom: 10px" class="txtField" id="date30" name="date30">
+            </div>
+
+
+
+            
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="detailsOfGuarantee77c">77C Details of Guarantee.1</label>
+            </div>
+		    <div class="col-sm-7">
+				<textarea ng-model ="bgOpenForm.detailsOfGuarantee77c_1_t6" id="detailsOfGuarantee77c" class="txtField" style="margin: 0px 0px 10px; width: 246px; height: 57px; margin-bottom: 10px"></textarea>
+               
+	        </div>
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="senderToReceiverInfo72">72 Sender to Receiver Info</label>
+            </div>
+		    <div class="col-sm-7">
+				<textarea ng-model ="bgOpenForm.senderToReceiverInfo72_t6" id="senderToReceiverInfo72" class="txtField" style="margin: 0px 0px 10px; width: 246px; height: 57px; margin-bottom: 10px"></textarea>
+               
+	        </div>
+
+
+
+            <div class="col-sm-5">
+                        <label  style="font-weight:!important" for="applicableRule">Applicable Rule(New Tag)</label>
+            </div>
+            <div class="col-sm-7">
+                <select ng-model ="bgOpenForm.applicableRule_t6" align="center"  style="margin-bottom: 10px" class="txtField" name="applicableRule" id="applicableRule" required >
+                        <option align="center" ng-repeat="applicableRule in applicableRules" value="{{applicableRule}}">{{applicableRule}}</option>
+                </select>
+            </div>
+
+
+
+            <div class="col-sm-5">
+                <label  style="font-weight:!important" for="narrative">Narrative(New Tag)</label>
+            </div>
+            <div class="col-sm-7">
+                 <input ng-model ="bgOpenForm.narrative_t6" type="text"  style="margin-bottom: 10px" class="txtField" id="narrative" name="narrative">
+            </div>
+            
+
+
+        
+        </div>   
+     
+    </div>
+
+</div>
+</script>
+
+    <button ng-click="bgOpenValidate()" type="button" class="btn btn-primary" style="margin-top: -75px;" ng-disabled="enableOpenValue"><span class="glyphicon glyphicon-ok" ></span> BG Validate</button>
+    
+    <button ng-click="Openbg()" type="button" class="btn btn-primary" style="margin-top: -75px; " ng-disabled="enableOpenValue"><span class="glyphicon glyphicon-ok"  ></span> Open BG</button>
+    <button ng-click="cancel()" type="button" class="btn btn-default" style="margin-top: -75px; "><span class="glyphicon glyphicon-remove"  ></span>Cancel</button>
+    
+  </div>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>

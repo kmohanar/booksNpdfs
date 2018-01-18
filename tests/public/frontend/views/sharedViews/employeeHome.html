@@ -1,0 +1,2670 @@
+﻿<!-- 
+<style>
+#header {
+background: #d1d1d1;
+width: 100%;
+height: 50px;
+#ultab {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+}
+#header {
+background: #D3D3D3;
+width: 100%;
+height: 50px;
+}
+
+
+
+#container {
+min-height: 100%;
+position: relative;
+}
+
+#header-image {
+background-image: url('cap-logo.jpg');
+background-repeat: no-repeat;
+background-position: left;
+-webkit-background-size: 10px;
+-moz-background-size: 10px;
+-o-background-size: 10px;
+background-size: 40px;
+height: 40px;
+
+}
+
+#lableWithBorder
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	padding-left: 3px;
+	padding-right: 12px;
+	padding-bottom: 6px;
+	padding-top: 6px;
+	border-right: 1px solid #ACACAD;
+}
+
+#mainButton {
+		font-family: Tahoma;
+        color: #000000;
+        background-color: #F9AA20; 
+        border: 2px solid #e4e4e4;
+        border-right: 2px solid #894A06;
+        border-bottom: 2px solid #894A06;
+        text-decoration: none;
+        display: inline-block;
+        padding-left: 4px;
+		padding-right: 4px;
+		padding-top: 2px;
+		padding-bottom: 2px;
+        font-weight: normal;
+        font-size: 11px;
+		cursor: hand;
+}
+
+#txtField
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;
+	<!-- margin-right:200px;
+	margin-left:200px; 
+	}
+}
+
+
+#litab {
+    border-radius: 2px 1px 5px 0px;
+    float: left;
+    border: 2px solid rgba(37, 130, 193, 0.97);
+	
+    border-bottom-width: thin;
+	
+    margin: 10px -3px -1px 0px;
+    padding: 12px 12px 6px 6px;
+    /* background-color: #af3c3c; */
+	background-color:#d7dfe8;
+    color: #1c1c1d;
+	    text-align: center;
+		cursor: hand;
+		background-color: #E5E8E9;
+    text-decoration: none;
+		
+		
+	<!-- 	    padding-left: 42px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    border-right: 1px solid #ACACAD;
+		 
+}
+.active {
+    background-color: #B1BDD9;
+    color: #3f3fa5;
+    margin-bottom: 0px;
+	font-weight: bold;
+}
+#mainView {
+  border-radius: 6px;
+    border: 1px solid #0099cc;
+	clear: both;
+	padding: 0 1em;
+	background-color: #fbfbfb;
+}
+.demoAppModule md-content {
+  background-color: #ffffff !important; }
+  .demoAppModule md-content md-tabs {
+    border: 1px solid #e1e1e1; }
+    .demoAppModule md-content md-tabs md-tab-content {
+      background: #f6f6f6; }
+    .demoAppModule md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .demoAppModule md-content h1:first-child {
+    margin-top: 0; }
+
+.demoAppModule md-input-container {
+  padding-bottom: 0;
+    width: 300px;	}
+
+.demoAppModule .remove-tab {
+  margin-bottom: 40px; }
+
+.demoAppModule .demo-tab > div > div {
+  padding: 25px;
+  box-sizing: border-box; }
+
+.demoAppModule .edit-form input {
+  width: 100%; }
+
+.demoAppModule md-tabs {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.demoAppModule md-tab[disabled] {
+  opacity: 0.5; }
+
+.demoAppModule label {
+  text-align: left; }
+
+.demoAppModule .long > input {
+  width: 264px; }
+
+.demoAppModule .md-button.add-tab {
+  transform: translateY(5px); }
+
+
+
+  /* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #f49542;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.form-control {
+  width: 300px;
+}
+
+
+.formlabel {
+    display: inline-block;
+    max-width: 100%;
+    font-size: small;
+  font-weight: normal important;
+}
+
+.label1 {
+    font-weight: normal important;
+}
+
+.label {
+    font-weight: bold important;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+bootstrap.min.css:5
+input[type=date].form-control, input[type=time].form-control, input[type=datetime-local].form-control, input[type=month].form-control {
+    line-height: 34px;
+    max-width: 300px;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    <!--font-family: Verdana;
+}
+@media (min-width: 768px)
+bootstrap.min.css:5
+.form-inline .form-control {
+    display: inline-block;
+    width: -webkit-fill-available;
+    vertical-align: middle;
+}
+.hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 0px 2px;
+    font-size: small;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-bottom: 10px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fbfbfb;
+    background-color: #d1d1d1;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #fbfbfb;
+    white-space: nowrap;
+    background: #d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1;
+    font-size: 13px;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    background: #d1d1d1;
+    border-top-right-radius: 0;
+}
+.btn-primary {
+    color: #fbfbfb;
+    background-color: #0866c6;
+    border-color: #e6ecff;
+}
+
+body
+{
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+#txtNormal
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align:left;
+	text-decoration: none;
+	padding-left:3px;
+	margin-top=6px
+}
+
+#style1 {
+color: #FF0000
+}
+
+}
+</style>
+ -->
+
+<div style="background-color:#ffffff !important" >
+<div id="header">
+<nav>
+<div class="container-fluid" style="background-color:#d1d1d1 !important">
+<div class="navbar-header">
+    <a class="navbar-brand"  href="#employeeHome" ng-click="setTab(0)" style="color:#337ab7">Digital Trade Chain</a>
+</div>
+
+
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="#" style="color:#337ab7">WELCOME
+            <span class="glyphicon glyphicon-user"></span> {{username}}</a>
+    </li>
+    <li>
+        <a href="#/customer" ng-click="logout()" style="color:#337ab7">
+            <span class="glyphicon glyphicon-log-in"></span> Logout</a>
+    </li>
+</ul>
+
+<div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" style="background-color:d1d1d1;color:#337ab7;font-family:Tahoma;" data-toggle="dropdown">Letter Of Credit<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#employeeHome" ng-click="setTab(1)" class="txtField">View Requested LC</a></li>
+                        <li class="divider"><strong></strong></li>
+                        <li><a href="#employeeHome" ng-click="setTab(2)">View Opened LC</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                                <a class="dropdown-toggle" style="background-color:d1d1d1;color:#337ab7;font-family:Tahoma;" data-toggle="dropdown">Bank Guarantee
+                                        <b class="caret"></b>
+                                    </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="divider">
+                                    <strong></strong>
+                                </li>
+                                <li>
+                                    <a href="#employeeHome" ng-click="setTab(3)">View Requsted BG</a>
+                                </li>
+                                <li class="divider">
+                                    <strong></strong>
+                                </li>
+                                <li>
+                                    <a href="#employeeHome" ng-click="setTab(4)">View Issued BG</a>
+                                </li>
+        
+        
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                                      
+                </div>
+              
+
+            </div>
+        </nav>
+    </div>
+
+
+
+
+ <!-- <h4 style="text-align: center;background-color: #d1d1d1;margin-left: 320px;margin-right: 320px;margin-top: 20px;font-size: 18px;height:40px;padding-top:9px;">Request For Letter of Credit</h4> -->
+
+<!-- <nav class="navbar navbar-default" role="navigation" style="padding-top: 62px;margin-bottom:-66px;"> -->
+  <!-- <div class="container-fluid" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div> -->
+
+    <script type="text/ng-template" id="messageContent.html">
+        <div class="modal-body" id="modal-body">
+            {{ modalInstanceTwo.message }}
+        </div>
+    </script>
+
+
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        ul.tab {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        /* Float the list items side by side */
+
+        ul.tab li {
+            float: left;
+        }
+        /* Style the links inside the list items */
+
+        ul.tab li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        /* Change background color of links on hover */
+
+        ul.tab li a:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+
+        ul.tab li a:focus,
+        .active {
+            background-color: #0866C6;
+        }
+        /* Style the tab content */
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+
+    <div ng-repeat="lc1 in loc1"></div>
+
+    <ul class="tab" style="visibility:hidden;">
+        <li ng-class="{ active: isSet(0) }">
+            <a href class="tablinks" id="defaultOpen" ng-click="setTab(0)">Home</a>
+        </li>
+        <li ng-class="{ active: isSet(1) }">
+            <a href class="tablinks" ng-click="setTab(1)">LC Request</a>
+        </li>
+        <li ng-class="{ active: isSet(2) }">
+            <a href class="tablinks" ng-click="setTab(2)">LC Open</a>
+        </li>
+        <li ng-class="{ active: isSet(3) }">
+            <a href class="tablinks" ng-click="setTab(3)">BG Request</a>
+        </li>
+        <li ng-class="{ active: isSet(4) }">
+            <a href class="tablinks" ng-click="setTab(4)">BG Open</a>
+        </li>
+    </ul>
+
+	<div ng-app>
+  <div ng-controller="TodoCtrl">
+    <div ng-repeat="day in weekDays">
+      {{day}}
+    </div>
+  </div>
+</div>
+
+<div ng-app>
+<div ng-controller="TodoCtrlbg">
+    <div ng-repeat="day in weekDays">
+      {{day}}
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-left:10%;width:80%; ">
+    <div class="row">
+	
+        <div ng-show="isSet(0)" style="margin-top:-40px";>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default" style="height:40px">
+                        <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; " >
+                            Notifications Panel
+							{{islcExpiryDate}}
+                        </div>
+						
+                        <div class="panel-body" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                            <div class="list-group">
+
+                                    <a href=#employeeHome class="list-group-item" ng-click="TodoCtrl()" >
+                                        <span class="badge" style="background-color:#24C2CE;font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">{{count1}}</span>
+                                        No. of LC's expiring in this week
+                                    </a>
+                                    <a href=#employeeHome class="list-group-item">
+                                                    <span class="badge" style="background-color:#24C2CE">{{count4}}</span>
+                                                     No. of BG's expiring in this week
+                                                </a> 
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                                Quick Links
+                            </div>
+                            <div class="panel-body" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none; ">
+                                <div class="list-group">
+
+                                    <a href=#employeeHome class="list-group-item" >
+
+                                        LC Opening
+                                    </a>
+                                                                 <a href=#employeeHome class="list-group-item" >
+
+                                                  BG Opening
+                                              </a> 
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default" style="border-color: #ECECEC;">
+                        <div id="chartContainer1" style="height: 200px; width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div id="chartContainer2" style="height: 200px; width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div id="chartContainer5" style="height: 200px; width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div id="chartContainer3" style="height: 200px; width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div id="chartContainer4" style="height: 200px; width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div ng-show="isSet(1)" style="margin-top:-40px;">
+
+            <!-- <div ng-show="!loc.length" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">There are no requested Letter of Credits</h3>
+                </div>
+                <div class="panel-body" style="font-family: Tahoma !important;font-size: 13px; font-style: normal;font-weight: bold;color: #f7f7f7;text-decoration: none; ">Use the "Request for LC" button to request for a Letter of Credit.</div>
+            </div>	
+
+            <!-- <div ng-show="loc.length" class="panel panel-primary"> -->
+			<!-- <div ng-show="loc.length" class="panel panel-primary" style="margin-left: 243px;margin-right: 243px" >
+                <div class="panel-heading" >
+				
+                     <h3 class="panel-title" style="font-family: Tahoma !important;font-size: 13px; font-style: normal;font-weight: bold;color: #f7f7f7;text-decoration: none; "> Letter of Credit - Requested:</h3>
+					<!-- <h3 class="panel-title" style="text-align: center; background-color: #d1d1d1;margin-left: 320px;margin-right: 320px;margin-top: -40px;font-size: 18px;height:63px;padding-top:9px;">All Letter of Credits:</h3>
+                </div>
+            </div> 
+			 -->
+			  
+			<div ng-show="!loc.length" class="panel panel-primary">
+                    <div class="panel-heading" style="font-family: Tahoma !important;font-size: 11px;font-style: normal;font-weight: normal;color: #ffffff;text-decoration: none;  ">
+                        <h3 class="panel-title" style="color:#FFFFFF;font-size:13px;">There are no requested Letter of Credits</h3>
+                    </div>
+                    <div class="panel-body" style="font-family: Tahoma !important;font-size: 13px;font-style: normal;font-weight: normal;color: #000000;text-decoration: none; ">Use the "Request for LC" button to request for a Letter of Credit.</div>
+                </div>
+				
+				
+                <div ng-show="loc.length" class="panel panel-primary" style="margin-bottom: 30px; background-color:#337ab7;width:100%">
+                    <div >
+                        <h3 class="panel-title" style="font-family: Tahoma !important;padding-top: 6px;font-size: 13px; font-style: bold;font-weight: bold;color: #f7f7f7;text-decoration: none;height: 29px;
+    text-align: center; ">Letter of Credit - Requested</h3>
+                    </div>
+                </div>
+
+			
+			
+
+            <div ng-show="loc.length" style="margin-left: 0%;width:100%">
+                <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px; " id="table_tingkat_jual" class="txtField">
+                    <thead bgcolor="#C0C0C0">
+                        <tr>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;
+	
+	">LC Request Number</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;
+	">LC Type</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Currency</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Amount</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Expiry Date</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	
+	element.style {
+	margin-bottom:10px !important;">LC Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="loc in loc" >
+                        <tr >
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.lcRequestNumber}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.ImportSightPmtLCType}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.LCCurrency}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.LCAmount}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.LCExpiryDate | date:'MM/dd/yyyy'}}</td>
+                            <td style="background-color:#FFFFFF;">
+					
+							<div id="btnwrap">
+                                    <!-- <button class="clsActionButton" id="idEditButton" ng-click="modalInstance.ammend()">Ammend</button>-->
+                                    <button type="button" ng-click="lcReqView(loc.lcRequestNumber)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">View</button>
+                                    <button id="idAddButton" ng-click="openLc(loc.lcRequestNumber)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Open</button>
+
+                                </div>
+                            </td>
+                        </tr>
+						<!-- 
+                        <td colspan=12>
+                            <div uib-collapse="!isCollapsed">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <fieldset class="scheduler-border" style="float:left;width:100%;height:140px;font-size:smaller;">
+                                            <legend class="scheduler-border">Applicant Details</legend>
+                                            <div class="row">
+
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC Req Number :</b></br>
+                                                    <i>{{loc.lcRequestNumber}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC-Type :</b></br>
+                                                    <i>{{loc.lctype}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC Currency :</b></br>
+                                                    <i>{{loc.lccurrency}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC Amount :</b></br>
+                                                    <i>{{loc.lcamount}}</i>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Applicant Customer :</b></br>
+                                                    <i>{{loc.applicantcustomer}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Applicant Address :</b> </br>
+                                                    <i>{{loc.applicantaddress}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Applicant Bank :</b> </br>
+                                                    <i>{{loc.applicantbank}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Applicant Bank Address :</b> </br>
+                                                    <i>{{loc.applicantbankaddress}}</i>
+                                                </div>
+
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <fieldset class="scheduler-border" style="float:right;width:100%;height:140px;font-size:smaller;">
+                                            <legend class="scheduler-border">Beneficiary Details</legend>
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <b>IBAN Number :</b></br>
+                                                    <i>{{loc.ibannumber}}</i>
+                                                </div>
+
+
+                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <b>Beneficiary ID :</b> </br>
+                                                    <i>{{loc.beneficiaryId}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <b>Beneficiary Address :</b> </br>
+                                                    <i>{{loc.beneficiaryaddress}}</i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <b>LC Issue Date :</b></br>
+                                                    <i>{{loc.lcissuedate}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <b>Beneficiary Bank ID :</b> </br>
+                                                    <i>{{loc.advisingbankid}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                    <b>Beneficiary Bank Address :</b></br>
+                                                    <i>{{loc.advisingBankAddress}}</i>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <fieldset class="scheduler-border" style="float:left;width:100%;height:200px;font-size:smaller;">
+                                            <legend class="scheduler-border">Shipment Details</legend>
+                                            <div class="row">
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Drafts At : </b></br>
+                                                    <i>{{loc.draftsatsight}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Drafts At :</b></br>
+                                                    <i>{{loc.draftsatusance}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Port Of Loading :</b> </br>
+                                                    <i>{{loc.portofloading}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Place of Expiry :</b> </br>
+                                                    <i>{{loc.lcexpiryplace}}</i>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Shipment Period :</b></br>
+                                                    <i>{{loc.shipmentperiodsight}}</i>
+                                                </div>
+
+
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Shipment Period :</b> </br>
+                                                    <i>{{loc.shipmentperiodusance}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Latest Shipment Date :</b></br>
+                                                    <i>{{loc.latestshipmentdate}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Liability Reversal Date :</b></br>
+                                                    <i>{{loc.liabilityreversaldate}}</i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Percentage :</b> </br>
+                                                    <i>{{loc.percentagesight}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Percentage :</b></br>
+                                                    <i>{{loc.percentageusance}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC expiry Date :</b></br>
+                                                    <i>{{loc.lcexpirydate}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Mode of Shipment :</b> </br>
+                                                    <i>{{loc.modeofshipment}}</i>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC Amount :</b> </br>
+                                                    <i>{{loc.lcAmountsight}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>LC Amount :</b></br>
+                                                    <i>{{loc.lcAmountusance}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Partial Shipments :</b></br>
+                                                    <i>{{loc.partialshipments}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Transhipment :</b></br>
+                                                    <i>{{loc.transshipment}}</i>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <fieldset class="scheduler-border" style="float:right;width:100%;height:200px;font-size:smaller;">
+                                            <legend class="scheduler-border">Other Details</legend>
+                                            <div class="row">
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Inco-Terms :</b></br>
+                                                    <i>{{loc.incoterms}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Reimburshing Bank :</b> </br>
+                                                    <i>{{loc.formofdocumentarycredit}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Sequence of Total :</b></br>
+                                                    <i>{{loc.sequenceoftotal}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Available With BY :</b> </br>
+                                                    <i>{{loc.availablewithby}}</i>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Maximum Credit Amount :</b></br>
+                                                    <i>{{loc.maximumcreditamount}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Confirmation Instructions : </b> </br>
+                                                    <i> {{loc.confirmationInstructions}} </i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Goods and Services :</b> </br>
+                                                    <i>{{loc.descriptionofgoodsandorservices}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>For Transportation To :</b></br>
+                                                    <i>{{loc.fortransportationto}}</i>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Additional Conditions :</b> </br>
+                                                    <i>{{loc.additionalConditions}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Charges :</b> </br>
+                                                    <i>{{loc.charges}}</i>
+                                                </div>
+
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Period for Presentation :</b></br>
+                                                    <i>{{loc.periodforpresentation}}</i>
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Documentary Credit No :</b></br>
+                                                    <i>{{loc.documentarycreditnumber}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Message to Receiver :</b></br>
+                                                    <i>{{loc.sendertoreceiverinformation}}</i>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                    <b>Advising through Bank :</b></br>
+                                                    <i>{{loc.advisingthroughbank}}</i>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Hide</button>
+                                </div>
+                            </div>
+                        </td> -->
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!--start here-->
+            <div ng-show="locamend.length">
+                <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual2">
+                    <thead bgcolor="#C0C0C0">
+                        <tr>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Number</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC AmendReq Id</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Amend Amount</th>
+<!--                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">LC Amend Advising Bank Ref</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">Amend Mode Of Shipment</th>-->
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Status</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Actions</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="locamend in locamend">
+                        <tr>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{locamend.lcAmendId}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{locamend.lcAmendReqId}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{locamend.lcAmendAmount}}</td>
+<!--                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{locamend.lcAmendAdvisingBankRef}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{locamend.amendModeOfShipment}}</td>-->
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{locamend.status}}</td>
+								<td style="background-color:#FFFFFF">
+								  <!--  <select ng-model="selected" ng-change="empamendListNew(locamend,locamend.lcId)" style="height:21px;">
+									<option value="0">Initial Version</option>
+									<option ng-repeat="version in locamend.amendArray" value="{{lcNumberOfAmendments+1}}">Version {{version.lcNumberOfAmendments+1}}</option>
+								</select>-->
+									<!-- <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed;locempDefaultdata(loc);historyemp(loc.lcId);OpenLcView(loc.lcId)">View</button> -->
+									<!--<button type="button" class="btn btn-default" ng-click="empamendListNew(locamend)" style="font-family: Tahoma;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: bold important;
+		color: #000000;
+		text-decoration: none;
+		height: 30px;
+		background-color:#FFFFFF;
+		element.style {
+        margin-bottom:10px !important;">View</button>-->
+        <button style="font-family: Tahoma;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: bold important;
+        color: #000000;
+        text-decoration: none;
+        height: 20px;
+        background-color:#f9f9f9;	
+        element.style {
+        margin-bottom:10px !important;text-align:centre;" type="button"  ng-click="lcAmendReqView(locamend.lcAmendReqId)">View</button>
+ 
+                                    <button class="clsActionButton" style="font-family: Tahoma;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: bold important;
+        color: #000000;
+        text-decoration: none;
+        height: 20px;
+        background-color:#f9f9f9;	
+        element.style {
+        margin-bottom:10px !important;text-align:centre;" id="idEditButton1" ng-click="amendAccept(locamend.lcAmendId,locamend.lcAmendReqId)">Accept Amend</button>
+                                  <!--  <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">View</button>
+
+                                    <button class="clsActionButton" id="idAddButton" ng-click="openLc(loc.lcId)">Open</button>-->
+                                
+                            </td>
+                        </tr>
+
+                        <!-- <tr>
+                            <td colspan=12>
+                                <div uib-collapse="!isCollapsed">
+                                    <div class="well well-lg">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <fieldset class="scheduler-border" style="float:left;width:100%;height:160px;font-size:smaller;">
+                                                    <legend class="scheduler-border">Amendment Details</legend>
+                                                    <div class="row">
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>LC Number :</b></br>
+                                                            <i>{{locamend.lcAmendId}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>LC-Amend Request Id :</b></br>
+                                                            <i>{{locamend.lcAmendReqId}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Advising Bank Ref:</b></br>
+                                                            <!-- <i>{{locamend.lcAmendAdvisingBankRefval}}</i> 
+                                                            <i>{{locamend.lcAmendAdvisingBankRef}}</i>
+
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>LC Expiry Date:</b></br>
+                                                            <i>{{locamend.lcAmendExpiryDate| date:'MM/dd/yyyy'}}</i>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>LC ExpiryPlace:</b></br>
+                                                            <i>{{locamend.lcAmendExpiryPlace}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Number Of Amendment:</b> </br>
+                                                            <i>{{locamend.numberOfAmendment}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Amendment Details:</b> </br>
+                                                            <i>{{locamend.amendmentDetails}}</i>
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Status:</b> </br>
+                                                            <i>{{locamend.status}}</i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>Mode Of Shipment:</b></br>
+                                                            <i>{{locamend.amendModeOfShipment}}</i>
+                                                        </div>
+
+                                                        <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                            <b>LC Amount:</b> </br>
+                                                            <i>{{locamend.lcAmendAmount}}</i>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Hide</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!--end here-->
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div ng-show="isSet(2)" style="margin-top:-40px;">
+
+
+            <div ng-show="!loc1.length" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">There are no Letter of Credits</h3>
+                </div>
+                <div class="panel-body">Use the "Request for LC" button to request for a Letter of Credit.</div>
+            </div>
+			
+		
+			
+            <div ng-show="loc1.length" >
+              
+                  <div class="panel-heading" >
+                    <h3 class="panel-title" style="text-align: center;margin-left: -1%;margin-right:-1%;background-color: #337ab7;padding-top: 10px;font-weight: bold;margin-top: -10px; color: #ffffff; font-size: 13px;height:45px;padding-top:-21px;">Letter of Credits - Opened</h3>
+                </div>
+            
+            <div ng-show="loc1.length" style="margin-left: 0%;margin-right: 0%;">
+                <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual1">
+                    <thead bgcolor="#C0C0C0" style="font-size: 81%;">
+                        <tr>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Number</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Type</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Currency</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" >LC Amount</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Expiry Date</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Status</th>
+                            <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">T24 Transaction ID
+                                </th>
+                                    <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">LC Actions</th>
+                                    <th style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">History</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody ng-repeat="loc in loc1">
+
+                        <tr style="font-size: 97%;">
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.lcId}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.importSightPmtLCType_t1}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.lCCurrency_t1}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.lCAmount_t1}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.lCExpiryDate_t1| date:'MM/dd/yyyy'}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.status}}</td>
+                            <td style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#FFFFFF;
+	element.style {
+	margin-bottom:10px !important;">{{loc.transactionId}}</td>
+                            <td style="background-color:#ffffff">
+                                <div id="btnwrap1">
+                                    <button ng-disabled="disableButton(loc)" ng-class="clsActionButton" id="idAddButton1" ng-click="approveLc(loc.lcId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Accept</button>
+                                    <button ng-disabled="disableAmendButton(loc)" ng-class="clsActionButton" id="idAddButton2" ng-click="approveAmendedLC(loc.lcId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Amend Approve</button>
+                                    <button ng-disabled="disableDocumentButton(loc)" type="button" ng-click="Documents(loc.lcId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Documents</button>
+
+                                </div>
+                            </td>
+
+                            <td>
+
+
+                                <select ng-model="selected" ng-change="empamendList(selected,loc.lcId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#ffffff;
+	element.style {
+	margin-bottom:10px !important;">
+                                <option value="0">Initial Version</option>
+                                <!--<option ng-repeat="version in loc.lcorder.amendData" value="{{version.numberOfAmendment-1}}">Version {{version.numberOfAmendment}}</option>-->
+                                <option ng-repeat="version in loc.amendArray" value="{{version.lcNumberOfAmendments+1}}">Version {{version.lcNumberOfAmendments+1}}</option>
+                            </select>
+                                <!-- <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed;locempDefaultdata(loc);historyemp(loc.lcId);OpenLcView(loc.lcId)">View</button> -->
+                                <button type="button" class="button" ng-click="OpenLcView(loc.lcId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#ffffff;
+	element.style {
+	margin-bottom:10px !important;">View</button>
+
+                            </td>
+                        </tr>                  
+                           
+                                <div uib-collapse="!isCollapsed" ng-show="empmyvar">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <fieldset class="scheduler-border" style="float:left;width:100%;height:140px;font-size:smaller;">
+                                                <legend class="scheduler-border">Applicant Details</legend>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC Number :</b></br>
+                                                        <i>{{loc.lcId}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC-Type :</b></br>
+                                                        <i>{{loc.lcType}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC Currency :</b></br>
+                                                        <i>{{loc.lcCurrency}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC Amount :</b></br>
+                                                        <i>{{amendAmountval}}</i>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Customer :</b></br>
+                                                        <i>{{loc.applicantCustomer}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Address :</b> </br>
+                                                        <i>{{loc.applicantAddress}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Bank :</b> </br>
+                                                        <i>{{loc.applicantBank}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Bank Address :</b> </br>
+                                                        <i>{{loc.applicantBankAddress}}</i>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <fieldset class="scheduler-border" style="float:right;width:100%;height:140px;font-size:smaller;">
+                                                <legend class="scheduler-border">Beneficiary Details</legend>
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>IBAN Number :</b></br>
+                                                        <i>{{loc.ibanNumber}}</i>
+                                                    </div>
+
+
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary ID :</b> </br>
+                                                        <i>{{loc.beneficiaryId}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary Address :</b> </br>
+                                                        <i>{{loc.beneficiaryAddress}}</i>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>LC Issue Date :</b></br>
+                                                        <i>{{loc.lcIssueDate}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary Bank ID :</b> </br>
+                                                        <i>{{lcAmendAdvisingBankRefval}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary Bank Address :</b></br>
+                                                        <i>{{loc.advisingBankAddress}}</i>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <fieldset class="scheduler-border" style="float:left;width:100%;height:200px;font-size:smaller;">
+                                                <legend class="scheduler-border">Shipment Details</legend>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Drafts At : </b></br>
+                                                        <i>{{loc.draftsAtSight}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Drafts At :</b></br>
+                                                        <i>{{loc.draftsAtUsance}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Port Of Loading :</b> </br>
+                                                        <i>{{loc.portofLoading}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Place of Expiry :</b> </br>
+                                                        <!--<i>{{loc.lcExpiryPlace}}</i>-->
+                                                        <i>{{lcAmendExpiryPlaceval}}</i>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Shipment Period :</b></br>
+                                                        <i>{{loc.shipmentPeriodSight}}</i>
+                                                    </div>
+
+
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Shipment Period :</b> </br>
+                                                        <i>{{loc.shipmentPeriodUsance}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Latest Shipment Date :</b></br>
+                                                        <i>{{loc.latestShipmentDate}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Liability Reversal Date :</b></br>
+                                                        <i>{{loc.liabilityReversalDate}}</i>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Percentage :</b> </br>
+                                                        <i>{{loc.percentageSight}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Percentage :</b></br>
+                                                        <i>{{loc.percentageUsance}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC expiry Date :</b></br>
+                                                        <!-- <i>{{loc.lcExpiryDate}}</i>-->
+                                                        <i>{{lcAmendExpiryDateval}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Mode of Shipment :</b> </br>
+                                                        <i>{{amendModeOfShipmentval}}</i>
+                                                        <!--<i>{{loc.modeOfShipment}}</i>-->
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC Amount :</b> </br>
+                                                        <i>{{loc.lcAmountSight}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>LC Amount :</b></br>
+                                                        <i>{{loc.lcAmountUsance}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Partial Shipments :</b></br>
+                                                        <i>{{loc.partialShipments}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Transhipment :</b></br>
+                                                        <i>{{loc.transshipment}}</i>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <fieldset class="scheduler-border" style="float:right;width:100%;height:200px;font-size:smaller;">
+                                                <legend class="scheduler-border">Other Details</legend>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Inco-Terms :</b></br>
+                                                        <i>{{loc.incoTerms}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Reimburshing Bank :</b> </br>
+                                                        <i>{{loc.formofDocumentaryCredit}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Sequence of Total :</b></br>
+                                                        <i>{{loc.sequenceOfTotal}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Available With BY :</b> </br>
+                                                        <i>{{loc.availableWithBy}}</i>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Maximum Credit Amount :</b></br>
+                                                        <i>{{loc.maximumCreditAmount}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Confirmation Instructions : </b> </br>
+                                                        <i> {{loc.confirmationInstructions}} </i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Goods and Services :</b> </br>
+                                                        <i>{{loc.descriptionOfGoodsAndOrServices}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>For Transportation To :</b></br>
+                                                        <i>{{loc.forTransportationTo}}</i>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Additional Conditions :</b> </br>
+                                                        <i>{{loc.additionalConditions}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Charges :</b> </br>
+                                                        <i>{{loc.charges}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Period for Presentation :</b></br>
+                                                        <i>{{loc.periodForPresentation}}</i>
+                                                    </div>
+
+
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Documentary Credit No :</b></br>
+                                                        <i>{{loc.documentaryCreditNumber}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Message to Receiver :</b></br>
+                                                        <i>{{loc.senderToReceiverInformation}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Advising through Bank :</b></br>
+                                                        <i>{{loc.advisingThroughBank}}</i>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Hide</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div ng-show="isSet(3)" style="margin-top:-40px;">
+
+
+            <div ng-show="!openbgs.length" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">There are no requested Bank Guarantees</h3>
+                </div>
+                <div class="panel-body">Use the "Request for BG" button to request for a Bank Guarantees.</div>
+            </div>
+            <div ng-show="openbgs.length" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="font-size:13px">Bank Guarantee - Requested</h3>
+                </div>
+            </div>
+            <!--<p>{{openbgs}}</p>-->
+
+            <div ng-show="openbgs.length">
+                <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual">
+                    <thead bgcolor="#C0C0C0">
+                        <tr>
+                            <th 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;
+    
+    "                           >BG Req Number</th>
+                            <th
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;
+    
+    "                           >Issued On Behalf Of</th>
+                            <th
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;"                           
+                            >BG Currency</th>
+    <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;"                           
+                            >BG Amount</th>
+                            <th 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;"
+                             >BG Expiry Date</th>
+	<th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">Status</th>
+
+                            <th 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;
+    text-align:center;"        >BG Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="openbg in openbgs">
+                        <tr>
+                            <td 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{openbg.bgReqID}}</td>
+                            <td
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{openbg.issuedOnBehalfOf}}</td>
+                            <td 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{openbg.currency}}</td>
+                            <td 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{openbg.amount}}</td>
+                            <td 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{openbg.expiryDate | date:'MM/dd/yyyy'}}</td>
+	
+	<td 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{openbg.status}}</td>
+
+                            <td 
+    style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#ffffff;
+    element.style {
+    margin-bottom:10px !important;
+    text-align:right;">
+                                <div id="btnwrap3">
+                                    <!-- <button class="clsActionButton" id="idEditButton" ng-click="modalInstance.ammend()">Ammend</button>-->
+                                    
+                                    <button type="button" style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;
+    text-align:right;" ng-click="bgReqView(openbg.bgReqID)">View</button>
+                                    <button id="idOpenButton" style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;
+    text-align:right;" ng-click="openBG(openbg.bgReqID)">Open</button>
+
+                                </div>
+                            </td>
+                        </tr>            
+                           
+                                <div uib-collapse="!isCollapsed">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <fieldset class="scheduler-border" style="float:left;width:100%;height:140px;font-size:smaller;">
+                                                <legend class="scheduler-border">Applicant Details</legend>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>BG Req Number :</b><br>
+                                                        <i>{{openbg.bgReqID}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Customer Reference :</b><br>
+                                                        <i>{{openbg.customersReference_t1}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>BG Currency :</b><br>
+                                                        <i>{{openbg.currency}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>BG Amount :</b><br>
+                                                        <i>{{openbg.principalAmount}}</i>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Customer :</b><br>
+                                                        <i>{{openbg.applicantcustomer}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Address :</b> <br>
+                                                        <i>{{openbg.applicantcustomeraddress}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Bank :</b> <br>
+                                                        <i>{{openbg.applicantBank}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicant Bank Address :</b> <br>
+                                                        <i>{{openbg.applicantbankaddress}}</i>
+                                                    </div>
+
+                                                </div>
+
+                                            </fieldset>
+                                            <fieldset class="scheduler-border" style="float:left;width:100%;height:140px;font-size:smaller;">
+                                                <legend class="scheduler-border">Beneficiary Details</legend>
+
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>IBAN Number :</b><br>
+                                                        <i>{{openbg.ibannumber}}</i>
+                                                    </div>
+
+
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary ID :</b> <br>
+                                                        <i>{{openbg.beneficiary}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary Address :</b> <br>
+                                                        <i>{{openbg.beneficiaryaddress}}</i>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <!--<div class="col-xs-12 col-sm-4 col-lg-4">-->
+                                                    <!--<b>BG Issue Date :</b><br>-->
+                                                    <!--<i>{{openbg.IssueDate}}</i>-->
+                                                    <!--</div>-->
+
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary Bank ID :</b> <br>
+                                                        <i>{{openbg.beneficiaryBank}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                                                        <b>Beneficiary Bank Address :</b><br>
+                                                        <i>{{openbg.beneficiaryBankAddress}}</i>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <fieldset class="scheduler-border" style="float:right;width:100%;height:285px;font-size:smaller;">
+                                                <legend class="scheduler-border">Guarantee Details</legend>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Deal Date  :</b></br>
+                                                        <i>{{openbg.dealDate}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Value Date:</b> </br>
+                                                        <i>{{openbg.valueDate}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Expiry Date :</b></br>
+                                                        <i>{{openbg.expiryDate}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Maturity Date :</b> </br>
+                                                        <i>{{openbg.maturityDate}}</i>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                        <b>Terms and Conditions :</b></br>
+                                                        <i>{{openbg.termsAndConditions}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6 col-lg-6">
+                                                        <b>Further Identification : </b> </br>
+                                                        <i> {{openbg.furtherIdentification}} </i>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Applicable Rule :</b> </br>
+                                                        <i>{{openbg.applicableRule}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Narrative :</b></br>
+                                                        <i>{{openbg.narrative}}</i>
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Details of Guarantee :</b></br>
+                                                        <i>{{openbg.detailsOfGuarantee1}}</i>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-3 col-lg-3">
+                                                        <b>Sender to Receiver information :</b></br>
+                                                        <i>{{openbg.senderToReceiverInformation}}</i>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Hide</button>
+                                    </div>
+
+
+                                </div>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div ng-show="bogamend.length">
+                <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual2">
+                    <thead bgcolor="#C0C0C0">
+                        <tr>
+                            <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">BG Number</th>
+                            <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">BG Amend Req Id</th>
+                            <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">BG Amend Amount</th>
+                            <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">BG Terms and conditions</th>
+                            <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">BG Expiry Date</th>
+                            <th style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">Status</th>
+                            <th  style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#f9f9f9;
+    element.style {
+    margin-bottom:10px !important;">BG Actions</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="bogamend in bogamend">
+                        <tr>
+                            <td style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{bogamend.bgAmendId}}</td>
+                            <td style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{bogamend.bgAmendReqId}}</td>
+                            <td style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{bogamend.bgAmendPrincipalAmount}}</td>
+                            <td style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{bogamend.bgTermsAndConditions}}</td>
+                            <td style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{bogamend.bgAmendExpiryDate}}</td>
+                            <td style="font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold important;
+    color: #000000;
+    text-decoration: none;
+    height: 20px;
+    background-color:#FFFFFF;
+    element.style {
+    margin-bottom:10px !important;">{{bogamend.status}}</td>
+                            <td style="background-color:#ffffff;">
+                                <div id="btnwrap2">
+	                                <div id="btnwrap1" >
+                            <button ng-class="clsActionButton" id="idAddButton1" ng-click="BGamendAccept(bogamend.bgAmendId,bogamend.bgAmendReqId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">Accept Amend</button>
+									
+ <button type="button" class="clsActionButton" ng-click="bgAmendReqView(bogamend.bgAmendReqId)" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;">View</button>
+                                </div>
+                                    <!--<button class="clsActionButton" id="idAddButton" ng-click="openLc(loc.lcId)">Open</button>-->
+                                </div>
+                            </td>
+                        </tr>                  
+                            
+                       
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-show="isSet(4)" style="margin-top:-40px;">
+            <div ng-show="!hyperAllBG.length" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">There are no Issued Bank Guarantees</h3>
+                </div>
+                <div class="panel-body">Use the "Request for BG" button to request for a Bank Guarantee.</div>
+            </div>
+            <div ng-show="hyperAllBG.length" class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="font-size:13px">Bank Guarantee - Issued</h3>
+                </div>
+            </div>
+            <div ng-show="hyperAllBG.length">
+                <table st-table="rowCollection" class="table table-striped" style="margin-top:-25px;" id="table_tingkat_jual1">
+                    <thead bgcolor="#C0C0C0">
+                        <tr>
+                            <th  style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;text-align:left;">BG Number</th>                           
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;">BG Currency</th>
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;">BG Amount</th>
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;">BG Expiry Date</th>
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;">T24 Transaction ID</th>						
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;">Status</th>
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;
+                            text-align:center;">BG Actions</th>
+                            <th  style="font-family: Tahoma;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: bold important;
+                            color: #000000;
+                            text-decoration: none;
+                            height: 20px;
+                            background-color:#f9f9f9;
+                            element.style {
+                            margin-bottom:10px !important;
+                            text-align:center;">History</th>
+                        </tr>
+                    </thead>
+
+                    <tbody ng-repeat="bog in hyperAllBG">
+                        <tr>
+
+                                    <td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;">{{bog.bgNumber_t1}}</td>        
+                                    <td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;">{{bog.currency_t1}}</td>
+                                    <td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;">{{bog.amount_t1}}</td>
+                                    <td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;">{{bog.expiryDate_t1| date:'MM/dd/yyyy'}}</td>
+									
+									<td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;">{{bog.transactionId}}</td>
+                                    <td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;">{{bog.status}}</td>
+
+                                    <td style="font-family: Tahoma;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    color: #000000;
+                                    text-decoration: none;
+                                    height: 20px;
+                                    background-color:#FFFFFF;
+                                    element.style {
+                                    margin-bottom:10px !important;
+                                    text-align:center;">
+                                        <div id="btnwrap1">
+                                            <button  ng-class="clsActionButton" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" ng-disabled="disableBGApproveBn(bog)" id="idAddButton19" ng-click="approveBG(bog.bgNumber_t1)">Approve</button>
+                                             <button ng-class="clsActionButton" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" ng-disabled="disableBgAmendApproveButton(bog)" ng-click="approveAmendedBG(bog.bgNumber_t1)" id="idAddButton20">Amend Approve</button>
+                                            
+
+                                </div>
+                            </td>
+
+                            <td style="background-color:#ffffff;">
+                                <select ng-model="selected" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#ffffff;
+	element.style {
+	margin-bottom:10px !important;" ng-change="empamendBGList(selected,bog.bgId)" style="font-size:12px">
+                                <option value="0">Initial Version</option>
+                                <option ng-repeat="version in bog.bgAmendArray" value="{{version.bgNumberOfAmendments}}">Version {{version.bgNumberOfAmendments}}</option>
+                            </select>
+
+                                <button type="button" style="font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold important;
+	color: #000000;
+	text-decoration: none;
+	height: 20px;
+	background-color:#f9f9f9;
+	element.style {
+	margin-bottom:10px !important;" style="font-family:Tahoma;font-size:13px;" ng-click="bgempDefaultdata(bog);bgAmendAcceptView(selected,bog.bgNumber_t1)">View</button>
+
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+    </div>
+
+</div>
