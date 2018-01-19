@@ -175,7 +175,7 @@ users: [
 		//unzip_dir: 'marbles-2.0/chaincode',
 		unzip_dir: '/chain1-master/git_code/',
 
-		deployed_name: 'fcbc3b0ebe0ef7fb2dbf4c88544ed81019c355b28ccda2dab74688371b4328eebd826e5d5156f092dfbabbb2b4d195d42242d8410c6b8d51ac185e021d1b575a',
+		deployed_name: '4fba29632b1a54b24e678f6c940d5744e410c399116f03c790f2926345bf8f23f4c0e953ffedae29d61da27eac6e68de9ec1e3ffd3a4fccb68ba560a3af31927',
 
 
 		//hashed cc name from prev deployment, comment me out to always deploy, uncomment me when its already deployed to skip deploying again

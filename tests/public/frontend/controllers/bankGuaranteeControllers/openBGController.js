@@ -262,7 +262,7 @@ $scope.checkChanges=function(selectedCommissionType){
         var commissionMDt=$filter('date')($scope.bgOpenForm.commissionDate_1_t3, "MM/dd/yyyy",  "IST")
           if(commissionMDt != $scope.bgOpenForm.maturityDate_t1 || $scope.bgOpenForm.commrate_t3==""){
               console.log("commissionMDt",commissionMDt,"1", $scope.bgOpenForm.maturityDate_t1 ,"2", $scope.bgOpenForm.commrate_t3);
-            $scope.Stl_comrate_t3="margin-bottom: 10px;border-color:red;"
+            $scope.Stl_comrate_t3="margin-bottom: 10px;border-color:blue;"
             
        alert("commission date should be same as maturity date");
        $scope.bgOpenForm.commissionDate_1_t3="";
@@ -278,7 +278,7 @@ $scope.checkChanges=function(selectedCommissionType){
         
          var commissionSDt=$filter('date')($scope.bgOpenForm.commissionDate_1_t3, "MM/dd/yyyy",  "IST")
     if(commissionSDt != $scope.bgOpenForm.startDate_t1 || $scope.bgOpenForm.commrate_t3=="" ){
-        $scope.Stl_comrate_t3="margin-bottom: 10px;border-color:red;"
+        $scope.Stl_comrate_t3="margin-bottom: 10px;border-color:blue;"
        
        alert("commission date should be same as start date");
        $scope.bgOpenForm.commissionDate_1_t3="";
@@ -289,7 +289,7 @@ $scope.checkChanges=function(selectedCommissionType){
         $scope.bgOpenForm.fixedAmount_t3="";
         $scope.bgOpenForm.rateChange_t3="";
         $scope.bgOpenForm.returnCommission_t3="";
-        $scope.Stl_comrate_t3="margin-bottom: 10px;"
+         $scope.Stl_comrate_t3="margin-bottom: 10px;border-color:blue;"
 
      }
      
