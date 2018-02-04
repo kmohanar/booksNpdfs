@@ -21,3 +21,8 @@ IF (OLD.status<>NEW.status)THEN
 SET new.notificationState = 'X';
 end if;
 END
+==================
+some links
+https://www.airpair.com/express/posts/earn-stack
+polling mysql db with socket.io
+https://stackoverflow.com/questions/21130845/long-polling-using-node-js-to-get-database-updates
