@@ -1,0 +1,23 @@
+stored procedure notify :accepts lcRequestNumber and notificationState parameters 
+CALL('lc-REQ-1234','YES');
+======================================================================================
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `notify`(
+        IN p_lcRequestNumber VARCHAR(45),
+		IN p_notificationState  VARCHAR(45)
+)
+BEGIN
+UPDATE applicantbank.letterofcredit 
+ SET notificationState=p_notificationState where lcRequestNumber=p_lcRequestNumber;
+END
+
+======================================================================================
+Trigger: to change the state of another field (notificationState to X) on field change (of status)
+Note:Key words NEW and OLD are necessary to track the change in the notificationState field
+======================================================================================
+CREATE DEFINER=`root`@`localhost` TRIGGER `applicantbank`.`letterofcredit_AFTER_UPDATE` BEFORE UPDATE ON `letterofcredit` FOR EACH ROW
+BEGIN
+IF (OLD.status<>NEW.status)THEN
+SET new.notificationState = 'X';
+end if;
+END
