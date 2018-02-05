@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ng-alerts tests</title>
+    <meta name="description" content="ng-alerts">
+    <meta name="author" content="Matthew Steele">
+
+    <!-- JS: Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+
+
+    
+
+    <!-- JS: ng-alerts -->
+    <script src="../dist/ng-alerts.js"></script>
+
+    <!-- CSS: ng-alerts -->
+    <link rel="stylesheet" href="../dist/ng-alerts.css">
+
+    <!-- CSS: Dependencies -->
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <style>
+        .nav,
+        .pagination,
+        .carousel,
+        .panel-title a {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body ng-app="testApp">
+
+    <script>
+        var randoms = [
+            'success',
+            'warning',
+            'danger',
+            'info',
+            'default'
+        ];
+        var testApp = angular.module('testApp', [
+            'ui.bootstrap',
+            'ngAlerts'
+        ]);
+
+        testApp.config(['ngAlertsProvider', function (ngAlertsProvider) {
+            ngAlertsProvider.options.emptyListText = 'Nothing here...';
+            ngAlertsProvider.options.queueTimeout = 5000;
+            // ngAlertsProvider.options.queue = false;
+        }]);
+
+        testApp.controller('TestCtrl', ['$scope', 'ngAlertsMngr', function ($scope, ngAlertsMngr) {
+            $scope.createAlert = function () {
+                var type = randoms[Math.round(Math.random() * (randoms.length - 1))];
+
+
+                ngAlertsMngr.add({
+                    msg: 'Adding a "' + type + '" alert.',
+                    type: type,
+                    time: Date.now() - Math.round(Math.random() * 10000000000)
+                });
+            };
+        }]);
+
+        testApp.controller('TestPopover', function ($scope) {
+            $scope.templateUrl = 'myPopoverTemplate.html';
+        });
+
+    </script>
+
+    <div ng-controller="TestCtrl">
+
+        <!-- navbar -->
+        <div class="navbar-default">
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="t" href="#" ng-alerts-popover popover-placement="bottom-right">
+                            <ng-alerts-count badge="true" hide-empty="true"></ng-alerts-count> messages
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-alerts-modal>See in modal</a>
+                    </li>
+                    <li><a href="#" ng-click="createAlert()">Create alert</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- jumbotron -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <p align="right">Use these buttons to test! ^</p>
+                        <h1>ng-alerts</h1>
+                        <p>The only angular alert and notification system you need!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
